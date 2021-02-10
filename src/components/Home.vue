@@ -1,13 +1,13 @@
 <template>
   <div class="row align-items-center">
     <!-- TODO: Increase the H1 font size -->
-    <div class="col-md-6 intro ">
+    <div class="col-xs-6 col-md-6 intro ">
       <h1>Ronn Gabiosa</h1>
       <!-- TODO: Increase the P font size  -->
       <p>Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys designing and developing websites, great in both Front and Back end.</p>
     </div>
-    <div class="col-md-6 ">
-      <img width="500" height="500" src="../assets/pics.jpg" alt="">
+    <div class="col-xs-6 col-md-6">
+      <img class="img-fluid" src="../assets/pics.png" alt="">
     </div>
   </div>
 </template>
