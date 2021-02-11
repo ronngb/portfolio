@@ -2,19 +2,22 @@
   <div id="app">
     <Navbar></Navbar>
     <div class="container">
-      <home></home>
+      <Home></Home>
+      <About></About>
     </div>
   </div>
 </template>
 <script>
 import Navbar from './components/Navbar.vue'
-import home from './components/Home.vue'
+import Home from './components/Home.vue'
+import About from './components/About.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    home
+    Home,
+    About
   }
 }
 </script>
