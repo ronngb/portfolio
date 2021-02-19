@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="col-12 proj">
+    <div class="col-md-12 proj">
       <h1>Project</h1>
       <ul class="d-flex justify-content-around proj-list">
-        <div class="col-5">
+        <div class="col-md-5">
           <li class="d-flex align-items-center flex-column">
             <div class=" image">
               <!-- PROB: image-->
