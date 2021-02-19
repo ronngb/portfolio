@@ -4,7 +4,7 @@
     <div id="test" class="container">
       <Home></Home>
       <About></About>
-      <Work></Work>
+      <Project></Project>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 import Navbar from './components/Navbar.vue'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
-import Work from './components/Work.vue'
+import Project from './components/Project.vue'
 
 
 export default {
@@ -21,15 +21,16 @@ export default {
     Navbar,
     Home,
     About,
-    Work
+    Project
   }
 }
 </script>
 <style>
-html {}
+html {
+  scroll-behavior: smooth;
+}
 
 #app {
-  scroll-behavior: smooth;
   font-family: Neutra Text, sans-serif;
   font-size: 20px;
   font-weight: 700;

@@ -12,7 +12,7 @@
       <div id="navbarNav" class="collapse navbar-collapse d-md-block justify-content-md-end justify-content-center">
         <ul id="main-nav" class="navbar-nav justify-content-center">
           <li class="nav-item active">
-            <a class="nav-link" href="">HOME</a>
+            <a class="nav-link" href="#">HOME</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#about">ABOUT</a>
