@@ -1,20 +1,21 @@
 <template>
-  <div class="row">
+  <div class="row justify-content-around">
     <div class="col-md-12 proj">
       <h1>Project</h1>
-      <ul class="d-flex justify-content-around proj-list">
-        <div class="col-md-5">
-          <li class="d-flex align-items-center flex-column">
-            <div class=" image">
-              <!-- PROB: image-->
-              <img class="img-fluid" src="../assets/test-proj.png" alt="">
-            </div>
-            <div class="text">
-              <h2>Fridge Man</h2>
-              <p>Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also...</p>
-            </div>
-          </li>
-        </div>
+    </div>
+    <!-- TODO: font-family set to current -->
+    <div class="col-md-6">
+      <ul class="proj-list">
+        <li class="d-flex align-items-center flex-column">
+          <div class=" image">
+            <!-- PROB: image-->
+            <img class="img-fluid" src="../assets/test-proj.png" alt="">
+          </div>
+          <div class="text">
+            <h2>Fridge Man</h2>
+            <p>Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also...</p>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -42,6 +43,7 @@ export default {
 .proj-list li {
   /*height: 500px;
 width: 450px;*/
+  display: inline-block;
   padding: 0px 20px;
   border-radius: 0.5em;
   box-shadow: 0 0 20px rgba(0, 0, 0, .16);
