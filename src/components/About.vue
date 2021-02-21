@@ -8,16 +8,18 @@
         <!-- TODO: Make P smaller -->
         <p>I'm a self-taught software engineer who is currently working at Cerner. In my free time, I enjoy contributing to open-source, designing, and working on side projects. Some technologies I enjoy are Typescript, Rust, C#, and Ruby. I have been writing code for 5 years since I first got introduced to web development.
         </p>
-        <div class="d-flex justify-content-around">
-          <ul>
+        <div class="col-6 px-0 d-inline-block">
+          <ul class="pl-4">
             <li>HTML</li>
             <li>Css</li>
             <li>Javascript</li>
           </ul>
-          <ul>
-            <li>HTML</li>
-            <li>Css</li>
-            <li>Javascript</li>
+        </div>
+        <div class="col-6 px-0 d-inline-block">
+          <ul class="pl-md-3">
+            <li>PHP</li>
+            <li>Vue</li>
+            <li>Laravel</li>
           </ul>
         </div>
       </div>
