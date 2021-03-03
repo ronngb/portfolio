@@ -1,10 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-light">
+  <!-- BUGS: conflict with sticky-top class
+        FIX: make the effect in navbar avialable to Desktop only   -->
+  <nav v-scroll="handleScroll" id="navbar" class="navbar sticky-top navbar-expand-md navbar-light bg-white">
     <div class="container">
       <a class="navbar-brand">
         <img class="" width="30" height="30" src="./../assets/logo.png" />
       </a>
-      <!-- TODO: fix prettyfy in code -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,6 +33,22 @@
 export default {
   name: "Navbar",
   components: {},
+  methods: {
+    handleScroll: function(evt, el) {
+      if (window.scrollY == 0) {
+        el.setAttribute(
+          'style',
+          'padding: 1.25rem 1rem;'
+        )
+      } else {
+        el.setAttribute(
+          'style',
+          'padding: .5rem 1rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
+        )
+      }
+
+    }
+  }
 };
 </script>
 <style>
@@ -48,8 +65,9 @@ export default {
   /*height: calc(100vh - 45px);*/
 }
 
-.nav-cont {
-  margin: 0px 15px !important;
+#navbar {
+  padding: 1.25rem 1rem;
+  transition: all .2s ease-in-out;
 }
 
 #nav-links li {
