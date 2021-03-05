@@ -1,16 +1,16 @@
 <template>
-  <!-- BUGS: conflict with sticky-top class
-        FIX: make the effect in navbar avialable to Desktop only   -->
+  <!-- PROBLEM: Overflow try to fixed -->
+  <!-- TODO: alternative to event scroll directice? -->
   <nav v-scroll="handleScroll" id="navbar" class="navbar sticky-top navbar-expand-md navbar-light bg-white">
     <div class="container">
       <a class="navbar-brand">
         <img class="" width="30" height="30" src="./../assets/logo.png" />
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <button class="navbar-toggler" type="button" @click="menuToggle">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="navbarNav" class="collapse navbar-collapse d-md-block justify-content-md-end justify-content-center">
-        <ul id="nav-links" class="navbar-nav justify-content-center">
+      <div id="navbar__list-item" :style="{ left: posLeft + '%'}" class="d-md-block">
+        <ul id="nav-links" class="navbar-nav">
           <!-- TODO: after clicking the anchor tag add .active class -->
           <li class="nav-item ">
             <a class="nav-link" href="#">HOME</a>
@@ -22,7 +22,7 @@
             <a class="nav-link" href="#">PROJECTS</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">RESUME</a>
+            <a class="nav-link" href="#" @click="menuToggle">RESUME</a>
           </li>
         </ul>
       </div>
@@ -31,10 +31,14 @@
 </template>
 <script>
 export default {
-  name: "Navbar",
-  components: {},
+  data() {
+    return {
+      posLeft: -100
+    };
+  },
   methods: {
     handleScroll: function(evt, el) {
+      /*Make this code smaller if possible*/
       if (window.scrollY == 0) {
         el.setAttribute(
           'style',
@@ -47,7 +51,17 @@ export default {
         )
       }
 
+    },
+
+    menuToggle: function() {
+      /*Make the this code block smaller*/
+      if (this.posLeft == 1) {
+        this.posLeft = -100
+      } else {
+        this.posLeft = 1
+      }
     }
+
   }
 };
 </script>
@@ -57,12 +71,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --teal: #00a89c;
-}
-
-/*Add this rules in portrait*/
-.navbar-collapse {
-  /*display: flex;*/
-  /*height: calc(100vh - 45px);*/
 }
 
 #navbar {
@@ -81,25 +89,46 @@ export default {
   color: black;
 }
 
-#nav-links>li>a:hover,
-#nav-links>li>a:focus {
-  color: var(--teal);
+
+/*CURRENT NAVBAR:OK
+make the font bigger*/
+@media (max-width: 768px) {
+  #navbar__list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    transition: all .2s ease-in-out;
+    height: 100vh;
+    width: 100vw;
+  }
 }
 
-#nav-links>li>a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: 7px;
-  left: 0;
-  background-color: var(--teal);
-  border-radius: 25px;
-  transform: scaleX(0);
-  transition: all 0.12s ease-in-out 0s;
-}
+@media (min-width: 768px) {
 
-#nav-links>li>a:hover::before {
-  transform: scaleX(1);
+  #nav-links>li>a:hover,
+  #nav-links>li>a:focus {
+    color: var(--teal);
+  }
+
+  #nav-links>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 7px;
+    left: 0;
+    background-color: var(--teal);
+    border-radius: 25px;
+    transform: scaleX(0);
+    transition: all 0.12s ease-in-out 0s;
+  }
+
+  #nav-links>li>a:hover::before {
+    transform: scaleX(1);
+  }
 }
 </style>
