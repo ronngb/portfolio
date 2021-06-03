@@ -1,7 +1,7 @@
 <template>
   <!-- PROBLEM: Overflow try to fixed -->
   <!-- TODO: alternative to event scroll directice? -->
-  <header v-scroll="handleScroll" class="sticky-top">
+  <header v-scroll="navbarTransition" class="sticky-top">
     <nav class="navbar navbar-expand-md navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand">
@@ -35,23 +35,17 @@
 export default {
   data() {
     return {
-      posLeft: -100
+      posLeft: -100,
+      cssProperty: ''
     };
   },
   methods: {
-    handleScroll: function(evt, el) {
-      /*Make this code smaller if possible*/
-      if (window.scrollY == 0) {
-        el.setAttribute(
-          'style',
-          'padding: 1rem 0rem;'
-        )
-      } else {
-        el.setAttribute(
-          'style',
-          'padding: .5rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
-        )
-      }
+    navbarTransition(evt, el) {
+      this.cssProperty = window.scrollY == 0 ?
+        'padding: 1rem 0rem;' :
+        'padding: .5rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
+
+      el.setAttribute('style', this.cssProperty)
 
     },
 
