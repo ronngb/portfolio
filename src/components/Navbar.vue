@@ -7,7 +7,7 @@
         <a class="navbar-brand">
           <img class="" width="30" height="30" src="./../assets/logo.png" />
         </a>
-        <button class="navbar-toggler" type="button" @click="menuToggle">
+        <button class="navbar-toggler" type="button" @click="toggleMenu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbar_list-item" :style="{ left: posLeft + '%'}" class="d-md-block">
@@ -46,16 +46,9 @@ export default {
         'padding: .5rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
 
       el.setAttribute('style', this.cssProperty)
-
     },
-
-    menuToggle: function() {
-      /*Make the this code block smaller*/
-      if (this.posLeft == 1) {
-        this.posLeft = -100
-      } else {
-        this.posLeft = 1
-      }
+    toggleMenu() {
+      this.posLeft = this.posLeft == 1 ? -100 : 1
     }
 
   }
