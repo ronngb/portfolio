@@ -1,33 +1,35 @@
 <template>
   <!-- PROBLEM: Overflow try to fixed -->
   <!-- TODO: alternative to event scroll directice? -->
-  <nav v-scroll="handleScroll" id="navbar" class="navbar sticky-top navbar-expand-md navbar-light bg-white">
-    <div class="container">
-      <a class="navbar-brand">
-        <img class="" width="30" height="30" src="./../assets/logo.png" />
-      </a>
-      <button class="navbar-toggler" type="button" @click="menuToggle">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="navbar__list-item" :style="{ left: posLeft + '%'}" class="d-md-block">
-        <ul id="nav-links" class="navbar-nav">
-          <!-- TODO: after clicking the anchor tag add .active class -->
-          <li class="nav-item ">
-            <a class="nav-link" href="#">HOME</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">ABOUT</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">PROJECTS</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#" @click="menuToggle">RESUME</a>
-          </li>
-        </ul>
+  <header v-scroll="handleScroll" class="sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand">
+          <img class="" width="30" height="30" src="./../assets/logo.png" />
+        </a>
+        <button class="navbar-toggler" type="button" @click="menuToggle">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar_list-item" :style="{ left: posLeft + '%'}" class="d-md-block">
+          <ul id="nav-links" class="navbar-nav">
+            <!-- TODO: after clicking the anchor tag add .active class -->
+            <li class="nav-item ">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">PROJECTS</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#" @click="menuToggle">RESUME</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 <script>
 export default {
@@ -42,12 +44,12 @@ export default {
       if (window.scrollY == 0) {
         el.setAttribute(
           'style',
-          'padding: 1.25rem 1rem;'
+          'padding: 1rem 0rem;'
         )
       } else {
         el.setAttribute(
           'style',
-          'padding: .5rem 1rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
+          'padding: .5rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
         )
       }
 
@@ -66,18 +68,14 @@ export default {
 };
 </script>
 <style>
-#app {
-  font-family: Neutra Text, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --teal: #00a89c;
-}
-
-#navbar {
-  padding: 1.25rem 1rem;
+/*header*/
+header {
+  background-color: white;
+  padding: 1rem 0rem;
   transition: all .2s ease-in-out;
 }
 
+/*navbar*/
 #nav-links li {
   padding: 0px 15px;
 }
@@ -93,7 +91,7 @@ export default {
 /*CURRENT NAVBAR:OK
 make the font bigger*/
 @media (max-width: 768px) {
-  #navbar__list-item {
+  #navbar_list-item {
     display: flex;
     align-items: center;
     justify-content: center;

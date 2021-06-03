@@ -32,7 +32,8 @@ html {
 
 #app {
   font-family: Neutra Text, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  --teal: #00a89c;
 }
 </style>
