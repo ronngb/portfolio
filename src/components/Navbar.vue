@@ -95,25 +95,25 @@ make the font bigger*/
 
 @media (min-width: 768px) {
 
-  #nav-links>li>a:hover,
-  #nav-links>li>a:focus {
-    color: var(--teal);
+  #nav-links li>a:hover,
+  #nav-links li>a:focus {
+    color: #00a69a;
   }
 
-  #nav-links>li>a::before {
+  #nav-links li>a::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 4px;
     bottom: 7px;
     left: 0;
-    background-color: var(--teal);
+    background-color: #00a69a;
     border-radius: 25px;
     transform: scaleX(0);
-    transition: all 0.12s ease-in-out 0s;
+    transition: all 0.12s ease-in-out;
   }
 
-  #nav-links>li>a:hover::before {
+  #nav-links li>a:hover::before {
     transform: scaleX(1);
   }
 }
