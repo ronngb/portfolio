@@ -38,16 +38,15 @@ export default {
   data() {
     return {
       posLeft: -100,
-      cssProperty: ''
     };
   },
   methods: {
     navbarTransition(evt, el) {
-      this.cssProperty = window.scrollY == 0 ?
+      let cssProperty = window.scrollY == 0 ?
         'padding: 1rem 0rem;' :
-        'padding: .5rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
+        'padding: .2rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
 
-      el.setAttribute('style', this.cssProperty)
+      el.setAttribute('style', cssProperty)
     },
     toggleMenu() {
       this.posLeft = this.posLeft == 1 ? -100 : 1
