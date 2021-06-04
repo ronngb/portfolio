@@ -5,7 +5,9 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand">
-          <img class="" width="30" height="30" src="./../assets/logo.png" />
+          <figure>
+            <img class="" width="30" height="30" src="./../assets/logo.png" alt="website logo" />
+          </figure>
         </a>
         <button class="navbar-toggler" type="button" @click="toggleMenu">
           <span class="navbar-toggler-icon"></span>
@@ -23,7 +25,7 @@
               <a class="nav-link" href="#">PROJECTS</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#" @click="menuToggle">RESUME</a>
+              <a class="nav-link" href="#" @click="toggleMenu">RESUME</a>
             </li>
           </ul>
         </div>
@@ -67,9 +69,9 @@ header {
   padding: 0px 15px;
 }
 
-#nav-links>li>a {
+#nav-links li>a {
   position: relative;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 700;
   color: black;
 }
@@ -83,11 +85,11 @@ make the font bigger*/
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 0;
+    top: 80px;
     background-color: white;
     z-index: 100;
-    transition: all .2s ease-in-out;
-    height: 100vh;
+    transition: all .3s ease-in-out;
+    height: calc(100vh - 100px);
     width: 100vw;
   }
 }
