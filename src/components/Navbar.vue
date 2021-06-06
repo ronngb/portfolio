@@ -1,31 +1,43 @@
 <template>
-  <!-- PROBLEM: Overflow try to fixed -->
-  <!-- TODO: alternative to event scroll directice? -->
   <header v-scroll="navbarTransition" class="sticky-top">
     <nav class="navbar navbar-expand-md navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand">
           <figure>
-            <img class="" width="30" height="30" src="./../assets/logo.png" alt="website logo" />
+            <img
+              width="30"
+              height="30"
+              alt="website logo"
+              src="./../assets/logo.png"
+            />
           </figure>
         </a>
-        <button class="navbar-toggler" type="button" @click="toggleMenu">
+        <button
+          class="navbar-toggler"
+          type="button"
+          @click="showMenu = !showMenu"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="navbar_list-item" :style="{ left: posLeft + '%'}" class="d-md-block">
+        <div
+          id="navbar_list-item"
+          :class="{ active: showMenu }"
+          class="d-md-block"
+        >
           <ul id="nav-links" class="navbar-nav">
-            <!-- TODO: after clicking the anchor tag add .active class -->
             <li class="nav-item ">
               <a class="nav-link" href="#">HOME</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#">ABOUT</a>
+              <a class="nav-link" href="#about" @click="showMenu = false">
+                ABOUT
+              </a>
             </li>
             <li class="nav-item ">
               <a class="nav-link" href="#">PROJECTS</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#" @click="toggleMenu">RESUME</a>
+              <a class="nav-link" href="#">RESUME</a>
             </li>
           </ul>
         </div>
@@ -37,22 +49,19 @@
 export default {
   data() {
     return {
-      posLeft: -100,
+      showMenu: false,
     };
   },
   methods: {
     navbarTransition(evt, el) {
-      let cssProperty = window.scrollY == 0 ?
-        'padding: 1rem 0rem;' :
-        'padding: .2rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);'
+      let cssProperty =
+        window.scrollY == 0
+          ? "padding: 1rem 0rem;"
+          : "padding: .2rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);";
 
-      el.setAttribute('style', cssProperty)
+      el.setAttribute("style", cssProperty);
     },
-    toggleMenu() {
-      this.posLeft = this.posLeft == 1 ? -100 : 1
-    }
-
-  }
+  },
 };
 </script>
 <style>
@@ -60,7 +69,7 @@ export default {
 header {
   background-color: white;
   padding: 1rem 0rem;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /*navbar*/
@@ -68,13 +77,12 @@ header {
   padding: 0px 15px;
 }
 
-#nav-links li>a {
+#nav-links li > a {
   position: relative;
   font-size: 1.2rem;
   font-weight: 700;
   color: black;
 }
-
 
 /*CURRENT NAVBAR:OK
 make the font bigger*/
@@ -84,23 +92,31 @@ make the font bigger*/
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 80px;
-    background-color: white;
+    left: 0;
+    top: 75px;
     z-index: 100;
-    transition: all .3s ease-in-out;
+    opacity: 0;
+    background-color: white;
     height: calc(100vh - 100px);
     width: 100vw;
+    transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(-20rem);
+  }
+
+  #navbar_list-item.active {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
 @media (min-width: 768px) {
-
-  #nav-links li>a:hover,
-  #nav-links li>a:focus {
+  #nav-links li > a:hover,
+  #nav-links li > a:focus {
     color: #00a69a;
   }
 
-  #nav-links li>a::before {
+  /*Recreate*/
+  #nav-links li > a::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -113,7 +129,7 @@ make the font bigger*/
     transition: all 0.12s ease-in-out;
   }
 
-  #nav-links li>a:hover::before {
+  #nav-links li > a:hover::before {
     transform: scaleX(1);
   }
 }
