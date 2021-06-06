@@ -21,8 +21,8 @@
         </button>
         <div
           id="navbar_list-item"
-          :class="{ active: showMenu }"
           class="d-md-block"
+          :class="{ active: showMenu }"
         >
           <ul id="nav-links" class="navbar-nav">
             <li class="nav-item ">
@@ -106,6 +106,11 @@ make the font bigger*/
   #navbar_list-item.active {
     opacity: 1;
     transform: translateX(0px);
+  }
+
+  #nav-links li > a {
+    font-size: 1.4rem;
+    text-align: center;
   }
 }
 
