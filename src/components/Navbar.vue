@@ -3,13 +3,8 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand">
-          <figure>
-            <img
-              width="30"
-              height="30"
-              alt="website logo"
-              src="./../assets/logo.png"
-            />
+          <figure class="logo" style="margin-bottom: 0rem;">
+            <img alt="website logo" src="./../assets/logo.png" />
           </figure>
         </a>
         <button
@@ -82,6 +77,10 @@ header {
   font-size: 1.2rem;
   font-weight: 700;
   color: black;
+}
+.logo img {
+  width: 30px;
+  height: 30px;
 }
 
 /*CURRENT NAVBAR:OK
