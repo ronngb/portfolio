@@ -5,11 +5,14 @@
       <div class="intro">
         <h1 class="mb-md-4">Ronn Gabiosa</h1>
         <!-- TODO: Increase the P font size  -->
-        <p>Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys designing and developing websites, great in both Front and Back end.</p>
+        <p>
+          Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys
+          designing and developing websites, great in both Front and Back end.
+        </p>
       </div>
     </div>
     <div class="col-md-6">
-      <img class="img-fluid" src="../assets/pics.png" alt="">
+      <img class="img-fluid" src="../assets/pics.png" alt="" />
     </div>
   </div>
 </template>

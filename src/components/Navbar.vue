@@ -52,9 +52,11 @@ export default {
       let cssProperty =
         window.scrollY == 0
           ? "padding: 1rem 0rem;"
-          : "padding: .2rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);";
+          : "padding: .5rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);";
 
-      el.setAttribute("style", cssProperty);
+      if (window.screen.width > 768) {
+        el.setAttribute("style", cssProperty);
+      }
     },
   },
 };
@@ -78,25 +80,30 @@ header {
   font-weight: 700;
   color: black;
 }
+
 .logo img {
   width: 30px;
   height: 30px;
 }
 
-/*CURRENT NAVBAR:OK
-make the font bigger*/
 @media (max-width: 768px) {
+  header {
+    padding: 0rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  }
+
   #navbar_list-item {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     left: 0;
-    top: 75px;
+    top: 57px;
     z-index: 100;
     opacity: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
     background-color: white;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 57px);
     width: 100vw;
     transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
     transform: translateX(-20rem);
