@@ -1,18 +1,20 @@
 <template>
-  <section class="row no-gutters">
+  <section>
     <!-- TODO: place a content wrapper in every section -->
-    <div class="intro col-md-7 align-self-center">
-      <h1>Ronnel Gabiosa</h1>
-      <h2>Web Developer</h2>
-      <p>
-        Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys
-        designing and developing websites, great in both Front and Back end.
-      </p>
-    </div>
-    <div class="col-md-5">
-      <figure>
-        <img class="img-fluid" src="../assets/pics.png" alt="hero image" />
-      </figure>
+    <div class="row no-gutters content-wrapper">
+      <div class="intro col-md-7 align-self-center">
+        <h1>Ronnel Gabiosa</h1>
+        <h2>Web Developer</h2>
+        <p>
+          Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys
+          designing and developing websites, great in both Front and Back end.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <figure>
+          <img class="img-fluid" src="../assets/pics.png" alt="hero image" />
+        </figure>
+      </div>
     </div>
   </section>
 </template>

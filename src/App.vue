@@ -37,4 +37,8 @@ html {
   --moz-osx-font-smoothing: grayscale;
   --teal: #00a89c;
 }
+
+.content-wrapper {
+  padding: 50px 0;
+}
 </style>
