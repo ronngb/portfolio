@@ -9,11 +9,10 @@
   </div>
 </template>
 <script>
-import Navbar from './components/Navbar.vue'
-import Home from './components/Home.vue'
-import About from './components/About.vue'
-import Project from './components/Project.vue'
-
+import Navbar from './components/Navbar.vue';
+import Home from './components/Home.vue';
+import About from './components/About.vue';
+import Project from './components/Project.vue';
 
 export default {
   name: 'App',
@@ -21,11 +20,13 @@ export default {
     Navbar,
     Home,
     About,
-    Project
-  }
-}
+    Project,
+  },
+};
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 html {
   scroll-behavior: smooth;
 }

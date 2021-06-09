@@ -1,24 +1,24 @@
 <template>
-  <div class="row align-items-center">
-    <!-- TODO: Increase the H1 font size -->
-    <div class="col-md-6">
-      <div class="intro">
-        <h1 class="mb-md-4">Ronn Gabiosa</h1>
-        <!-- TODO: Increase the P font size  -->
-        <p>
-          Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys
-          designing and developing websites, great in both Front and Back end.
-        </p>
-      </div>
+  <section class="row no-gutters">
+    <!-- TODO: place a content wrapper in every section -->
+    <div class="intro col-md-7 align-self-center">
+      <h1>Ronnel Gabiosa</h1>
+      <h2>Web Developer</h2>
+      <p>
+        Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys
+        designing and developing websites, great in both Front and Back end.
+      </p>
     </div>
-    <div class="col-md-6">
-      <img class="img-fluid" src="../assets/pics.png" alt="" />
+    <div class="col-md-5">
+      <figure>
+        <img class="img-fluid" src="../assets/pics.png" alt="hero image" />
+      </figure>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 export default {
-  name: "Navbar",
+  name: 'Intro',
   components: {},
 };
 </script>
@@ -26,15 +26,25 @@ export default {
 .intro h1 {
   text-align: left;
   font-size: 5.5rem;
-  font-weight: bold;
-  color: #00a89c;
+  font-weight: 600;
+  margin: 0;
+  color: #00a698;
+}
+
+.intro h2 {
+  font-size: 3rem;
+  text-align: left;
+  font-weight: 600;
+  padding-left: 2px;
+  color: rgba(0, 166, 154, 0.75);
 }
 
 .intro p {
-  font-size: 2.2rem;
-  /*text-align: left;*/
-  font-weight: normal;
-  line-height: 1;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2.1rem;
+  text-align: left;
+  line-height: 1.1;
+  padding-left: 5px;
 }
 
 @media (max-width: 768px) {
