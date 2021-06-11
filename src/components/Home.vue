@@ -42,7 +42,7 @@ export default {
 }
 
 .intro p {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans';
   font-size: 2.1rem;
   text-align: left;
   line-height: 1.1;
@@ -52,12 +52,19 @@ export default {
 @media (max-width: 768px) {
   .intro h1 {
     font-size: 3.1rem;
-    margin: 3rem 0rem 2rem;
+    text-align: center;
+  }
+
+  .intro h2 {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    color: rgba(0, 166, 154, 0.75);
   }
 
   .intro p {
     font-size: 1.5rem;
-    font-weight: normal;
+    text-align: center;
     line-height: 1;
   }
 }

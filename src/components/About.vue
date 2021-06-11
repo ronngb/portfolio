@@ -1,63 +1,87 @@
 <template>
-  <div id="about" class="row">
-    <div class="col-md-12">
-      <h1 id="header">About</h1>
-    </div>
-    <div class="col-md-6 pl-md-4">
-      <div class="about">
-        <!-- TODO: Make P smaller -->
-        <p>I'm a self-taught software engineer who is currently working at Cerner. In my free time, I enjoy contributing to open-source, designing, and working on side projects. Some technologies I enjoy are Typescript, Rust, C#, and Ruby. I have been writing code for 5 years since I first got introduced to web development.
-        </p>
-        <div class="col-6 px-0 d-inline-block">
-          <ul class="pl-4">
-            <li>HTML</li>
-            <li>Css</li>
-            <li>Javascript</li>
-          </ul>
-        </div>
-        <div class="col-6 px-0 d-inline-block">
-          <ul class="pl-md-3">
-            <li>PHP</li>
-            <li>Vue</li>
-            <li>Laravel</li>
-          </ul>
-        </div>
+  <section class="about">
+    <div class="content-wrapper">
+      <h1>About</h1>
+      <!-- TODO: place a margin or padding in div .row -->
+      <div class="row row-wrapper no-gutters ">
+        <article class="col-md-6">
+          <p>
+            I'm a self-taught software engineer who is currently working at
+            Cerner. In my free time, I enjoy contributing to open-source,
+            designing, and working on side projects. Some technologies I enjoy
+            are Typescript, Rust, C#, and Ruby. I have been writing code for 5
+            years since I first got introduced to web development.
+          </p>
+          <p>Some of technologies that I've been using lately</p>
+          <section class="skills">
+            <ul class="mr-5">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript (ES2015)</li>
+            </ul>
+            <ul>
+              <li>PHP</li>
+              <li>Vue</li>
+              <li>Laravel</li>
+            </ul>
+          </section>
+        </article>
+        <figure class="col-md-6">
+          <img
+            src="../assets/profile-pic.jpg"
+            class="profile-pic"
+            alt="profile-pic"
+          />
+        </figure>
       </div>
     </div>
-    <div class="col-md-6 pl-md-4">
-      <img src="../assets/profile-pic.jpg" height="240" width="240" class="profile-pic mx-auto d-block">
-    </div>
-  </div>
+  </section>
 </template>
 <script>
 export default {
-  name: "About",
+  name: 'About',
   components: {},
 };
 </script>
 <style>
-#header {
-  padding: 5.5rem 0 3rem;
+/* #00a69a - Persian Green
+   #dcdcdd - Gainsboro
+   #c5c3c6 - Silver
+   #46494c - Davys Grey
+   #4c5c68 - Black Coral
+*/
+
+.about h1 {
+  /*padding: 5.5rem 0 3rem;*/
   text-align: center;
-  font-size: 7.6rem;
-  font-weight: bold;
-  color: #00a89c;
+  font-size: 6rem;
+  font-weight: 600;
+  color: #00a69a;
 }
 
-.about p {
-  font-size: 1.4em;
+.about article > p {
+  font-family: 'Josefin Sans';
+  font-size: 1.4rem;
   text-align: left;
   font-weight: normal;
   line-height: 1;
 }
 
-.about ul {
+.skills ul {
+  font-family: 'Josefin Sans';
   display: inline-block;
   list-style: none;
+  padding-inline-start: 20px;
 }
 
-.about ul li::before {
-  content: "\2022";
+.skills ul > li {
+  font-family: 'Josefin Sans';
+  font-size: 1rem;
+}
+
+/*recreate*/
+.skills ul > li::before {
+  content: '\2022';
   color: #00a89c;
   font-weight: bold;
   display: inline-block;
@@ -65,9 +89,18 @@ export default {
   margin-left: -1em;
 }
 
-.profile-pic {
-  border-radius: 50%;
+figure .profile-pic {
+  display: block;
+  /*border-radius: 50%;*/
+  height: 234.5px;
+  width: 234.5px;
+  margin: 0px auto;
   border: 3px solid #00a89c;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.row-wrapper {
+  margin: 50px 0px;
 }
 
 @media (max-width: 768px) {
