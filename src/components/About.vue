@@ -3,7 +3,7 @@
     <div class="content-wrapper">
       <h1>About</h1>
       <!-- TODO: place a margin or padding in div .row -->
-      <div class="row row-wrapper no-gutters ">
+      <div class="row row-wrapper no-gutters">
         <article class="col-md-6">
           <p>
             I'm a self-taught software engineer who is currently working at
@@ -14,12 +14,10 @@
           </p>
           <p>Some of technologies that I've been using lately</p>
           <section class="skills">
-            <ul class="mr-5">
+            <ul>
               <li>HTML</li>
               <li>CSS</li>
-              <li>Javascript (ES2015)</li>
-            </ul>
-            <ul>
+              <li>Javascript (ES6)</li>
               <li>PHP</li>
               <li>Vue</li>
               <li>Laravel</li>
@@ -52,9 +50,8 @@ export default {
 */
 
 .about h1 {
-  /*padding: 5.5rem 0 3rem;*/
   text-align: center;
-  font-size: 6rem;
+  font-size: 6.5rem;
   font-weight: 600;
   color: #00a69a;
 }
@@ -68,14 +65,14 @@ export default {
 }
 
 .skills ul {
-  font-family: 'Josefin Sans';
-  display: inline-block;
+  display: grid;
   list-style: none;
+  font-family: 'Josefin Sans';
+  grid-template-columns: repeat(2, 1fr);
   padding-inline-start: 20px;
 }
 
 .skills ul > li {
-  font-family: 'Josefin Sans';
   font-size: 1rem;
 }
 
@@ -91,12 +88,12 @@ export default {
 
 figure .profile-pic {
   display: block;
-  /*border-radius: 50%;*/
+  border-radius: 50%;
   height: 234.5px;
   width: 234.5px;
   margin: 0px auto;
   border: 3px solid #00a89c;
-  clip-path: circle(50% at 50% 50%);
+  /*clip-path: circle(50% at 50% 50%);*/
 }
 
 .row-wrapper {
@@ -104,15 +101,29 @@ figure .profile-pic {
 }
 
 @media (max-width: 768px) {
-  #header {
-    font-size: 4.5rem;
+  .about h1 {
+    text-align: center;
+    font-size: 4.1rem;
+    font-weight: 600;
+    color: #00a69a;
   }
 
   .about p {
-    font-size: 1.5rem;
-    font-weight: normal;
-    text-align: left;
+    font-size: 1.4rem;
+    text-align: center;
     line-height: 1;
+  }
+
+  .skills ul {
+    grid-template-columns: 65% 1fr;
+  }
+
+  figure .profile-pic {
+    margin: 25px auto;
+  }
+
+  .row-wrapper {
+    margin: 25px 0px;
   }
 }
 </style>
