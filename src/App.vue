@@ -41,4 +41,10 @@ html {
 .content-wrapper {
   padding: 50px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+    padding-bottom: 0px;
+  }
+}
 </style>

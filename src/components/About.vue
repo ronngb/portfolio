@@ -2,9 +2,8 @@
   <section class="about">
     <div class="content-wrapper">
       <h1>About</h1>
-      <!-- TODO: place a margin or padding in div .row -->
-      <div class="row row-wrapper no-gutters">
-        <article class="col-md-6">
+      <section>
+        <article>
           <p>
             I'm a self-taught software engineer who is currently working at
             Cerner. In my free time, I enjoy contributing to open-source,
@@ -24,14 +23,14 @@
             </ul>
           </section>
         </article>
-        <figure class="col-md-6">
+        <figure>
           <img
             src="../assets/profile-pic.jpg"
             class="profile-pic"
             alt="profile-pic"
           />
         </figure>
-      </div>
+      </section>
     </div>
   </section>
 </template>
@@ -56,6 +55,12 @@ export default {
   color: #00a69a;
 }
 
+.about section:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  margin: 25px 0px;
+}
+
 .about article > p {
   font-family: 'Josefin Sans';
   font-size: 1.4rem;
@@ -76,7 +81,6 @@ export default {
   font-size: 1rem;
 }
 
-/*recreate*/
 .skills ul > li::before {
   content: '\2022';
   color: #00a89c;
@@ -96,22 +100,17 @@ figure .profile-pic {
   /*clip-path: circle(50% at 50% 50%);*/
 }
 
-.row-wrapper {
-  margin: 50px 0px;
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .about h1 {
-    text-align: center;
     font-size: 4.1rem;
-    font-weight: 600;
-    color: #00a69a;
+  }
+
+  .about section:nth-child(2) {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   }
 
   .about p {
     font-size: 1.4rem;
-    text-align: center;
-    line-height: 1;
   }
 
   .skills ul {
@@ -120,10 +119,6 @@ figure .profile-pic {
 
   figure .profile-pic {
     margin: 25px auto;
-  }
-
-  .row-wrapper {
-    margin: 25px 0px;
   }
 }
 </style>
