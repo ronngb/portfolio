@@ -67,8 +67,7 @@ export default {
 }
 
 .projects-list li {
-  height: 350px;
-  padding: 0px 30px;
+  padding: 0px 30px 30px;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
 }
@@ -93,9 +92,21 @@ export default {
   max-width: 100%;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .projects h1 {
+    font-size: 4.1rem;
+  }
+
   .projects-list ul {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  }
+
+  .projects-list li {
+    padding: 0px 15px 15px;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
   }
 }
 </style>
