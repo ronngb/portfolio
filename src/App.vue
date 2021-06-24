@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Navbar></Navbar>
+    <Navbar />
     <div id="test" class="container">
-      <Home></Home>
-      <About></About>
-      <Project></Project>
+      <Intro />
+      <About />
+      <Project />
     </div>
   </div>
 </template>
 <script>
 import Navbar from './components/Navbar.vue';
-import Home from './components/Home.vue';
+import Intro from './components/Intro.vue';
 import About from './components/About.vue';
 import Project from './components/Project.vue';
 
@@ -18,7 +18,7 @@ export default {
   name: 'App',
   components: {
     Navbar,
-    Home,
+    Intro,
     About,
     Project,
   },
@@ -35,7 +35,6 @@ html {
   font-family: 'Neutra Text', 'Josefin Sans', sans-serif;
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
-  --teal: #00a89c;
 }
 
 .content-wrapper {
