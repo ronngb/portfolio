@@ -1,20 +1,17 @@
 <template>
-  <section>
+  <section class="intro">
     <div class="content-wrapper">
-      <section class="intro">
-        <article>
-          <h1>Ronnel Gabiosa</h1>
-          <h2>Web Developer</h2>
-          <p>
-            Hi there! I'm Ronnel, your friendly neighborhood developer, who
-            enjoys designing and developing websites, great in both Front and
-            Back end.
-          </p>
-        </article>
-        <figure>
-          <img class="img-fluid" src="../assets/pics.png" alt="hero image" />
-        </figure>
-      </section>
+      <article>
+        <h1>Ronnel Gabiosa</h1>
+        <h2>Web Developer</h2>
+        <p>
+          Hi there! I'm Ronnel, your friendly neighborhood developer, who enjoys
+          designing and developing websites, great in both Front and Back end.
+        </p>
+      </article>
+      <figure>
+        <img class="hero-image" src="../assets/pics.png" alt="hero image" />
+      </figure>
     </div>
   </section>
 </template>
@@ -25,7 +22,7 @@ export default {
 };
 </script>
 <style>
-.intro {
+.intro div {
   display: grid;
   grid-template-columns: repeat(auto-fill, 55% 45%);
 }
@@ -59,8 +56,13 @@ export default {
   padding-left: 5px;
 }
 
+figure .hero-image {
+  max-width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 768px) {
-  .intro {
+  .intro div {
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   }
 
