@@ -67,6 +67,7 @@ export default {
   text-align: left;
   font-weight: normal;
   line-height: 1;
+  /*padding-left: 5px;*/
 }
 
 .skills ul {

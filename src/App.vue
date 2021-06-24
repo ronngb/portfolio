@@ -40,6 +40,7 @@ html {
 
 .content-wrapper {
   padding: 50px 0;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {

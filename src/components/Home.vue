@@ -1,20 +1,20 @@
 <template>
   <section>
-    <!-- TODO: place a content wrapper in every section -->
-    <div class="row no-gutters content-wrapper">
-      <div class="intro col-md-7 align-self-center">
-        <h1>Ronnel Gabiosa</h1>
-        <h2>Web Developer</h2>
-        <p>
-          Hi there! I'm Ronn, your friendly neighborhood developer, who enjoys
-          designing and developing websites, great in both Front and Back end.
-        </p>
-      </div>
-      <div class="col-md-5">
+    <div class="content-wrapper">
+      <section class="intro">
+        <article>
+          <h1>Ronnel Gabiosa</h1>
+          <h2>Web Developer</h2>
+          <p>
+            Hi there! I'm Ronnel, your friendly neighborhood developer, who
+            enjoys designing and developing websites, great in both Front and
+            Back end.
+          </p>
+        </article>
         <figure>
           <img class="img-fluid" src="../assets/pics.png" alt="hero image" />
         </figure>
-      </div>
+      </section>
     </div>
   </section>
 </template>
@@ -25,6 +25,16 @@ export default {
 };
 </script>
 <style>
+.intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 55% 45%);
+}
+
+.intro article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .intro h1 {
   text-align: left;
   font-size: 5.5rem;
@@ -49,22 +59,21 @@ export default {
   padding-left: 5px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .intro {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  }
+
   .intro h1 {
     font-size: 3.1rem;
-    text-align: center;
   }
 
   .intro h2 {
     font-size: 2rem;
-    text-align: center;
-    font-weight: 600;
-    color: rgba(0, 166, 154, 0.75);
   }
 
   .intro p {
     font-size: 1.5rem;
-    text-align: center;
     line-height: 1;
   }
 }
