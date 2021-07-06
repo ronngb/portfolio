@@ -151,9 +151,36 @@ nav ul > li {
 }
 
 @media screen and (min-width: 769px) {
+  @keyframes navbar {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  nav ul :nth-child(n + 1) {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: navbar 0.5s ease-out forwards;
+  }
+
+  nav ul :nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  nav ul :nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  nav ul :nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  nav ul :nth-child(4) {
+    animation-delay: 0.7s;
+  }
+
   nav .toggle-button {
     display: none;
   }
+
   nav ul {
     flex: 0 0 45%;
   }
