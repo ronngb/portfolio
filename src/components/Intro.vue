@@ -79,4 +79,44 @@ figure .hero-image {
     line-height: 1;
   }
 }
+
+@media screen and (min-width: 769px) {
+  @keyframes intro-image {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes introTrans {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .intro h1,
+  h2,
+  p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: introTrans 0.5s ease-out forwards;
+  }
+  .intro h1 {
+    animation-delay: 0.8s;
+  }
+
+  .intro h2 {
+    animation-delay: 0.9s;
+  }
+
+  .intro p {
+    animation-delay: 1s;
+  }
+
+  figure .hero-image {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: intro-image 0.5s ease-out 1.2s forwards;
+  }
+}
 </style>
