@@ -32,17 +32,26 @@
 </template>
 <script>
 export default {
+  directives: {
+    scroll: {
+      inserted(el, binding) {
+        window.addEventListener('scroll', () => {
+          binding.value(el);
+        });
+      },
+    },
+  },
   data() {
     return {
       showMenu: false,
     };
   },
   methods: {
-    navbarTransition(evt, el) {
+    navbarTransition(el) {
       let cssProperty =
         window.scrollY == 0
           ? 'padding: 1.3rem 0rem;'
-          : 'padding: 1rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);';
+          : 'padding: .7rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);';
 
       if (window.screen.width > 768) {
         el.setAttribute('style', cssProperty);
