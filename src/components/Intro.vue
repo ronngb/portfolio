@@ -18,7 +18,6 @@
 <script>
 export default {
   name: 'Intro',
-  components: {},
 };
 </script>
 <style>
@@ -38,6 +37,9 @@ export default {
   font-weight: 600;
   margin: 0;
   color: #00a698;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: intro-transition 0.5s ease-out 0.8s forwards;
 }
 
 .intro h2 {
@@ -46,6 +48,9 @@ export default {
   font-weight: 600;
   padding-left: 2px;
   color: rgba(0, 166, 154, 0.75);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: intro-transition 0.5s ease-out 0.9s forwards;
 }
 
 .intro p {
@@ -54,11 +59,17 @@ export default {
   text-align: left;
   line-height: 1.1;
   padding-left: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: intro-transition 0.5s ease-out 1s forwards;
 }
 
 figure .hero-image {
   max-width: 100%;
   height: auto;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: intro-image-transition 0.5s ease-out 1.2s forwards;
 }
 
 @media screen and (max-width: 768px) {
@@ -80,43 +91,16 @@ figure .hero-image {
   }
 }
 
-@media screen and (min-width: 769px) {
-  @keyframes intro-image {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+@keyframes intro-image-transition {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  @keyframes introTrans {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .intro h1,
-  h2,
-  p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: introTrans 0.5s ease-out forwards;
-  }
-  .intro h1 {
-    animation-delay: 0.8s;
-  }
-
-  .intro h2 {
-    animation-delay: 0.9s;
-  }
-
-  .intro p {
-    animation-delay: 1s;
-  }
-
-  figure .hero-image {
-    opacity: 0;
-    transform: translateX(20px);
-    animation: intro-image 0.5s ease-out 1.2s forwards;
+}
+@keyframes intro-transition {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
