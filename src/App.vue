@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar />
-    <div id="test" class="container">
+    <div v-trigger class="container">
       <Intro />
       <About />
       <Project />
@@ -16,6 +16,26 @@ import Project from './components/Project.vue';
 
 export default {
   name: 'App',
+  directives: {
+    trigger: {
+      inserted(el, binding) {
+        const options = {
+          threshold: 0.25,
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, options);
+
+        el.children.forEach((section) => {
+          observer.observe(section);
+        });
+      },
+    },
+  },
   components: {
     Navbar,
     Intro,
