@@ -37,37 +37,44 @@
 <script>
 export default {
   name: 'About',
-  components: {},
 };
 </script>
 <style>
-/* #00a69a - Persian Green
-   #dcdcdd - Gainsboro
-   #c5c3c6 - Silver
-   #46494c - Davys Grey
-   #4c5c68 - Black Coral
-*/
-
 .about h1 {
   text-align: center;
   font-size: 6.5rem;
   font-weight: 600;
   color: #00a69a;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.about section:nth-child(2) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-  margin: 25px 0px;
+.about.active h1 {
+  animation: about-transition 0.5s ease-out 0.2s forwards;
 }
 
-.about article > p {
+.about article {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.about.active article {
+  animation: about-transition 0.5s ease-out 0.4s forwards;
+}
+
+.about p {
   font-family: 'Josefin Sans';
   font-size: 1.4rem;
   text-align: left;
   font-weight: normal;
   line-height: 1;
   /*padding-left: 5px;*/
+}
+
+.about section:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  margin: 25px 0px;
 }
 
 .skills ul {
@@ -91,14 +98,25 @@ export default {
   margin-left: -1em;
 }
 
-figure .profile-pic {
+.profile-pic {
   display: block;
   border-radius: 50%;
   height: 234.5px;
   width: 234.5px;
   margin: 0px auto;
   border: 3px solid #00a89c;
+  transform: translateX(500px) rotate(180deg);
   /*clip-path: circle(50% at 50% 50%);*/
+}
+
+.about.active .profile-pic {
+  animation: about-transition 1.2s ease-out 0.3s forwards;
+}
+
+@keyframes about-image-transition {
+  to {
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -118,8 +136,15 @@ figure .profile-pic {
     grid-template-columns: 65% 1fr;
   }
 
-  figure .profile-pic {
+  .profile-pic {
     margin: 25px auto;
+  }
+}
+
+@keyframes about-transition {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

@@ -20,7 +20,7 @@ export default {
     trigger: {
       inserted(el, binding) {
         const options = {
-          threshold: 0.25,
+          threshold: 0.6,
         };
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
