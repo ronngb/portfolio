@@ -38,7 +38,6 @@
 <script>
 export default {
   name: 'Projects',
-  components: {},
 };
 </script>
 <style>
@@ -47,6 +46,12 @@ export default {
   font-size: 6.5rem;
   font-weight: 600;
   color: #00a69a;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.projects.active h1 {
+  animation: projects-transition 0.5s ease-out 0.2s forwards;
 }
 
 .projects-list {
@@ -62,14 +67,33 @@ export default {
   gap: 70px 60px;
 }
 
-.projects-list figure {
-  margin-bottom: 0px;
-}
-
 .projects-list li {
   padding: 0px 30px 30px;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.projects.active .projects-list li {
+  animation: projects-transition 0.5s ease-out 0.4s forwards;
+}
+
+.projects-list figure {
+  margin-bottom: 0px;
+}
+
+.project-image img {
+  position: relative;
+  bottom: 1.6rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  max-width: 100%;
+  transform: translateY(-20px);
+}
+
+.projects.active .project-image img {
+  animation: projects-transition 0.5s ease-out 0.6s forwards;
 }
 
 .project-title {
@@ -82,14 +106,6 @@ export default {
   font-weight: 100;
   line-height: 1;
   margin-bottom: 0px;
-}
-
-.project-image img {
-  position: relative;
-  bottom: 1.6rem;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-  max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -107,6 +123,13 @@ export default {
 
   .project-title {
     font-size: 1.3rem;
+  }
+}
+
+@keyframes projects-transition {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

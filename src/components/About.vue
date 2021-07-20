@@ -113,12 +113,6 @@ export default {
   animation: about-transition 1.2s ease-out 0.3s forwards;
 }
 
-@keyframes about-image-transition {
-  to {
-    transform: translateY(0);
-  }
-}
-
 @media screen and (max-width: 768px) {
   .about h1 {
     font-size: 4.1rem;
@@ -144,6 +138,12 @@ export default {
 @keyframes about-transition {
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-image-transition {
+  to {
     transform: translateY(0);
   }
 }
