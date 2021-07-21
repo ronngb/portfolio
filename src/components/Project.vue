@@ -72,7 +72,7 @@ export default {
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 
 .projects.active .projects-list li {
@@ -83,16 +83,29 @@ export default {
   margin-bottom: 0px;
 }
 
-.project-image img {
+.project-image {
   position: relative;
   bottom: 1.6rem;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-  max-width: 100%;
+  opacity: 0;
   transform: translateY(-20px);
+  overflow: hidden;
 }
 
-.projects.active .project-image img {
+.project-image img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s;
+}
+
+.project-image:hover img {
+  transform: scale(1.2);
+}
+
+.projects.active .project-image {
   animation: projects-transition 0.5s ease-out 0.6s forwards;
 }
 
