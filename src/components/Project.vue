@@ -101,7 +101,7 @@ export default {
 };
 </script>
 <style>
-.projects h1 {
+section.projects h1 {
   text-align: center;
   font-size: 6.5rem;
   font-weight: 600;
@@ -110,15 +110,15 @@ export default {
   transform: translateY(20px);
 }
 
-.projects.active h1 {
+section.projects.active h1 {
   animation: projects-transition 0.5s ease-out 0.2s forwards;
 }
 
-.projects-list {
+section.projects-list {
   margin: 50px 0px;
 }
 
-.projects-list ul {
+section.projects-list ul {
   display: grid;
   list-style: none;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -127,7 +127,7 @@ export default {
   gap: 70px 60px;
 }
 
-.projects-list li {
+section.projects-list li {
   padding: 0px 30px 30px;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
@@ -135,12 +135,36 @@ export default {
   transform: translateY(30px);
 }
 
-.projects.active .projects-list li {
+section.projects.active section.projects-list li {
   animation: projects-transition 0.5s ease-out 0.4s forwards;
 }
 
-.projects-list figure {
+figure.project-image {
+  position: relative;
+  bottom: 1.6rem;
+  border-radius: 8px;
   margin-bottom: 0px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  background-color: #46494c;
+  opacity: 1;
+  transform: translateY(-20px);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+figure.project-image img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-position: center;
+  transition: transform 0.5s;
+}
+figure.project-image:hover img {
+  transform: scale(1.4);
+}
+
+section.projects.active figure.project-image {
+  animation: projects-transition 0.5s ease-out 0.6s forwards;
 }
 
 figure.project-image figcaption {
@@ -155,33 +179,6 @@ figure.project-image figcaption {
 
 figure.project-image:hover figcaption {
   bottom: 0;
-}
-
-figure.project-image p.icon-tools a {
-  position: absolute;
-  bottom: 7em;
-  left: 50%;
-  margin-left: -30px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-figure.project-image:hover p.icon-tools a {
-  opacity: 1;
-  width: 60px;
-  height: 60px;
-}
-
-figure.project-image p.icon-tools a:hover {
-  stroke: #fff;
-}
-
-figure.project-image p.icon-tools svg.github-icon {
-  width: 100%;
-  height: 100%;
-  fill: #46494c;
-  opacity: 0.5;
 }
 
 figure.project-image p.icon-tools {
@@ -217,39 +214,39 @@ figure.project-image:hover p.icon-tools span:nth-child(3) {
   transition-delay: 0.1s;
 }
 
-figure.project-image {
-  position: relative;
-  bottom: 1.6rem;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-  background-color: #46494c;
-  opacity: 1;
-  transform: translateY(-20px);
-  overflow: hidden;
-  cursor: pointer;
+figure.project-image p.icon-tools a {
+  position: absolute;
+  bottom: 7em;
+  left: 50%;
+  margin-left: -30px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-figure.project-image img {
+figure.project-image:hover p.icon-tools a {
+  opacity: 1;
+  width: 60px;
+  height: 60px;
+}
+
+figure.project-image p.icon-tools a:hover {
+  stroke: #fff;
+}
+
+figure.project-image p.icon-tools svg.github-icon {
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  background-position: center;
-  transition: transform 0.5s;
-}
-figure.project-image:hover img {
-  transform: scale(1.4);
+  fill: #46494c;
+  opacity: 0.5;
 }
 
-.projects.active .project-image {
-  animation: projects-transition 0.5s ease-out 0.6s forwards;
-}
-
-.project-title {
+h2.project-title {
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.project-info {
+p.project-info {
   font-family: 'Josefin Sans';
   font-weight: 100;
   line-height: 1;
@@ -257,19 +254,19 @@ figure.project-image:hover img {
 }
 
 @media screen and (max-width: 768px) {
-  .projects h1 {
+  section.projects h1 {
     font-size: 4.1rem;
   }
 
-  .projects-list ul {
+  section.projects-list ul {
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   }
 
-  .projects-list li {
+  section.projects-list li {
     padding: 0px 15px 15px;
   }
 
-  .project-title {
+  h2.project-title {
     font-size: 1.3rem;
   }
 }
