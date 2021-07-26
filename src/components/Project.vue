@@ -105,17 +105,6 @@ section.projects-list {
   margin: 50px 0px;
 }
 
-section.projects-list ul {
-  /*display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 525px));
-  grid-template-rows: auto;
-  gap: 70px 60px;*/
-  list-style: none;
-  width: 525px;
-  margin: 0 auto;
-  padding-inline-start: 0px;
-}
-
 section.projects-list li {
   padding: 0px 30px 30px;
   border-radius: 8px;
@@ -126,6 +115,11 @@ section.projects-list li {
 
 section.projects.active section.projects-list li {
   animation: projects-transition 0.5s ease-out 0.4s forwards;
+}
+
+section.projects-list ul {
+  list-style: none;
+  padding-inline-start: 0px;
 }
 
 figure.project-image {
@@ -148,9 +142,6 @@ figure.project-image img {
   background-position: center;
   transition: transform 0.5s;
 }
-figure.project-image:hover img {
-  transform: scale(1.4);
-}
 
 section.projects.active figure.project-image {
   animation: projects-transition 0.5s ease-out 0.6s forwards;
@@ -164,10 +155,6 @@ figure.project-image figcaption {
   width: 100%;
   height: 25%;
   transition: bottom 0.5s ease-out;
-}
-
-figure.project-image:hover figcaption {
-  bottom: 0;
 }
 
 figure.project-image p.icon-tools {
@@ -187,22 +174,6 @@ figure.project-image p.icon-tools span {
   transition: transform 0.35s;
 }
 
-figure.project-image:hover p.icon-tools span {
-  transform: translateY(0);
-}
-
-figure.project-image:hover p.icon-tools span:nth-child(1) {
-  transition-delay: 0.3s;
-}
-
-figure.project-image:hover p.icon-tools span:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-figure.project-image:hover p.icon-tools span:nth-child(3) {
-  transition-delay: 0.1s;
-}
-
 figure.project-image p.icon-tools a {
   position: absolute;
   bottom: 7em;
@@ -211,16 +182,6 @@ figure.project-image p.icon-tools a {
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s;
-}
-
-figure.project-image:hover p.icon-tools a {
-  opacity: 1;
-  width: 60px;
-  height: 60px;
-}
-
-figure.project-image p.icon-tools a:hover {
-  stroke: #fff;
 }
 
 figure.project-image p.icon-tools svg.github-icon {
@@ -248,8 +209,8 @@ p.project-info {
   }
 
   section.projects-list ul {
-    /*grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));*/
-    width: 330px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   }
 
   section.projects-list li {
@@ -258,6 +219,50 @@ p.project-info {
 
   h2.project-title {
     font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  section.projects-list ul {
+    /*display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 525px));
+    grid-template-rows: auto;
+    gap: 70px 60px;*/
+    width: 525px;
+    margin: 0 auto;
+  }
+}
+@media (hover: hover) {
+  figure.project-image:hover img {
+    transform: scale(1.4);
+  }
+  figure.project-image:hover figcaption {
+    bottom: 0;
+  }
+  figure.project-image:hover p.icon-tools span {
+    transform: translateY(0);
+  }
+
+  figure.project-image:hover p.icon-tools span:nth-child(1) {
+    transition-delay: 0.3s;
+  }
+
+  figure.project-image:hover p.icon-tools span:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  figure.project-image:hover p.icon-tools span:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+
+  figure.project-image:hover p.icon-tools a {
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+  }
+
+  figure.project-image p.icon-tools a:hover {
+    stroke: #fff;
   }
 }
 
