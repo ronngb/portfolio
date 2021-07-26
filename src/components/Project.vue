@@ -4,8 +4,8 @@
       <h1>Projects</h1>
       <section class="projects-list">
         <ul>
-          <article>
-            <li>
+          <li>
+            <article>
               <figure class="project-image">
                 <img src="../assets/test-proj.png" alt="" />
                 <figcaption>
@@ -75,21 +75,8 @@
                 Fridge Man allows you to create and edit locations in which food
                 will be stored. You can also...
               </p>
-            </li>
-          </article>
-          <article>
-            <li>
-              <figure class="project-image">
-                <img src="../assets/test-proj.png" alt="" />
-              </figure>
-              <h2 class="project-title">Fridge Man</h2>
-              <p class="project-info">
-                Fridge Man was built to make food inventory management a breeze.
-                Fridge Man allows you to create and edit locations in which food
-                will be stored. You can also...
-              </p>
-            </li>
-          </article>
+            </article>
+          </li>
         </ul>
       </section>
     </div>
@@ -119,12 +106,14 @@ section.projects-list {
 }
 
 section.projects-list ul {
-  display: grid;
-  list-style: none;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  /*display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 525px));
   grid-template-rows: auto;
+  gap: 70px 60px;*/
+  list-style: none;
+  width: 525px;
+  margin: 0 auto;
   padding-inline-start: 0px;
-  gap: 70px 60px;
 }
 
 section.projects-list li {
@@ -259,7 +248,8 @@ p.project-info {
   }
 
   section.projects-list ul {
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));*/
+    width: 330px;
   }
 
   section.projects-list li {
