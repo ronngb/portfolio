@@ -220,6 +220,16 @@ p.project-info {
   h2.project-title {
     font-size: 1.3rem;
   }
+
+  figure.project-image p.icon-tools a {
+    bottom: 8em;
+    left: 50%;
+    margin-left: calc(45px / -2);
+    width: 45px;
+    height: 45px;
+    /*opacity: 1;*/
+    animation: github-icon-transition 2s ease-out infinite alternate;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -232,6 +242,7 @@ p.project-info {
     margin: 0 auto;
   }
 }
+
 @media (hover: hover) {
   figure.project-image:hover img {
     transform: scale(1.4);
@@ -270,6 +281,19 @@ p.project-info {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes github-icon-transition {
+  0% {
+    opacity: 1;
+  }
+  10%,
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 </style>
