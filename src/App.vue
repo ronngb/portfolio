@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Navbar />
-    <div v-trigger class="container">
+    <main v-trigger class="container">
       <Intro />
       <About />
       <Project />
-    </div>
+    </main>
   </div>
 </template>
 <script>
@@ -47,10 +47,34 @@ export default {
 <style>
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Neutra Text', 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin-top: 0;
 }
 
 #app {
-  font-family: 'Neutra Text', 'Josefin Sans', sans-serif;
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
 }
