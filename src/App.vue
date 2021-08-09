@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <Navbar />
-    <main v-trigger class="container">
+    <main v-trigger>
       <Intro />
-      <About />
-      <Project />
+      <!--       <About />
+      <Project /> -->
     </main>
   </div>
 </template>
@@ -48,6 +48,7 @@ export default {
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -60,8 +61,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Neutra Text', 'Josefin Sans', sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.2;
+}
+
+main {
+  width: 83%;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+p {
+  font-family: 'Josefin Sans';
+  margin: 0;
 }
 
 a,
@@ -79,14 +94,17 @@ ul {
   --moz-osx-font-smoothing: grayscale;
 }
 
-.content-wrapper {
-  padding: 50px 0;
-  margin: 0 auto;
+.intro {
+  padding: 3.125rem 0;
 }
 
 @media screen and (max-width: 768px) {
-  .content-wrapper {
-    padding-bottom: 0px;
+  html {
+    font-size: 10.7px;
+  }
+
+  main {
+    width: 95%;
   }
 }
 </style>
