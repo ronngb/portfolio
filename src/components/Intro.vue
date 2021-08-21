@@ -18,10 +18,11 @@
 export default { name: 'Intro' };
 </script>
 <style>
-/*TODO: replace .content-wrapper with section */
 .intro {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 55% 45%);
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 15px 0;
+  font-size: 1rem;
 }
 
 .intro-main {
@@ -30,77 +31,78 @@ export default { name: 'Intro' };
   justify-content: center;
 }
 
-/*TODO: font & image*/
-
 .intro-name,
 .intro-pos,
 .intro-subtitle {
-  animation: intro-transition 0.5s ease-out forwards;
-  opacity: 0;
   text-align: left;
   transform: translateY(20px);
+  opacity: 0;
+  animation: intro-transition 0.5s ease-out forwards;
 }
 
 .intro-name {
-  animation-delay: 0.8s;
   color: #00a698;
-  font-size: 5.5rem;
+  font-size: 3em;
+  line-height: 1;
+  animation-delay: 0.8s;
 }
 
 .intro-pos {
-  animation-delay: 0.9s;
-  color: rgba(0, 166, 154, 0.75);
-  font-size: 3rem;
   padding-left: 2px;
+  color: rgba(0, 166, 154, 0.75);
+  font-size: 2em;
+  animation-delay: 0.9s;
 }
 
 .intro-subtitle {
-  animation-delay: 1s;
-  font-size: 2rem;
   padding-left: 5px;
+  font-size: 1.33em;
+  animation-delay: 1s;
 }
 
 .hero-image {
-  /*  background-image: url('../assets/pics.png');
-  background-position: center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;*/
   width: 100%;
-  opacity: 0;
+  max-width: 475px;
   transform: translateX(20px);
+  opacity: 0;
   animation: intro-image-transition 0.5s ease-out 1.2s forwards;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .intro {
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 15px 0;
+    grid-template-columns: 55% 45%;
+    font-size: 1.1rem;
   }
 
   .intro-name {
-    font-size: 4.4rem;
+    font-size: 3em;
   }
 
-  /*.intro h2 {
-    font-size: 2rem;
+  .hero-image {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .intro {
+    font-size: 1.56rem;
   }
 
-  .intro p {
-    font-size: 1.5rem;
-    line-height: 1;
-  }*/
+  .intro-name {
+    font-size: 3.5em;
+  }
 }
 
 @keyframes intro-image-transition {
   to {
-    opacity: 1;
     transform: translateX(0);
+    opacity: 1;
   }
 }
 @keyframes intro-transition {
   to {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
   }
 }
 </style>

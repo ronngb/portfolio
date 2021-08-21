@@ -3,8 +3,8 @@
     <Navbar />
     <main v-trigger>
       <Intro />
-      <!--       <About />
-      <Project /> -->
+      <!-- <About /> -->
+      <!--  <Project /> -->
     </main>
   </div>
 </template>
@@ -52,8 +52,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -65,7 +65,7 @@ body {
 }
 
 main {
-  width: 83%;
+  width: 92%;
   margin: 0 auto;
 }
 
@@ -75,8 +75,8 @@ h2 {
 }
 
 p {
-  font-family: 'Josefin Sans';
   margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a,
@@ -85,8 +85,8 @@ a:focus {
   text-decoration: none;
 }
 ul {
-  list-style: none;
   margin-top: 0;
+  list-style: none;
 }
 
 #app {
@@ -98,13 +98,15 @@ ul {
   padding: 3.125rem 0;
 }
 
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 10.7px;
-  }
-
+@media screen and (min-width: 768px) {
   main {
-    width: 95%;
+    width: 84%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    width: 82%;
   }
 }
 </style>

@@ -4,5 +4,9 @@
     "stylelint-config-standard",
     "stylelint-config-rational-order",
     "stylelint-config-prettier"
-  ]
+  ],
+  "rules": {
+      "comment-whitespace-inside": null,
+      "comment-empty-line-before": null
+  }
 }
