@@ -52,8 +52,8 @@ export default {
     navbarTransition(el) {
       let cssProperty =
         window.scrollY == 0
-          ? 'padding: 1.3rem 0rem;'
-          : 'padding: .7rem 0rem;box-shadow: 0 0 20px rgba(0,0,0,.16);';
+          ? 'padding: 1.3rem 0;'
+          : 'padding: .7rem 0;box-shadow: 0 0 20px rgba(0,0,0,.16);';
 
       if (window.screen.width > 768) {
         el.setAttribute('style', cssProperty);
@@ -67,8 +67,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 1rem 0;
   background-color: white;
-  padding: 1rem 0rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -77,7 +77,7 @@ header nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0px 9%;
+  padding: 0 9%;
 }
 
 .website-logo {
@@ -87,8 +87,8 @@ header nav {
 
 .site-nav {
   display: flex;
-  padding-left: 0;
   margin-bottom: 0;
+  padding-left: 0;
 }
 
 .toggle-button {
@@ -114,16 +114,16 @@ header nav {
 
 .nav-link {
   position: relative;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: black;
-  padding: 0.5rem 0rem;
   display: block;
+  padding: 0.5rem 0;
+  color: black;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 768px) {
   header {
-    padding: 0rem !important;
+    padding: 0 !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.16);
   }
 
@@ -132,22 +132,22 @@ header nav {
   }
 
   .site-nav {
+    position: fixed;
+    top: 57px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 57px;
-    opacity: 0;
-    background-color: white;
-    height: calc(100vh - 57px);
     width: 100vw;
-    transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
+    height: calc(100vh - 57px);
+    background-color: white;
     transform: translateX(-20rem);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
   }
 
   .site-nav.active {
+    transform: translateX(0);
     opacity: 1;
-    transform: translateX(0px);
   }
 
   .nav-link {
@@ -157,8 +157,8 @@ header nav {
 
 @media screen and (min-width: 769px) {
   li.nav-item:nth-child(n + 1) {
-    opacity: 0;
     transform: translateY(-10px);
+    opacity: 0;
     animation: navbar-trans 0.5s ease-out forwards;
   }
 
@@ -188,16 +188,16 @@ header nav {
   }
 
   a.nav-link::before {
-    content: '';
     position: absolute;
-    width: 100%;
-    height: 4px;
     bottom: 7px;
     left: 0;
+    width: 100%;
+    height: 4px;
     background-color: #00a69a;
     border-radius: 25px;
     transform: scaleX(0);
     transition: all 0.12s ease-in-out;
+    content: '';
   }
 
   a.nav-link:hover::before {
@@ -207,8 +207,8 @@ header nav {
 
 @keyframes navbar-trans {
   to {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
   }
 }
 </style>
