@@ -1,5 +1,6 @@
 <template>
   <section class="about">
+    <!-- remove this .content-wrapper -->
     <div class="content-wrapper">
       <h1>About</h1>
       <section>
@@ -41,12 +42,12 @@ export default {
 </script>
 <style>
 .about h1 {
-  text-align: center;
-  font-size: 6.5rem;
-  font-weight: 600;
   color: #00a69a;
-  opacity: 0;
+  font-weight: 600;
+  font-size: 6.5rem;
+  text-align: center;
   transform: translateY(20px);
+  opacity: 0;
 }
 
 .about.active h1 {
@@ -54,8 +55,8 @@ export default {
 }
 
 .about article {
-  opacity: 0;
   transform: translateY(20px);
+  opacity: 0;
 }
 
 .about.active article {
@@ -63,25 +64,25 @@ export default {
 }
 
 .about p {
-  font-family: 'Josefin Sans';
-  font-size: 1.4rem;
-  text-align: left;
   font-weight: normal;
+  font-size: 1.4rem;
+  font-family: 'Josefin Sans', sans-serif;
   line-height: 1;
+  text-align: left;
   /*padding-left: 5px;*/
 }
 
 .about section:nth-child(2) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-  margin: 25px 0px;
+  margin: 25px 0;
 }
 
 .skills ul {
   display: grid;
-  list-style: none;
-  font-family: 'Josefin Sans';
   grid-template-columns: repeat(2, 1fr);
+  font-family: 'Josefin Sans', sans-serif;
+  list-style: none;
   padding-inline-start: 20px;
 }
 
@@ -90,21 +91,21 @@ export default {
 }
 
 .skills ul > li::before {
-  content: '\2022';
-  color: #00a89c;
-  font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+  color: #00a89c;
+  font-weight: bold;
+  content: '\2022';
 }
 
 .profile-pic {
   display: block;
-  border-radius: 50%;
-  height: 234.5px;
   width: 234.5px;
-  margin: 0px auto;
+  height: 234.5px;
+  margin: 0 auto;
   border: 3px solid #00a89c;
+  border-radius: 50%;
   transform: translateX(500px) rotate(180deg);
   /*clip-path: circle(50% at 50% 50%);*/
 }
@@ -137,8 +138,8 @@ export default {
 
 @keyframes about-transition {
   to {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
   }
 }
 

@@ -3,8 +3,8 @@
     <Navbar />
     <main v-trigger>
       <Intro />
-      <!-- <About /> -->
-      <!--  <Project /> -->
+      <About />
+      <!-- <Project /> -->
     </main>
   </div>
 </template>
