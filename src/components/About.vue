@@ -25,9 +25,6 @@
         <li>Laravel</li>
       </ul>
     </article>
-    <!-- TRIAL: try to change it to background-image -->
-    <!-- TODO: place the profile-pic to center if success on TRIAL: -->
-    <!-- TODO: convert the profile-pic to webp -->
     <img
       src="../assets/profile-pic.jpg"
       class="profile-pic"
@@ -45,6 +42,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr repeat(auto-fill, minmax(330px, 1fr));
   gap: 15px 0;
+  overflow: hidden;
 }
 
 .section-heading {
@@ -52,18 +50,18 @@ export default {
   color: var(--persian-green);
   font-size: 3.4rem;
   text-align: center;
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.about article {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 
 .about-subtitle {
   margin-bottom: 15px;
   font-size: 1.31rem;
-}
-
-.about article {
-  transform: translateY(0);
-  opacity: 1;
 }
 
 .tech-skills {
@@ -82,21 +80,31 @@ export default {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
-  color: #00a89c;
+  color: var(--persian-green);
   font-weight: bold;
   content: '\2022';
 }
 
 .profile-pic {
-  display: block;
   width: 234.5px;
   height: 234.5px;
-  margin: 25px auto;
-  border: 3px solid #00a89c;
+  margin: 0 auto;
+  border: 3px solid var(--persian-green);
   border-radius: 50%;
-  transform: translateX(0);
-  /*Original transform: translateX(500px) rotate(180deg);*/
+  transform: translateX(500px) rotate(180deg);
   /*clip-path: circle(50% at 50% 50%);*/
+}
+
+.about.active .section-heading {
+  animation: about-transition 0.5s ease-out 0.2s forwards;
+}
+
+.about.active article {
+  animation: about-transition 0.5s ease-out 0.4s forwards;
+}
+
+.about.active .profile-pic {
+  animation: about-transition 1.2s ease-out 0.3s forwards;
 }
 
 @media screen and (min-width: 768px) {
@@ -114,7 +122,7 @@ export default {
   }
 
   .profile-pic {
-    margin: 0 auto;
+    margin-top: 20px;
   }
 }
 
@@ -130,23 +138,4 @@ export default {
     transform: translateY(0);
   }
 }
-
-/*ANIMATION*/
-/*.about.active h1 {
-  animation: about-transition 0.5s ease-out 0.2s forwards;
-}*/
-
-/*.about.active article {
-  animation: about-transition 0.5s ease-out 0.4s forwards;
-}*/
-
-/*.about.active .profile-pic {
-  animation: about-transition 1.2s ease-out 0.3s forwards;
-}*/
-
-/*TOREMOVE*/
-/*.about p {
-  text-align: left;
-  padding-left: 5px;
-}*/
 </style>
