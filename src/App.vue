@@ -59,7 +59,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Neutra Text', 'Josefin Sans', sans-serif;
+  font-family: 'Neutra Text', sans-serif;
   line-height: 1.2;
 }
 
@@ -93,7 +93,8 @@ ul {
   --moz-osx-font-smoothing: grayscale;
 }
 
-.intro {
+.intro,
+.about {
   padding: 3.125rem 0;
 }
 
