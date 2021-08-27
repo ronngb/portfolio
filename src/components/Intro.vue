@@ -39,7 +39,7 @@ export default { name: 'Intro' };
 }
 
 .intro-name {
-  color: #00a698;
+  color: var(--persian-green);
   font-size: 3em;
   line-height: 1;
   animation-delay: 0.8s;

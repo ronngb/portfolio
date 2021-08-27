@@ -1,7 +1,5 @@
 <template>
   <section class="about">
-    <!-- TODO: Make it responsive -->
-    <!-- TODO: make .section-heading font-size larger in mobile -->
     <h1 class="section-heading">About</h1>
     <article>
       <p class="about-subtitle">
@@ -13,7 +11,7 @@
       </p>
       <p class="about-subtitle">
         In my free time, I developed open source project. Fast forward today, I
-        was retrenched because of the pandemic, hoping to get a job.
+        was retrenched because of the pandemic and hoping to get a job.
       </p>
       <p class="about-subtitle">
         Some of technologies that I've been using
@@ -28,6 +26,8 @@
       </ul>
     </article>
     <!-- TRIAL: try to change it to background-image -->
+    <!-- TODO: place the profile-pic to center if success on TRIAL: -->
+    <!-- TODO: convert the profile-pic to webp -->
     <img
       src="../assets/profile-pic.jpg"
       class="profile-pic"
@@ -43,14 +43,14 @@ export default {
 <style>
 .about {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  grid-template-columns: 1fr repeat(auto-fill, minmax(330px, 1fr));
   gap: 15px 0;
 }
 
 .section-heading {
-  grid-column: 1 / 3;
-  color: #00a69a;
-  font-size: 6.5rem;
+  grid-column: 1/2;
+  color: var(--persian-green);
+  font-size: 3.4rem;
   text-align: center;
   transform: translateY(0);
   opacity: 1;
@@ -58,7 +58,7 @@ export default {
 
 .about-subtitle {
   margin-bottom: 15px;
-  font-size: 1.3rem;
+  font-size: 1.31rem;
 }
 
 .about article {
@@ -68,7 +68,7 @@ export default {
 
 .tech-skills {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 65% 1fr;
   gap: 2px 0;
   font-family: 'Josefin Sans', sans-serif;
   padding-inline-start: 20px;
@@ -91,7 +91,7 @@ export default {
   display: block;
   width: 234.5px;
   height: 234.5px;
-  margin: 0 auto;
+  margin: 25px auto;
   border: 3px solid #00a89c;
   border-radius: 50%;
   transform: translateX(0);
@@ -99,27 +99,22 @@ export default {
   /*clip-path: circle(50% at 50% 50%);*/
 }
 
-@media screen and (max-width: 768px) {
-  .section-heading {
-    grid-column: 1/2;
-    font-size: 3.4rem;
-    /*original - font-size: 3.2rem;*/
-  }
-
+@media screen and (min-width: 768px) {
   .about {
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   }
 
-  .about-subtitle {
-    font-size: 1.31rem;
+  .section-heading {
+    grid-column: 1 / 3;
+    font-size: 6.2rem;
   }
 
   .tech-skills {
-    grid-template-columns: 65% 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .profile-pic {
-    margin: 25px auto;
+    margin: 0 auto;
   }
 }
 

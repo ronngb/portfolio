@@ -46,6 +46,12 @@ export default {
 </script>
 <style>
 html {
+  --persian-green: #00a69a;
+  --gainsboro: #dcdcdd;
+  --silver: #c5c3c6;
+  --davys-grey: #46494c;
+  --black-coral: #4c5c68;
+
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
