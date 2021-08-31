@@ -2,9 +2,9 @@
   <div id="app">
     <Navbar />
     <main v-trigger>
-      <Intro />
-      <About />
-      <!-- <Project /> -->
+      <!-- <Intro /> -->
+      <!-- <About /> -->
+      <Project />
     </main>
   </div>
 </template>
@@ -91,7 +91,15 @@ a:focus {
 }
 ul {
   margin-top: 0;
+  margin-bottom: 0;
   list-style: none;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 #app {
@@ -100,7 +108,8 @@ ul {
 }
 
 .intro,
-.about {
+.about,
+.projects {
   padding: 3.125rem 0;
 }
 
