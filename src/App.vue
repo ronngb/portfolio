@@ -2,8 +2,8 @@
   <div id="app">
     <Navbar />
     <main v-trigger>
-      <!-- <Intro /> -->
-      <!-- <About /> -->
+      <Intro />
+      <About />
       <Project />
     </main>
   </div>
@@ -70,7 +70,7 @@ body {
 }
 
 main {
-  width: 92%;
+  width: 91%;
   margin: 0 auto;
 }
 
@@ -109,7 +109,7 @@ figure {
 
 .intro,
 .about,
-.projects {
+.project {
   padding: 3.125rem 0;
 }
 
