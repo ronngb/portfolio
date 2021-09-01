@@ -3,7 +3,6 @@
     <article class="intro-main">
       <h1 class="intro-name">Ronnel Gabiosa</h1>
       <h2 class="intro-pos">Web Developer</h2>
-      <!-- TODO: change <p> to <h3> -->
       <p class="intro-subtitle">
         Hi there! I'm Ronnel, your friendly neighborhood developer, who enjoys
         designing and developing websites, great in both Front and Back end.

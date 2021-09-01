@@ -1,6 +1,6 @@
 <template>
   <section class="about">
-    <h1 class="section-heading">About</h1>
+    <h1 class="about-heading">About</h1>
     <article>
       <p class="about-subtitle">
         Hello world! My name is Ronnel and I love building things that make work
@@ -45,7 +45,7 @@ export default {
   overflow: hidden;
 }
 
-.section-heading {
+.about-heading {
   grid-column: 1/2;
   color: var(--persian-green);
   font-size: 3.4rem;
@@ -95,7 +95,7 @@ export default {
   /*clip-path: circle(50% at 50% 50%);*/
 }
 
-.about.active .section-heading {
+.about.active .about-heading {
   animation: about-transition 0.5s ease-out 0.2s forwards;
 }
 
@@ -112,7 +112,7 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   }
 
-  .section-heading {
+  .about-heading {
     grid-column: 1 / 3;
     font-size: 6.2rem;
   }

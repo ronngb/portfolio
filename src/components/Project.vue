@@ -2,13 +2,11 @@
   <!-- TODO: place #id in evry section -->
   <!-- TODO: change .project to .content-wrapper -->
   <section class="project">
-    <!-- REMIND: replace the test-heading -->
-    <h1 class="test-heading">Project</h1>
+    <h1 class="project-heading">Project</h1>
     <ul class="project-list">
       <li class="project-item">
         <article>
           <figure class="project-figure">
-            <!-- TODO: convert image to webp -->
             <img
               class="project-thumbnail"
               src="../assets/test-proj.png"
@@ -48,8 +46,8 @@ export default {
   grid-template-columns: minmax(290px, 1fr);
   gap: 80px 0;
 }
-/* TODO: make this .section-heading then make it global*/
-.test-heading {
+
+.project-heading {
   grid-column: 1/2;
   color: var(--persian-green);
   font-size: 3.4rem;
@@ -129,8 +127,8 @@ export default {
 .project-info {
   font-size: 0.9rem;
 }
-/* REMIND: change to .section-heading */
-.project.active .test-heading {
+
+.project.active .project-heading {
   animation: project-transition 0.5s ease-out 0.2s forwards;
 }
 
@@ -144,7 +142,7 @@ export default {
     grid-template-columns: 1fr;
   }
 
-  .test-heading {
+  .project-heading {
     font-size: 6.2rem;
   }
 
