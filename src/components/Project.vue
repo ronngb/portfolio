@@ -1,7 +1,5 @@
 <template>
-  <!-- TODO: place #id in evry section -->
-  <!-- TODO: change .project to .content-wrapper -->
-  <section class="project">
+  <section id="project" class="content-wrapper">
     <h1 class="project-heading">Project</h1>
     <ul class="project-list">
       <li class="project-item">
@@ -40,8 +38,7 @@ export default {
 };
 </script>
 <style>
-/* REMIND: change this to #(id)  */
-.project {
+#project {
   display: grid;
   grid-template-columns: minmax(290px, 1fr);
   gap: 80px 0;
@@ -128,17 +125,16 @@ export default {
   font-size: 0.9rem;
 }
 
-.project.active .project-heading {
+#project.active .project-heading {
   animation: project-transition 0.5s ease-out 0.2s forwards;
 }
 
-.project.active .project-list {
+#project.active .project-list {
   animation: project-transition 0.5s ease-out 0.4s forwards;
 }
 
-/*MOBILE*/
 @media screen and (min-width: 768px) {
-  .project {
+  #project {
     grid-template-columns: 1fr;
   }
 

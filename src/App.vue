@@ -107,9 +107,7 @@ figure {
   --moz-osx-font-smoothing: grayscale;
 }
 
-.intro,
-.about,
-.project {
+.content-wrapper {
   padding: 3.125rem 0;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="intro">
+  <section id="intro" class="content-wrapper">
     <article class="intro-main">
       <h1 class="intro-name">Ronnel Gabiosa</h1>
       <h2 class="intro-pos">Web Developer</h2>
@@ -15,7 +15,7 @@
 export default { name: 'Intro' };
 </script>
 <style>
-.intro {
+#intro {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 15px 0;
@@ -66,7 +66,7 @@ export default { name: 'Intro' };
 }
 
 @media screen and (min-width: 768px) {
-  .intro {
+  #intro {
     grid-template-columns: 55% 45%;
     font-size: 1.1rem;
   }
@@ -81,7 +81,7 @@ export default { name: 'Intro' };
 }
 
 @media screen and (min-width: 1100px) {
-  .intro {
+  #intro {
     font-size: 1.56rem;
   }
 

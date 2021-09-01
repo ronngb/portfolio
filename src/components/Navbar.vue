@@ -15,7 +15,7 @@
       </button>
       <ul :class="{ active: showMenu }" class="site-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">HOME</a>
+          <a class="nav-link" href="#intro">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about" @click="showMenu = false">
@@ -23,7 +23,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">PROJECTS</a>
+          <a class="nav-link" href="#project">PROJECTS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">RESUME</a>

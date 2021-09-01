@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section id="about" class="content-wrapper">
     <h1 class="about-heading">About</h1>
     <article>
       <p class="about-subtitle">
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 <style>
-.about {
+#about {
   display: grid;
   grid-template-columns: 1fr repeat(auto-fill, minmax(330px, 1fr));
   gap: 15px 0;
@@ -54,7 +54,7 @@ export default {
   opacity: 0;
 }
 
-.about article {
+#about article {
   transform: translateY(-20px);
   opacity: 0;
 }
@@ -95,20 +95,20 @@ export default {
   /*clip-path: circle(50% at 50% 50%);*/
 }
 
-.about.active .about-heading {
+#about.active .about-heading {
   animation: about-transition 0.5s ease-out 0.2s forwards;
 }
 
-.about.active article {
+#about.active article {
   animation: about-transition 0.5s ease-out 0.4s forwards;
 }
 
-.about.active .profile-pic {
+#about.active .profile-pic {
   animation: about-transition 1.2s ease-out 0.3s forwards;
 }
 
 @media screen and (min-width: 768px) {
-  .about {
+  #about {
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   }
 
