@@ -41,7 +41,7 @@ export default {
 #project {
   display: grid;
   grid-template-columns: minmax(290px, 1fr);
-  gap: 80px 0;
+  gap: 30px 0;
 }
 
 .project-heading {
@@ -122,7 +122,7 @@ export default {
 }
 
 .project-info {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 #project.active .project-heading {
@@ -136,6 +136,7 @@ export default {
 @media screen and (min-width: 768px) {
   #project {
     grid-template-columns: 1fr;
+    gap: 50px 0;
   }
 
   .project-heading {
