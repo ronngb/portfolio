@@ -15,7 +15,7 @@
       </button>
       <ul :class="{ active: showMenu }" class="site-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#intro">HOME</a>
+          <a class="nav-link" href="#intro" @click="showMenu = false">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about" @click="showMenu = false">
@@ -23,7 +23,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#project">PROJECTS</a>
+          <a class="nav-link" href="#project" @click="showMenu = false"
+            >PROJECTS</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">RESUME</a>
@@ -134,13 +136,14 @@ header nav {
   .site-nav {
     position: fixed;
     top: 57px;
+    left: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: calc(100vh - 57px);
     background-color: white;
-    transform: translateX(-20rem);
+    transform: translateX(-320px);
     opacity: 0;
     transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
   }
@@ -151,6 +154,7 @@ header nav {
   }
 
   .nav-link {
+    font-size: 1.4rem;
     text-align: center;
   }
 }
