@@ -17,7 +17,7 @@ export default { name: 'Intro' };
 <style>
 #intro {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 15px 0;
   font-size: 1rem;
 }
