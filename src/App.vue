@@ -44,7 +44,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 html {
   --persian-green: #00a69a;
   --gainsboro: #dcdcdd;

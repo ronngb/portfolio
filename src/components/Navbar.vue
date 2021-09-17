@@ -15,20 +15,20 @@
       </button>
       <ul :class="{ active: showMenu }" class="site-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#intro" @click="showMenu = false">HOME</a>
+          <a class="nav-link" href="#intro" @click="showMenu = false">home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about" @click="showMenu = false">
-            ABOUT
+            about
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#project" @click="showMenu = false">
-            PROJECTS
+            projects
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">RESUME</a>
+          <a class="nav-link" href="#">resume</a>
         </li>
       </ul>
     </nav>
@@ -70,21 +70,25 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
+$color-primary: #00a69a;
+$color-black: #000;
+$color-white: #fff;
+
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
-}
+  background-color: $color-white;
+  border-bottom: 1px solid rgba($color-black, 0.16);
 
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 8px 10px;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 10px;
+  }
 }
 
 .website-logo {
@@ -103,32 +107,34 @@ header nav {
   justify-content: center;
   width: 100vw;
   height: calc(100vh - 57px);
-  background-color: white;
+  background-color: $color-white;
   transform: translateX(-320px);
   opacity: 0;
   transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.site-nav.active {
-  transform: translateX(0);
-  opacity: 1;
-}
+.toggle {
+  &-button {
+    padding: 0.25rem 0.75rem;
+    background-color: transparent;
+    border: 1px solid #c5c3c6;
+    border-radius: 0.25rem;
+  }
 
-.toggle-button {
-  padding: 0.25rem 0.75rem;
-  background-color: transparent;
-  border: 1px solid #c5c3c6;
-  border-radius: 0.25rem;
-}
+  &-icon {
+    width: 30px;
+    height: 30px;
+  }
 
-.toggle-icon {
-  width: 30px;
-  height: 30px;
-}
-
-.toggle-icon path {
-  stroke: #46494c;
-  stroke-width: 3;
+  &-icon path {
+    stroke: #46494c;
+    stroke-width: 3;
+  }
 }
 
 .nav-item {
@@ -142,6 +148,7 @@ header nav {
   color: black;
   font-weight: 700;
   font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 768px) {
@@ -149,15 +156,16 @@ header nav {
     padding: 1rem 0;
     transition: all 0.2s ease-in-out;
     border-bottom: 0;
-  }
 
-  header nav {
-    padding: 6px 9%;
+    nav {
+      padding: 0.37rem 7rem;
+    }
   }
 
   .site-nav {
     position: static;
     flex-direction: row;
+    flex: 0 0 45%;
     opacity: 1;
     height: 0;
     transform: none;
@@ -165,8 +173,31 @@ header nav {
 
   .nav-link {
     font-size: 1.2rem;
+
+    &:hover,
+    &:focus {
+      color: #00a69a;
+    }
+
+    &::before {
+      position: absolute;
+      bottom: 7px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #00a69a;
+      border-radius: 25px;
+      transform: scaleX(0);
+      transition: all 0.12s ease-in-out;
+      content: '';
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
   }
 
+  // use loop on this
   .nav-item:nth-child(n + 1) {
     transform: translateY(-10px);
     opacity: 0;
@@ -188,31 +219,6 @@ header nav {
 
   .toggle-button {
     display: none;
-  }
-
-  .site-nav {
-    flex: 0 0 45%;
-  }
-  .nav-link:hover,
-  .nav-link:focus {
-    color: #00a69a;
-  }
-
-  .nav-link::before {
-    position: absolute;
-    bottom: 7px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #00a69a;
-    border-radius: 25px;
-    transform: scaleX(0);
-    transition: all 0.12s ease-in-out;
-    content: '';
-  }
-
-  .nav-link:hover::before {
-    transform: scaleX(1);
   }
 }
 
