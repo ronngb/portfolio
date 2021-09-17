@@ -71,10 +71,6 @@ export default {
 };
 </script>
 <style lang="scss">
-$color-primary: #00a69a;
-$color-black: #000;
-$color-white: #fff;
-
 header {
   position: sticky;
   top: 0;
