@@ -1,0 +1,15 @@
+@mixin style-intro($font-size, $anima-delay, $padding: 0) {
+  font-size: $font-size;
+  animation-delay: $anima-delay;
+  padding-left: $padding;
+}
+
+@mixin style-intro-text($direction) {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    $direction,
+    $color-primary,
+    $color-gradient
+  );
+}

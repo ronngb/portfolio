@@ -4,7 +4,8 @@ module.exports = {
       scss: {
         additionalData: `
           @import "@/scss/variables.scss";
-          @import "@/scss/base.scss";          
+          @import "@/scss/mixins.scss";
+          @import "@/scss/base.scss";
         `,
       },
     },
