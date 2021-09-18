@@ -193,28 +193,16 @@ header {
     }
   }
 
-  // use loop on this
-  .nav-item:nth-child(n + 1) {
-    transform: translateY(-10px);
-    opacity: 0;
-    animation: navbar-trans 0.5s ease-out forwards;
-  }
-
-  .nav-item:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .nav-item:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-  .nav-item:nth-child(3) {
-    animation-delay: 0.5s;
-  }
-  .nav-item:nth-child(4) {
-    animation-delay: 0.7s;
-  }
-
   .toggle-button {
     display: none;
+  }
+
+  @for $i from 1 through 4 {
+    .nav-item:nth-child(#{$i}) {
+      transform: translateY(-10px);
+      opacity: 0;
+      animation: navbar-trans 0.5s ease-out (($i - 1) + $i) * 0.1s forwards;
+    }
   }
 }
 
