@@ -1,5 +1,5 @@
 <template>
-  <section id="intro" class="content-wrapper">
+  <section id="section-intro" class="content-wrapper">
     <article class="intro-main">
       <h1 class="intro-name">Ronnel Gabiosa</h1>
       <h2 class="intro-pos">Web Developer</h2>
@@ -14,47 +14,45 @@
 <script>
 export default { name: 'Intro' };
 </script>
-<style>
-#intro {
+<style lang="scss">
+#section-intro {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 15px 0;
   font-size: 1rem;
 }
 
-.intro-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.intro-name,
-.intro-pos,
-.intro-subtitle {
+%intro-placeholder {
   text-align: left;
   transform: translateY(20px);
   opacity: 0;
   animation: intro-transition 0.5s ease-out forwards;
 }
 
-.intro-name {
-  color: var(--persian-green);
-  font-size: 3em;
-  line-height: 1;
-  animation-delay: 0.8s;
-}
+.intro {
+  &-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.intro-pos {
-  padding-left: 2px;
-  color: rgba(0, 166, 154, 0.75);
-  font-size: 2em;
-  animation-delay: 0.9s;
-}
+  &-name {
+    line-height: 1;
+    @extend %intro-placeholder;
+    @include style-intro-text(to right);
+    @include style-intro(3em, 0.8s);
+  }
 
-.intro-subtitle {
-  padding-left: 5px;
-  font-size: 1.33em;
-  animation-delay: 1s;
+  &-pos {
+    @extend %intro-placeholder;
+    @include style-intro-text(to left);
+    @include style-intro(2em, 0.9s, 2px);
+  }
+
+  &-subtitle {
+    @extend %intro-placeholder;
+    @include style-intro(1.33em, 1s, 5px);
+  }
 }
 
 .hero-image {
@@ -66,7 +64,7 @@ export default { name: 'Intro' };
 }
 
 @media screen and (min-width: 768px) {
-  #intro {
+  #section-intro {
     grid-template-columns: 55% 45%;
     font-size: 1.1rem;
   }
@@ -81,7 +79,7 @@ export default { name: 'Intro' };
 }
 
 @media screen and (min-width: 1100px) {
-  #intro {
+  #section-intro {
     font-size: 1.56rem;
   }
 
