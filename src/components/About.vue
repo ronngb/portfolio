@@ -1,7 +1,7 @@
 <template>
-  <section id="about" class="content-wrapper">
-    <h1 class="about-heading">About</h1>
-    <article>
+  <section id="section-about" class="content-wrapper">
+    <h2 class="about-heading">About</h2>
+    <article class="about-main">
       <p class="about-subtitle">
         Hello world! My name is Ronnel and I love building things that make work
         accessible. My interest in web development started way back in 2014 when
@@ -28,7 +28,7 @@
     <img
       src="../assets/profile-pic.jpg"
       class="profile-pic"
-      alt="profile-pic"
+      alt="profile-pic-me"
     />
   </section>
 </template>
@@ -37,31 +37,32 @@ export default {
   name: 'About',
 };
 </script>
-<style>
-#about {
+<style lang="scss">
+#section-about {
   display: grid;
   grid-template-columns: 1fr repeat(auto-fill, minmax(330px, 1fr));
   gap: 15px 0;
   overflow: hidden;
+
+  article {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
 }
 
-.about-heading {
-  grid-column: 1/2;
-  color: var(--persian-green);
-  font-size: 3.4rem;
-  text-align: center;
-  transform: translateY(-20px);
-  opacity: 0;
-}
-
-#about article {
-  transform: translateY(-20px);
-  opacity: 0;
-}
-
-.about-subtitle {
-  margin-bottom: 15px;
-  font-size: 1.31rem;
+.about {
+  &-heading {
+    grid-column: 1/2;
+    color: $color-primary;
+    font-size: 3.4rem;
+    text-align: center;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  &-subtitle {
+    margin-bottom: 15px;
+    font-size: 1.31rem;
+  }
 }
 
 .tech-skills {
@@ -70,45 +71,44 @@ export default {
   gap: 2px 0;
   font-family: 'Josefin Sans', sans-serif;
   padding-inline-start: 20px;
-}
 
-.tech-skills > li {
-  font-size: 1rem;
-}
+  & > li {
+    font-size: 1rem;
 
-.tech-skills > li::before {
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  color: var(--persian-green);
-  font-weight: bold;
-  content: '\2022';
+    &::before {
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      color: $color-primary;
+      font-weight: bold;
+      content: '\2022';
+    }
+  }
 }
 
 .profile-pic {
   width: 234.5px;
   height: 234.5px;
   margin: 0 auto;
-  border: 3px solid var(--persian-green);
+  border: 3px solid $color-primary;
   border-radius: 50%;
   transform: translateX(500px) rotate(180deg);
   /*clip-path: circle(50% at 50% 50%);*/
 }
 
-#about.active .about-heading {
-  animation: about-transition 0.5s ease-out 0.2s forwards;
-}
-
-#about.active article {
-  animation: about-transition 0.5s ease-out 0.4s forwards;
-}
-
-#about.active .profile-pic {
-  animation: about-transition 1.2s ease-out 0.3s forwards;
+#section-about.active {
+  @for $i from 1 through length($class-about-active) {
+    .#{nth($class-about-active, $i)} {
+      animation: about-transition 0.5s ease-out $i * 0.2s forwards;
+    }
+  }
+  .profile-pic {
+    animation: about-transition 1.2s ease-out 0.3s forwards;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  #about {
+  #section-about {
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   }
 
