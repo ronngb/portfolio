@@ -13,3 +13,18 @@
     $color-gradient
   );
 }
+
+@mixin style-all-section($grid-columns, $grid-gap: 15px) {
+  display: grid;
+  grid-template-columns: $grid-columns;
+  gap: $grid-gap 0;
+}
+
+@mixin style-all-heading {
+  grid-column: 1/2;
+  color: $color-primary;
+  font-size: 3.4rem;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+}

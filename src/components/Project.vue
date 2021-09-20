@@ -1,5 +1,5 @@
 <template>
-  <section id="project" class="content-wrapper">
+  <section id="section-project" class="content-wrapper">
     <h1 class="project-heading">Project</h1>
     <ul class="project-list">
       <li class="project-item">
@@ -21,7 +21,7 @@
               <img class="github-svg" src="../assets/github.svg" alt="" />
             </a>
           </figure>
-          <h2 class="project-name">Fridge Man</h2>
+          <h3 class="project-name">Fridge Man</h3>
           <p class="project-info">
             Fridge Man was built to make food inventory management a breeze.
             Fridge Man allows you to create and edit locations in which food
@@ -37,72 +37,72 @@ export default {
   name: 'Projects',
 };
 </script>
-<style>
-#project {
-  display: grid;
-  grid-template-columns: minmax(290px, 1fr);
-  gap: 30px 0;
+<style lang="scss">
+#section-project {
+  @include style-all-section(minmax(290px, 1fr), 30px);
 }
 
-.project-heading {
-  grid-column: 1/2;
-  color: var(--persian-green);
-  font-size: 3.4rem;
-  text-align: center;
-  transform: translateY(20px);
-  opacity: 0;
-}
+.project {
+  &-heading {
+    @include style-all-heading;
+  }
 
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 543px));
-  gap: 20px 0;
-  justify-content: center;
-  padding-inline-start: 0;
-  transform: translateY(20px);
-  opacity: 0;
-}
+  &-list {
+    @include style-all-section(repeat(auto-fit, minmax(290px, 543px)), 20px);
+    justify-content: center;
+    padding-inline-start: 0;
+    transform: translateY(20px);
+    opacity: 0;
+  }
 
-.project-item {
-  padding: 0 15px 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-}
+  &-item {
+    padding: 0 15px 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba($color-black, 0.16);
+  }
 
-.project-figure {
-  position: relative;
-  bottom: 12px;
-  overflow: hidden;
-  background-color: var(--davys-grey);
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
-}
+  &-figure {
+    position: relative;
+    bottom: 12px;
+    overflow: hidden;
+    background-color: $color-secondary;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba($color-black, 0.16);
+    cursor: pointer;
+  }
 
-.project-thumbnail {
-  width: 100%;
-  opacity: 0.8;
-  transition: transform 0.5s;
-}
+  &-thumbnail {
+    width: 100%;
+    opacity: 0.8;
+    transition: transform 0.5s;
+  }
 
-.project-figure figcaption {
-  position: absolute;
-  bottom: -30%;
-  width: 100%;
-  padding: 20px 15px;
-  transition: bottom 0.5s ease-out;
+  &-figure figcaption {
+    position: absolute;
+    bottom: -30%;
+    width: 100%;
+    padding: 20px 15px;
+    transition: bottom 0.5s ease-out;
+  }
+
+  &-name {
+    font-size: 1.25rem;
+  }
+
+  &-info {
+    font-size: 1rem;
+  }
 }
 
 .tech-icons {
   display: flex;
   justify-content: space-evenly;
-  color: var(--davys-grey);
-  opacity: 0.7;
-}
+  color: lighten($color-secondary, 20%);
 
-.tech-icons > i {
-  transform: translateY(20px);
-  transition: transform 0.35s;
+  & > i {
+    transform: translateY(20px);
+    transition: transform 0.35s;
+  }
 }
 
 .github-svg {
@@ -117,86 +117,75 @@ export default {
   transition: all 0.5s;
 }
 
-.project-name {
-  font-size: 1.25rem;
-}
-
-.project-info {
-  font-size: 1rem;
-}
-
-#project.active .project-heading {
-  animation: project-transition 0.5s ease-out 0.2s forwards;
-}
-
-#project.active .project-list {
-  animation: project-transition 0.5s ease-out 0.4s forwards;
+#section-project.active {
+  @for $i from 1 through length($class-project-active) {
+    .#{nth($class-project-active, $i)} {
+      animation: about-transition 0.5s ease-out $i * 0.2s forwards;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-  #project {
-    grid-template-columns: 1fr;
-    gap: 50px 0;
+  #section-project {
+    @include style-all-section(1fr, 50px);
   }
 
-  .project-heading {
-    font-size: 6.2rem;
-  }
+  .project {
+    &-heading {
+      font-size: 6.2rem;
+    }
 
-  .project-list {
-    gap: 0 20px;
-  }
+    &-list {
+      gap: 0 20px;
+    }
 
-  .project-item {
-    padding: 0 30px;
-  }
+    &-item {
+      padding: 0 30px;
+    }
 
-  .project-item > article {
-    position: relative;
-    bottom: 20.8px;
-  }
+    &-item > article {
+      position: relative;
+      bottom: 20.8px;
+    }
 
-  .project-name {
-    font-size: 1.4rem;
-  }
+    &-name {
+      font-size: 1.4rem;
+    }
 
-  .project-info {
-    font-size: 1rem;
+    &-info {
+      font-size: 1rem;
+    }
   }
 }
 
 @media (hover: hover) {
-  .project-figure:hover .project-thumbnail {
-    transform: scale(1.6);
-  }
+  .project-figure:hover {
+    .project-thumbnail {
+      transform: scale(1.6);
+    }
 
-  .project-figure:hover figcaption {
-    bottom: 0;
-  }
+    figcaption {
+      bottom: 0;
+    }
 
-  .project-figure:hover .tech-icons i {
-    transform: translateY(0);
-  }
+    .github-svg {
+      transform: translateY(0);
+      opacity: 1;
+    }
 
-  .project-figure:hover .tech-icons i:nth-child(3) {
-    transition-delay: 0.4s;
-  }
+    a:hover .github-svg {
+      transform: scale(1.3);
+    }
 
-  .project-figure:hover .tech-icons i:nth-child(2) {
-    transition-delay: 0.3s;
-  }
+    .tech-icons i {
+      transform: translateY(0);
 
-  .project-figure:hover .tech-icons i:nth-child(1) {
-    transition-delay: 0.2s;
-  }
-
-  .project-figure:hover .github-svg {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .project-figure:hover a:hover .github-svg {
-    transform: scale(1.3);
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          transition-delay: ($i + 1) * 0.1s;
+        }
+      }
+    }
   }
 }
 
