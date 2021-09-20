@@ -39,7 +39,7 @@ export default {
 </script>
 <style lang="scss">
 #section-project {
-  @include style-all-section(minmax(290px, 1fr), 30px);
+  @include style-all-grid(minmax(290px, 1fr), 30px);
 }
 
 .project {
@@ -48,7 +48,7 @@ export default {
   }
 
   &-list {
-    @include style-all-section(repeat(auto-fit, minmax(290px, 543px)), 20px);
+    @include style-all-grid(repeat(auto-fit, minmax(290px, 543px)), 20px);
     justify-content: center;
     padding-inline-start: 0;
     transform: translateY(20px);
@@ -127,7 +127,7 @@ export default {
 
 @media screen and (min-width: 768px) {
   #section-project {
-    @include style-all-section(1fr, 50px);
+    @include style-all-grid(1fr, 50px);
   }
 
   .project {

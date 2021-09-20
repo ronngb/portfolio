@@ -39,25 +39,18 @@ export default {
 </script>
 <style lang="scss">
 #section-about {
-  display: grid;
-  grid-template-columns: 1fr repeat(auto-fill, minmax(330px, 1fr));
-  gap: 15px 0;
+  @include style-all-grid(1fr repeat(auto-fill, minmax(330px, 1fr)));
   overflow: hidden;
 
   article {
-    transform: translateY(-20px);
+    transform: translateY(20px);
     opacity: 0;
   }
 }
 
 .about {
   &-heading {
-    grid-column: 1/2;
-    color: $color-primary;
-    font-size: 3.4rem;
-    text-align: center;
-    transform: translateY(-20px);
-    opacity: 0;
+    @include style-all-heading;
   }
   &-subtitle {
     margin-bottom: 15px;
@@ -66,9 +59,7 @@ export default {
 }
 
 .tech-skills {
-  display: grid;
-  grid-template-columns: 65% 1fr;
-  gap: 2px 0;
+  @include style-all-grid(65% 1fr, 2px);
   font-family: 'Josefin Sans', sans-serif;
   padding-inline-start: 20px;
 

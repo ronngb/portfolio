@@ -1,6 +1,6 @@
-@mixin style-intro($font-size, $anima-delay, $padding: 0) {
+@mixin style-intro($font-size, $animation-delay, $padding: 0) {
   font-size: $font-size;
-  animation-delay: $anima-delay;
+  animation-delay: $animation-delay;
   padding-left: $padding;
 }
 
@@ -14,7 +14,7 @@
   );
 }
 
-@mixin style-all-section($grid-columns, $grid-gap: 15px) {
+@mixin style-all-grid($grid-columns, $grid-gap: 15px) {
   display: grid;
   grid-template-columns: $grid-columns;
   gap: $grid-gap 0;

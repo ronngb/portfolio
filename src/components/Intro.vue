@@ -16,9 +16,7 @@ export default { name: 'Intro' };
 </script>
 <style lang="scss">
 #section-intro {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 15px 0;
+  @include style-all-grid(repeat(auto-fill, minmax(290px, 1fr)));
   font-size: 1rem;
 }
 
