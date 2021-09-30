@@ -28,3 +28,10 @@
   transform: translateY(20px);
   opacity: 0;
 }
+
+@mixin style-all-flex($align-items, $justify-cont, $flex-direct: row) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-cont;
+  flex-direction: $flex-direct;
+}

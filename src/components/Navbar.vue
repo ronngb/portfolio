@@ -79,11 +79,10 @@ header {
   border-bottom: 1px solid rgba($color-black, 0.16);
 
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include style-all-flex(center, space-between);
     width: 100%;
-    padding: 8px 10px;
+    margin: 0 auto;
+    padding: 0.5rem 0.62rem;
   }
 }
 
@@ -93,14 +92,11 @@ header {
 }
 
 .site-nav {
-  display: flex;
+  @include style-all-flex(center, center, column);
   padding-left: 0;
   position: fixed;
   top: 57px;
   left: 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   height: calc(100vh - 57px);
   background-color: $color-white;
@@ -119,7 +115,7 @@ header {
     padding: 0.25rem 0.75rem;
     background-color: transparent;
     border: 1px solid #c5c3c6;
-    border-radius: 0.25rem;
+    border-radius: 4px;
   }
 
   &-icon {
@@ -131,10 +127,6 @@ header {
     stroke: #46494c;
     stroke-width: 3;
   }
-}
-
-.nav-item {
-  padding: 0 1.6rem;
 }
 
 .nav-link {
@@ -154,7 +146,8 @@ header {
     border-bottom: 0;
 
     nav {
-      padding: 0.37rem 7rem;
+      width: 84%;
+      padding: 1rem 0;
     }
   }
 
@@ -165,6 +158,14 @@ header {
     opacity: 1;
     height: 0;
     transform: none;
+  }
+
+  .nav-item {
+    padding: 0 1.1rem;
+  }
+
+  .nav-item:last-child {
+    padding-right: 0;
   }
 
   .nav-link {
@@ -203,6 +204,19 @@ header {
       opacity: 0;
       animation: navbar-trans 0.5s ease-out (($i - 1) + $i) * 0.1s forwards;
     }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  header {
+    nav {
+      width: 82%;
+      padding: 0.37rem 0;
+    }
+  }
+
+  .nav-item {
+    padding: 0 1.6rem;
   }
 }
 
