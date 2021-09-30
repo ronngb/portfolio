@@ -37,13 +37,13 @@ export default { name: 'Intro' };
   &-name {
     line-height: 1;
     @extend %intro-placeholder;
-    @include style-intro-text(to right);
+    @include style-gradient-heading(to right);
     @include style-intro(3em, 0.8s);
   }
 
   &-pos {
     @extend %intro-placeholder;
-    @include style-intro-text(to left);
+    @include style-gradient-heading(to left);
     @include style-intro(2em, 0.9s, 2px);
   }
 

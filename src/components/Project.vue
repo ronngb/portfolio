@@ -45,6 +45,7 @@ export default {
 .project {
   &-heading {
     @include style-all-heading;
+    @include style-gradient-heading(to right);
   }
 
   &-list {
@@ -132,7 +133,7 @@ export default {
 
   .project {
     &-heading {
-      font-size: 6.2rem;
+      font-size: 4.5rem;
     }
 
     &-list {
@@ -155,6 +156,12 @@ export default {
     &-info {
       font-size: 1rem;
     }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .project-heading {
+    font-size: 6.2rem;
   }
 }
 

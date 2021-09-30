@@ -51,6 +51,7 @@ export default {
 .about {
   &-heading {
     @include style-all-heading;
+    @include style-gradient-heading(to right);
   }
   &-subtitle {
     margin-bottom: 15px;
@@ -105,7 +106,7 @@ export default {
 
   .about-heading {
     grid-column: 1 / 3;
-    font-size: 6.2rem;
+    font-size: 4.5rem;
   }
 
   .tech-skills {
@@ -114,6 +115,12 @@ export default {
 
   .profile-pic {
     margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .about-heading {
+    font-size: 6.2rem;
   }
 }
 

@@ -4,7 +4,7 @@
   padding-left: $padding;
 }
 
-@mixin style-intro-text($direction) {
+@mixin style-gradient-heading($direction) {
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(
