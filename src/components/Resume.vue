@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: commit 1st before anything: fix the circle positioning -->
   <!-- TODO: ready to fill with real data-->
   <!-- TODO: set it to mobile 1st-->
   <!-- TODO: decide if the 3rd row to be grid or not -->
@@ -9,17 +10,12 @@
   <section id="section-resume" class="content-wrapper">
     <h1 class="resume-heading">Resume</h1>
     <!-- REMIND: col-timeline is the middle line -->
-    <div class="col-timeline">
-      <svg class="circle circle-event-1" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" />
-      </svg>
-
-      <!--   <svg class="circle circle-event-2" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" />
-      </svg> -->
-    </div>
+    <div class="col-timeline"></div>
     <div class="col-job-items">
       <article class="article-job-item">
+        <svg class="circle circle-event-1 " viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" />
+        </svg>
         <div class="job-details">
           <span class="job-date"><b>March - September 2020</b></span>
           <hgroup>
@@ -43,6 +39,9 @@
         </ul>
       </article>
       <article class="article-job-item">
+        <svg class="circle circle-event-2" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" />
+        </svg>
         <div class="job-details">
           <span class="job-date"><b>January – December 2018</b></span>
           <hgroup>
@@ -93,18 +92,18 @@ export default {
   text-align: center;
 }
 .circle {
-  position: absolute;
+  position: relative;
   left: -18px;
   width: 30px;
   height: 30px;
 }
 
 svg.circle-event-1 {
-  top: 5.4%;
+  top: 55px;
 }
 
 svg.circle-event-2 {
-  top: 42.1%;
+  top: 55px;
 }
 
 svg circle {
@@ -114,6 +113,9 @@ svg circle {
 }
 
 .article-job-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 35px;
 }
 
@@ -121,8 +123,9 @@ svg circle {
   border-radius: 5px;
   box-shadow: 0px 2px 8px 0px rgba(36, 46, 76, 0.25);
   height: 137px;
-  width: 90%;
-  margin-left: auto;
+  // width: 90%;
+  // margin-left: auto;
+  flex: 0 0 89%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -192,10 +195,11 @@ svg circle {
   border-radius: 50%;
 }
 
-// TODO:resumeeriment on this try using bg color
+// TODO:experiment on this try using bg color
 .col-timeline {
   position: relative;
-  grid-column: 2/3;
+  // BUGS: grid-column error if enable
+  // grid-column: 2/3;
   border-left: 5px solid #848892;
   width: 100%;
   height: 1000px;
