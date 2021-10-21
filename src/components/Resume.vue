@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO: commit 1st before anything: fix the circle positioning -->
   <!-- TODO: ready to fill with real data-->
   <!-- TODO: set it to mobile 1st-->
   <!-- TODO: decide if the 3rd row to be grid or not -->
@@ -9,6 +8,37 @@
   <!-- TODO: try to remove the box-shadow of task-list replace with bgcolor -->
   <section id="section-resume" class="content-wrapper">
     <h1 class="resume-heading">Resume</h1>
+    <div class="col-left-job-items">
+      <article class="article-job-item">
+        <div class="job-details">
+          <span class="job-date"><b>January – December 2018</b></span>
+          <hgroup>
+            <h2 class="job-position">Programmer</h2>
+            <h2 class="job-company"><i>Telford Svc.</i></h2>
+          </hgroup>
+          <p class="job-subtitle">
+            Sole developer for maintaining in-house system
+          </p>
+        </div>
+        <svg class="circle circle-event-2 " viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" />
+        </svg>
+        <ul class="job-summary">
+          <li>
+            Eliminating the bugs that outputted false value base on the standard
+            Humidity and Temperature in a specific area
+          </li>
+          <li>
+            Maintain the Document Controller System by fixing the bugs that
+            preventing the user for adding new Document
+          </li>
+          <li>
+            Support and assist particular departments regarding on any IT
+            related issues including Computer Troubleshooting,
+          </li>
+        </ul>
+      </article>
+    </div>
     <!-- REMIND: col-timeline is the middle line -->
     <div class="col-timeline"></div>
     <div class="col-job-items">
@@ -43,27 +73,27 @@
           <circle cx="50" cy="50" r="40" />
         </svg>
         <div class="job-details">
-          <span class="job-date"><b>January – December 2018</b></span>
+          <span class="job-date"><b>May – September 2017</b></span>
           <hgroup>
-            <h2 class="job-position">Programmer</h2>
-            <h2 class="job-company"><i>Telford Svc.</i></h2>
+            <h2 class="job-position">Web Developer</h2>
+            <h2 class="job-company"><i>Widget City Co.</i></h2>
           </hgroup>
           <p class="job-subtitle">
-            Sole developer for maintaining in-house system
+            Sole developer for maintaining the e-commerce website
           </p>
         </div>
         <ul class="job-summary">
           <li>
-            Eliminating the bugs that outputted false value base on the standard
-            Rapid Humidity and Temperature in a specific area
+            Maintain the website, add new product, update the price and other
+            information of the specific product.
           </li>
           <li>
-            Maintain the Document Controller System by fixing the bugs that
-            preventing the user for adding new Document
+            Integration of Google Analytics and Facebook Pixel for data
+            comparison and correlation.
           </li>
           <li>
-            Support and assist particular departments regarding on any IT
-            related issues including Computer Troubleshooting,
+            Sole Developed the Payment Module Dragon Pay for the new website as
+            one of the payment options for the customer checkout process.
           </li>
         </ul>
       </article>
@@ -76,6 +106,7 @@ export default {
 };
 </script>
 <style lang="scss">
+// REMIND:768px is next BP, the 576px is still unsure
 #section-resume {
   display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(290px, 460px));
@@ -91,6 +122,19 @@ export default {
   font-size: 3.4rem;
   text-align: center;
 }
+
+.col-left-job-items {
+  display: none;
+}
+
+// TODO:experiment on this try using bg color
+.col-timeline {
+  position: relative;
+  border-left: 5px solid #848892;
+  width: 100%;
+  height: 100%;
+}
+
 .circle {
   position: relative;
   left: -18px;
@@ -195,14 +239,62 @@ svg circle {
   border-radius: 50%;
 }
 
-// TODO:experiment on this try using bg color
-.col-timeline {
-  position: relative;
-  // BUGS: grid-column error if enable
-  // grid-column: 2/3;
-  border-left: 5px solid #848892;
-  width: 100%;
-  height: 1000px;
+@media screen and (min-width: 576px) {
+  .job-details {
+    flex: 0 0 92%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #section-resume {
+    grid-template-columns: 1fr min-content 1fr;
+  }
+
+  .col-left-job-items {
+    display: block;
+    align-self: center;
+  }
+
+  .col-left-job-items .job-details {
+    text-align: right;
+  }
+
+  .col-left-job-items .job-details::before {
+    display: none;
+  }
+
+  .col-left-job-items .job-details::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    right: -18px;
+    left: unset;
+    border: 10px solid black;
+    // border-color: transparent transparent #fff #fff;
+    border-color: #fff #fff transparent transparent;
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+    filter: drop-shadow(2px -2px 3px rgba(36, 46, 76, 0.25));
+  }
+
+  .col-left-job-items .circle {
+    left: unset;
+    right: -17px;
+    z-index: 10;
+  }
+
+  .col-left-job-items .job-summary {
+    margin-left: unset;
+    margin-right: auto;
+  }
+
+  .col-timeline {
+    grid-column: 2/3;
+  }
+
+  .job-details {
+    flex: 0 0 90%;
+  }
 }
 
 // @media screen and (max-width: 768px) {
