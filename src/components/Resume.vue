@@ -1,6 +1,7 @@
 <template>
-  <!-- TODO: ready to fill with real data-->
-  <!-- TODO: set it to mobile 1st-->
+  <!-- TODO: make the .resume-heading font bigger  -->
+  <!-- TODO: make the .job-position use linear-grediant -->
+  <!-- TODO: set it to mobile 1st -->
   <!-- TODO: decide if the 3rd row to be grid or not -->
   <!-- TODO: try if the task-list is better w/o border -->
   <!-- TODO: try to change the font-color of .position -->
@@ -14,7 +15,7 @@
           <span class="job-date"><b>January – December 2018</b></span>
           <hgroup>
             <h2 class="job-position">Programmer</h2>
-            <h2 class="job-company"><i>Telford Svc.</i></h2>
+            <h2 class="job-company"><i>Telford Svc Phils., Inc.</i></h2>
           </hgroup>
           <p class="job-subtitle">
             Sole developer for maintaining in-house system
@@ -69,7 +70,36 @@
         </ul>
       </article>
       <article class="article-job-item">
-        <svg class="circle circle-event-2" viewBox="0 0 100 100">
+        <svg class="circle circle-event-2 " viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" />
+        </svg>
+        <div class="job-details">
+          <span class="job-date"><b>January – December 2018</b></span>
+          <hgroup>
+            <h2 class="job-position">Programmer</h2>
+            <h2 class="job-company"><i>Telford Svc Phils., Inc.</i></h2>
+          </hgroup>
+          <p class="job-subtitle">
+            Sole developer for maintaining in-house system
+          </p>
+        </div>
+        <ul class="job-summary">
+          <li>
+            Eliminating the bugs that outputted false value base on the standard
+            Humidity and Temperature in a specific area
+          </li>
+          <li>
+            Maintain the Document Controller System by fixing the bugs that
+            preventing the user for adding new Document
+          </li>
+          <li>
+            Support and assist particular departments regarding on any IT
+            related issues including Computer Troubleshooting,
+          </li>
+        </ul>
+      </article>
+      <article class="article-job-item">
+        <svg class="circle circle-event-3" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" />
         </svg>
         <div class="job-details">
@@ -130,8 +160,11 @@ export default {
 // TODO:experiment on this try using bg color
 .col-timeline {
   position: relative;
-  border-left: 5px solid #848892;
-  width: 100%;
+  // border-left: 5px solid #848892;
+  border: 1px solid #848892;
+  border-radius: 5px;
+  background-color: #848892;
+  width: 5px;
   height: 100%;
 }
 
@@ -147,6 +180,10 @@ svg.circle-event-1 {
 }
 
 svg.circle-event-2 {
+  top: 55px;
+}
+
+svg.circle-event-3 {
   top: 55px;
 }
 
@@ -267,7 +304,7 @@ svg circle {
     content: '';
     position: absolute;
     top: 40%;
-    right: -18px;
+    right: -19px;
     left: unset;
     border: 10px solid black;
     // border-color: transparent transparent #fff #fff;
@@ -275,6 +312,7 @@ svg circle {
     transform-origin: 0 0;
     transform: rotate(45deg);
     filter: drop-shadow(2px -2px 3px rgba(36, 46, 76, 0.25));
+    // z-index: -1;
   }
 
   .col-left-job-items .circle {
@@ -288,6 +326,10 @@ svg circle {
     margin-right: auto;
   }
 
+  .col-job-items article:nth-child(2) {
+    display: none;
+  }
+
   .col-timeline {
     grid-column: 2/3;
   }
@@ -295,6 +337,10 @@ svg circle {
   .job-details {
     flex: 0 0 90%;
   }
+
+  // .job-summary li {
+  //   font-size: 1rem;
+  // }
 }
 
 // @media screen and (max-width: 768px) {
