@@ -1,12 +1,6 @@
 <template>
-  <!-- TODO: make the .resume-heading font bigger  -->
+  <!-- TODO: commit 1st: add animation on .col-timeline & .circle -->
   <!-- TODO: make the .job-position use linear-grediant -->
-  <!-- TODO: set it to mobile 1st -->
-  <!-- TODO: decide if the 3rd row to be grid or not -->
-  <!-- TODO: try if the task-list is better w/o border -->
-  <!-- TODO: try to change the font-color of .position -->
-  <!-- TODO: try to change the font-color of date-hired -->
-  <!-- TODO: try to remove the box-shadow of task-list replace with bgcolor -->
   <section id="section-resume" class="content-wrapper">
     <h1 class="resume-heading">Resume</h1>
     <div class="col-left-job-items">
@@ -40,7 +34,6 @@
         </ul>
       </article>
     </div>
-    <!-- REMIND: col-timeline is the middle line -->
     <div class="col-timeline"></div>
     <div class="col-job-items">
       <article class="article-job-item">
@@ -151,21 +144,33 @@ export default {
   color: $color-primary;
   font-size: 3.4rem;
   text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+#section-resume.active .resume-heading {
+  animation: resume-transition 0.5s ease-out 0.2s forwards;
 }
 
 .col-left-job-items {
   display: none;
 }
 
-// TODO:experiment on this try using bg color
 .col-timeline {
   position: relative;
-  // border-left: 5px solid #848892;
   border: 1px solid #848892;
   border-radius: 5px;
   background-color: #848892;
   width: 5px;
   height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  // opacity: 0;
+}
+
+#section-resume.active .col-timeline {
+  animation: resume-timeline-transition 1.5s cubic-bezier(0.08, 0.82, 0.17, 1)
+    0.4s forwards;
 }
 
 .circle {
@@ -173,6 +178,7 @@ export default {
   left: -18px;
   width: 30px;
   height: 30px;
+  opacity: 0;
 }
 
 svg.circle-event-1 {
@@ -187,6 +193,19 @@ svg.circle-event-3 {
   top: 55px;
 }
 
+#section-resume.active svg.circle-event-1 {
+  animation: resume-transition 0.8s ease-in 1.5s forwards;
+}
+
+#section-resume.active svg.circle-event-2 {
+  animation: resume-transition 0.8s ease-in 1.8s forwards;
+}
+
+#section-resume.active svg.circle-event-3 {
+  animation: resume-transition 0.8s ease-in 2.1s forwards;
+}
+
+//TODO: move to .circle
 svg circle {
   fill: #fff;
   stroke: #848892;
@@ -287,6 +306,10 @@ svg circle {
     grid-template-columns: 1fr min-content 1fr;
   }
 
+  .resume-heading {
+    font-size: 6.2rem;
+  }
+
   .col-left-job-items {
     display: block;
     align-self: center;
@@ -343,37 +366,16 @@ svg circle {
   // }
 }
 
-// @media screen and (max-width: 768px) {
-//   #section-resume {
-//     grid-template-columns: min-content 1fr;
-//   }
+@keyframes resume-transition {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-//       .resume-heading {
-//   grid-column: 1/4;
-//   color: $color-primary;
-//   font-size: 3.4rem;
-//   text-align: center;
-// }
-//   .article-one {
-//     padding-right: 0;
-//   }
-
-//   .test-date-h {
-//     font-size: 0.9rem;
-//     font-weight: 700;
-//   }
-
-//   .job-position {
-//     font-size: 1.1rem;
-//   }
-
-//   .job-company {
-//     font-size: 1.1rem;
-//     font-weight: 500;
-//   }
-
-//   .job-subtitle {
-//     font-size: 1.1rem;
-//   }
-// }
+@keyframes resume-timeline-transition {
+  to {
+    transform: scaleY(1);
+  }
+}
 </style>
