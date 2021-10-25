@@ -1,126 +1,94 @@
 <template>
-  <!-- TODO: commit 1st: add animation on .col-timeline & .circle -->
   <!-- TODO: make the .job-position use linear-grediant -->
+  <!-- TODO: check what grid-auto-rows do -->
+  <!-- TODO: continue refactoring -->
   <section id="section-resume" class="content-wrapper">
     <h1 class="resume-heading">Resume</h1>
-    <div class="col-left-job-items">
-      <article class="article-job-item">
-        <div class="job-details">
-          <span class="job-date"><b>January – December 2018</b></span>
-          <hgroup>
-            <h2 class="job-position">Programmer</h2>
-            <h2 class="job-company"><i>Telford Svc Phils., Inc.</i></h2>
-          </hgroup>
-          <p class="job-subtitle">
-            Sole developer for maintaining in-house system
-          </p>
-        </div>
-        <svg class="circle circle-event-2 " viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" />
-        </svg>
-        <ul class="job-summary">
-          <li>
-            Eliminating the bugs that outputted false value base on the standard
-            Humidity and Temperature in a specific area
-          </li>
-          <li>
-            Maintain the Document Controller System by fixing the bugs that
-            preventing the user for adding new Document
-          </li>
-          <li>
-            Support and assist particular departments regarding on any IT
-            related issues including Computer Troubleshooting,
-          </li>
-        </ul>
-      </article>
-    </div>
-    <div class="col-timeline"></div>
-    <div class="col-job-items">
-      <article class="article-job-item">
-        <svg class="circle circle-event-1 " viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" />
-        </svg>
-        <div class="job-details">
-          <span class="job-date"><b>March - September 2020</b></span>
-          <hgroup>
-            <h2 class="job-position">IT Programmer</h2>
-            <h2 class="job-company">
-              <i>Solid Business Machines Center, Inc.</i>
-            </h2>
-          </hgroup>
-          <p class="job-subtitle">
-            Developer for module base content management system
-          </p>
-        </div>
-        <ul class="job-summary">
-          <li>
-            Develop Quatation Reciept Module that will easily print in organize
-            reciept format
-          </li>
-          <li>
-            Develop Quatation Module that can add new product for Quatation
-          </li>
-        </ul>
-      </article>
-      <article class="article-job-item">
-        <svg class="circle circle-event-2 " viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" />
-        </svg>
-        <div class="job-details">
-          <span class="job-date"><b>January – December 2018</b></span>
-          <hgroup>
-            <h2 class="job-position">Programmer</h2>
-            <h2 class="job-company"><i>Telford Svc Phils., Inc.</i></h2>
-          </hgroup>
-          <p class="job-subtitle">
-            Sole developer for maintaining in-house system
-          </p>
-        </div>
-        <ul class="job-summary">
-          <li>
-            Eliminating the bugs that outputted false value base on the standard
-            Humidity and Temperature in a specific area
-          </li>
-          <li>
-            Maintain the Document Controller System by fixing the bugs that
-            preventing the user for adding new Document
-          </li>
-          <li>
-            Support and assist particular departments regarding on any IT
-            related issues including Computer Troubleshooting,
-          </li>
-        </ul>
-      </article>
-      <article class="article-job-item">
-        <svg class="circle circle-event-3" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" />
-        </svg>
-        <div class="job-details">
-          <span class="job-date"><b>May – September 2017</b></span>
-          <hgroup>
-            <h2 class="job-position">Web Developer</h2>
-            <h2 class="job-company"><i>Widget City Co.</i></h2>
-          </hgroup>
-          <p class="job-subtitle">
-            Sole developer for maintaining the e-commerce website
-          </p>
-        </div>
-        <ul class="job-summary">
-          <li>
-            Maintain the website, add new product, update the price and other
-            information of the specific product.
-          </li>
-          <li>
-            Integration of Google Analytics and Facebook Pixel for data
-            comparison and correlation.
-          </li>
-          <li>
-            Sole Developed the Payment Module Dragon Pay for the new website as
-            one of the payment options for the customer checkout process.
-          </li>
-        </ul>
-      </article>
-    </div>
+    <div class="timeline"></div>
+    <article class="article-job-item">
+      <svg class="circle circle-event-1 " viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" />
+      </svg>
+      <div class="job-details">
+        <span class="job-date"><b>March - September 2020</b></span>
+        <hgroup>
+          <h2 class="job-position">IT Programmer</h2>
+          <h2 class="job-company">
+            <i>Solid Business Machines Center, Inc.</i>
+          </h2>
+        </hgroup>
+        <p class="job-subtitle">
+          Developer for module base content management system
+        </p>
+      </div>
+      <ul class="job-summary">
+        <li>
+          Develop Quatation Reciept Module that will easily print in organize
+          reciept format
+        </li>
+        <li>
+          Develop Quatation Module that can add new product for Quatation
+        </li>
+      </ul>
+    </article>
+    <article class="article-job-item">
+      <svg class="circle circle-event-2 " viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" />
+      </svg>
+      <div class="job-details">
+        <span class="job-date"><b>January – December 2018</b></span>
+        <hgroup>
+          <h2 class="job-position">Programmer</h2>
+          <h2 class="job-company"><i>Telford Svc Phils., Inc.</i></h2>
+        </hgroup>
+        <p class="job-subtitle">
+          Sole developer for maintaining in-house system
+        </p>
+      </div>
+      <ul class="job-summary">
+        <li>
+          Eliminating the bugs that outputted false value base on the standard
+          Humidity and Temperature in a specific area
+        </li>
+        <li>
+          Maintain the Document Controller System by fixing the bugs that
+          preventing the user for adding new Document
+        </li>
+        <li>
+          Support and assist particular departments regarding on any IT related
+          issues including Computer Troubleshooting,
+        </li>
+      </ul>
+    </article>
+    <article class="article-job-item">
+      <svg class="circle circle-event-3" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" />
+      </svg>
+      <div class="job-details">
+        <span class="job-date"><b>May – September 2017</b></span>
+        <hgroup>
+          <h2 class="job-position">Web Developer</h2>
+          <h2 class="job-company"><i>Widget City Co.</i></h2>
+        </hgroup>
+        <p class="job-subtitle">
+          Sole developer for maintaining the e-commerce website
+        </p>
+      </div>
+      <ul class="job-summary">
+        <li>
+          Maintain the website, add new product, update the price and other
+          information of the specific product.
+        </li>
+        <li>
+          Integration of Google Analytics and Facebook Pixel for data comparison
+          and correlation.
+        </li>
+        <li>
+          Sole Developed the Payment Module Dragon Pay for the new website as
+          one of the payment options for the customer checkout process.
+        </li>
+      </ul>
+    </article>
   </section>
 </template>
 <script>
@@ -129,67 +97,62 @@ export default {
 };
 </script>
 <style lang="scss">
-// REMIND:768px is next BP, the 576px is still unsure
 #section-resume {
   display: grid;
-  // grid-template-columns: repeat(auto-fill, minmax(290px, 460px));
-  grid-template-columns: min-content 1fr;
-  // grid-template-columns: 1fr min-content 1fr;
-  // grid-auto-rows: auto 500px;
+  grid-template-columns: minmax(290px, auto);
+  grid-template-rows: repeat(auto-fill, max-content);
   gap: 20px 0;
+  position: relative;
 }
 
 .resume-heading {
-  grid-column: 1/4;
+  grid-column: 1/2;
   color: $color-primary;
   font-size: 3.4rem;
   text-align: center;
-  transform: translateY(20px);
-  opacity: 0;
 }
 
-#section-resume.active .resume-heading {
-  animation: resume-transition 0.5s ease-out 0.2s forwards;
-}
-
-.col-left-job-items {
-  display: none;
-}
-
-.col-timeline {
-  position: relative;
+.timeline {
+  display: inline-block;
+  position: absolute;
   border: 1px solid #848892;
   border-radius: 5px;
   background-color: #848892;
   width: 5px;
-  height: 100%;
-  transform-origin: bottom;
+  height: 90%;
+  top: 136px;
+  left: -2px;
   transform: scaleY(0);
-  // opacity: 0;
 }
 
-#section-resume.active .col-timeline {
+#section-resume.active .timeline {
   animation: resume-timeline-transition 1.5s cubic-bezier(0.08, 0.82, 0.17, 1)
     0.4s forwards;
 }
 
+svg circle {
+  fill: #fff;
+  stroke: #848892;
+  stroke-width: 12px;
+}
+
 .circle {
   position: relative;
-  left: -18px;
+  left: -15px;
   width: 30px;
   height: 30px;
   opacity: 0;
 }
 
-svg.circle-event-1 {
+.circle-event-1 {
   top: 55px;
 }
 
-svg.circle-event-2 {
+.circle-event-2 {
   top: 55px;
 }
 
-svg.circle-event-3 {
+.circle-event-3 {
   top: 55px;
 }
 
@@ -205,26 +168,17 @@ svg.circle-event-3 {
   animation: resume-transition 0.8s ease-in 2.1s forwards;
 }
 
-//TODO: move to .circle
-svg circle {
-  fill: #fff;
-  stroke: #848892;
-  stroke-width: 12px;
-}
-
 .article-job-item {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 
 .job-details {
   border-radius: 5px;
   box-shadow: 0px 2px 8px 0px rgba(36, 46, 76, 0.25);
   height: 137px;
-  // width: 90%;
-  // margin-left: auto;
   flex: 0 0 89%;
   display: flex;
   flex-direction: column;
@@ -303,67 +257,62 @@ svg circle {
 
 @media screen and (min-width: 768px) {
   #section-resume {
-    grid-template-columns: 1fr min-content 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content;
   }
 
   .resume-heading {
+    grid-column: 1/3;
     font-size: 6.2rem;
   }
 
-  .col-left-job-items {
-    display: block;
+  .timeline {
+    height: 80%;
+    top: 187px;
+    left: 50%;
+    margin-left: -2.5px;
+  }
+
+  #section-resume article:nth-of-type(1) {
+    grid-column: 2/3;
+  }
+
+  #section-resume article:nth-of-type(2) {
+    grid-row: 2/4;
     align-self: center;
   }
 
-  .col-left-job-items .job-details {
+  #section-resume article:nth-of-type(2) .job-details {
     text-align: right;
+    order: -1;
   }
 
-  .col-left-job-items .job-details::before {
-    display: none;
+  #section-resume article:nth-of-type(2) .circle {
+    left: unset;
+    right: -15px;
   }
 
-  .col-left-job-items .job-details::after {
+  #section-resume article:nth-of-type(2) .job-details::before {
     content: '';
     position: absolute;
     top: 40%;
     right: -19px;
     left: unset;
     border: 10px solid black;
-    // border-color: transparent transparent #fff #fff;
     border-color: #fff #fff transparent transparent;
     transform-origin: 0 0;
     transform: rotate(45deg);
     filter: drop-shadow(2px -2px 3px rgba(36, 46, 76, 0.25));
-    // z-index: -1;
   }
 
-  .col-left-job-items .circle {
-    left: unset;
-    right: -17px;
-    z-index: 10;
-  }
-
-  .col-left-job-items .job-summary {
+  #section-resume article:nth-of-type(2) .job-summary {
     margin-left: unset;
     margin-right: auto;
-  }
-
-  .col-job-items article:nth-child(2) {
-    display: none;
-  }
-
-  .col-timeline {
-    grid-column: 2/3;
   }
 
   .job-details {
     flex: 0 0 90%;
   }
-
-  // .job-summary li {
-  //   font-size: 1rem;
-  // }
 }
 
 @keyframes resume-transition {
