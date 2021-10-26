@@ -273,26 +273,26 @@ svg circle {
     margin-left: -2.5px;
   }
 
-  #section-resume article:nth-of-type(1) {
+  .article-job-item:nth-of-type(1) {
     grid-column: 2/3;
   }
 
-  #section-resume article:nth-of-type(2) {
+  .article-job-item:nth-of-type(2) {
     grid-row: 2/4;
     align-self: center;
   }
 
-  #section-resume article:nth-of-type(2) .job-details {
+  .article-job-item:nth-of-type(2) .job-details {
     text-align: right;
     order: -1;
   }
 
-  #section-resume article:nth-of-type(2) .circle {
+  .article-job-item:nth-of-type(2) .circle {
     left: unset;
     right: -15px;
   }
 
-  #section-resume article:nth-of-type(2) .job-details::before {
+  .article-job-item:nth-of-type(2) .job-details::before {
     content: '';
     position: absolute;
     top: 40%;
@@ -305,7 +305,7 @@ svg circle {
     filter: drop-shadow(2px -2px 3px rgba(36, 46, 76, 0.25));
   }
 
-  #section-resume article:nth-of-type(2) .job-summary {
+  .article-job-item:nth-of-type(2) .job-summary {
     margin-left: unset;
     margin-right: auto;
   }
