@@ -1,6 +1,4 @@
 <template>
-  <!-- TODO: commit 1st b4 procede add animation on .job-summary & .job-details -->
-  <!-- BUGS: timeline start on middle in start of animation -->
   <!-- TODO: make the .job-position use linear-grediant -->
   <!-- TODO: check what grid-auto-rows do -->
   <!-- TODO: continue refactoring -->
@@ -141,34 +139,19 @@ svg circle {
 
 .circle {
   position: relative;
+  top: 55px;
   left: -15px;
   width: 30px;
   height: 30px;
   opacity: 0;
 }
 
-.circle-event-1 {
-  top: 55px;
-}
-
-.circle-event-2 {
-  top: 55px;
-}
-
-.circle-event-3 {
-  top: 55px;
-}
-
-#section-resume.active svg.circle-event-1 {
-  animation: resume-transition 0.8s ease-in 1.5s forwards;
-}
-
-#section-resume.active svg.circle-event-2 {
-  animation: resume-transition 0.8s ease-in 1.8s forwards;
-}
-
-#section-resume.active svg.circle-event-3 {
-  animation: resume-transition 0.8s ease-in 2.1s forwards;
+#section-resume.active {
+  @for $i from 1 through 3 {
+    svg.circle-event-#{$i} {
+      animation: resume-transition 0.8s ease-in ($i * 0.3) + 1.2s forwards;
+    }
+  }
 }
 
 .article-job-item {
@@ -176,6 +159,17 @@ svg circle {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 15px;
+}
+
+.article-job-item .job-details {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+@for $i from 1 through 3 {
+  .article-job-item:nth-of-type(#{$i}) .job-details {
+    animation: resume-job-details-transition 0.8s ease ($i * 0.2) + 2s forwards;
+  }
 }
 
 .job-details {
@@ -252,6 +246,28 @@ svg circle {
   border-radius: 50%;
 }
 
+.article-job-item .job-summary > li {
+  opacity: 0;
+}
+
+$counter: 2.8s;
+
+@for $i from 1 through 3 {
+  .article-job-item:nth-of-type(#{$i}) .job-summary {
+    @for $j from 1 through 3 {
+      :nth-child(#{$j}) {
+        animation: resume-job-summary-transition
+          1s
+          cubic-bezier(0.22, 0.61, 0.36, 1)
+          ($j * 0.3) +
+          $counter
+          forwards;
+      }
+    }
+    $counter: $counter + 0.2;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .job-details {
     flex: 0 0 92%;
@@ -313,48 +329,9 @@ svg circle {
     margin-right: auto;
   }
 
-  .article-job-item:nth-of-type(odd) .job-details {
-    transform: translateX(20px);
-    opacity: 0;
-  }
-
   .article-job-item:nth-of-type(even) .job-details {
     transform: translateX(-20px);
     opacity: 0;
-  }
-
-  .article-job-item:nth-of-type(1) .job-details {
-    animation: resume-job-details-transition 0.8s ease 2.2s forwards;
-  }
-
-  .article-job-item:nth-of-type(2) .job-details {
-    animation: resume-job-details-transition 0.8s ease 2.4s forwards;
-  }
-
-  .article-job-item:nth-of-type(3) .job-details {
-    animation: resume-job-details-transition 0.8s ease 2.6s forwards;
-  }
-
-  .article-job-item .job-summary > li {
-    opacity: 0;
-  }
-
-  $counter: 2.8s;
-
-  @for $i from 1 through 3 {
-    .article-job-item:nth-of-type(#{$i}) .job-summary {
-      @for $i from 1 through 3 {
-        :nth-child(#{$i}) {
-          animation: resume-job-summary-transition
-            1s
-            cubic-bezier(0.22, 0.61, 0.36, 1)
-            ($i * 0.3) +
-            $counter
-            forwards;
-        }
-      }
-      $counter: $counter + 0.2;
-    }
   }
 
   .job-details {
