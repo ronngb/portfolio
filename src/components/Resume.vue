@@ -1,4 +1,6 @@
 <template>
+  <!-- TODO: commit 1st b4 procede add animation on .job-summary & .job-details -->
+  <!-- BUGS: timeline start on middle in start of animation -->
   <!-- TODO: make the .job-position use linear-grediant -->
   <!-- TODO: check what grid-auto-rows do -->
   <!-- TODO: continue refactoring -->
@@ -122,6 +124,7 @@ export default {
   height: 90%;
   top: 136px;
   left: -2px;
+  transform-origin: bottom;
   transform: scaleY(0);
 }
 
@@ -310,8 +313,65 @@ svg circle {
     margin-right: auto;
   }
 
+  .article-job-item:nth-of-type(odd) .job-details {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  .article-job-item:nth-of-type(even) .job-details {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  .article-job-item:nth-of-type(1) .job-details {
+    animation: resume-job-details-transition 0.8s ease 2.2s forwards;
+  }
+
+  .article-job-item:nth-of-type(2) .job-details {
+    animation: resume-job-details-transition 0.8s ease 2.4s forwards;
+  }
+
+  .article-job-item:nth-of-type(3) .job-details {
+    animation: resume-job-details-transition 0.8s ease 2.6s forwards;
+  }
+
+  .article-job-item .job-summary > li {
+    opacity: 0;
+  }
+
+  $counter: 2.8s;
+
+  @for $i from 1 through 3 {
+    .article-job-item:nth-of-type(#{$i}) .job-summary {
+      @for $i from 1 through 3 {
+        :nth-child(#{$i}) {
+          animation: resume-job-summary-transition
+            1s
+            cubic-bezier(0.22, 0.61, 0.36, 1)
+            ($i * 0.3) +
+            $counter
+            forwards;
+        }
+      }
+      $counter: $counter + 0.2;
+    }
+  }
+
   .job-details {
     flex: 0 0 90%;
+  }
+}
+
+@keyframes resume-job-summary-transition {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes resume-job-details-transition {
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
