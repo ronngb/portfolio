@@ -5,6 +5,7 @@
       <Intro />
       <About />
       <Project />
+      <Resume />
     </main>
   </div>
 </template>
@@ -13,6 +14,7 @@ import Navbar from './components/Navbar.vue';
 import Intro from './components/Intro.vue';
 import About from './components/About.vue';
 import Project from './components/Project.vue';
+import Resume from './components/Resume.vue';
 
 export default {
   name: 'App',
@@ -41,6 +43,7 @@ export default {
     Intro,
     About,
     Project,
+    Resume,
   },
 };
 </script>
