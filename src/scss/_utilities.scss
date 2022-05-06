@@ -1,0 +1,10 @@
+.border-solid {
+  border: 1px solid black;
+}
+
+%intro-animation-init {
+  text-align: left;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: intro-transition 0.5s ease-out forwards;
+}
