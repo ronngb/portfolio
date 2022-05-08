@@ -1,0 +1,13 @@
+@keyframes slide-left {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
