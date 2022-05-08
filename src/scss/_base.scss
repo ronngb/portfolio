@@ -1,4 +1,6 @@
-html {
+:root {
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
   --gainsboro: #dcdcdd;
   --silver: #c5c3c6;
   --black-coral: #4c5c68;
@@ -18,11 +20,6 @@ body {
   padding: 0;
   font-family: 'Neutra Text', sans-serif;
   line-height: 1.2;
-}
-
-main {
-  width: 91%;
-  margin: 0 auto;
 }
 
 h1,
