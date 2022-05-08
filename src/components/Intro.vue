@@ -1,55 +1,55 @@
 <template>
-  <section id="section-intro" class="content-wrapper">
-    <article class="intro-main">
-      <h1 class="intro-name">Ronnel Gabiosa</h1>
-      <h2 class="intro-pos">Web Developer</h2>
+  <section id="intro-section" class="content-wrapper">
+    <div class="intro-main">
+      <hgroup>
+        <h1 class="intro-name ">Ronnel Gabiosa</h1>
+        <h2 class="intro-pos">Web Developer</h2>
+      </hgroup>
       <p class="intro-subtitle">
         Hi there! I'm Ronnel, your friendly neighborhood developer, who enjoys
         designing and developing websites, great in both Front and Back end.
       </p>
-    </article>
-    <img class="hero-image" src="../assets/pics-1500.webp" alt="hero image" />
+    </div>
+    <img
+      class="hero-image "
+      src="../assets/hero-image-sm.webp"
+      srcset="
+        ../assets/hero-image-sm.webp  500w,
+        ../assets/hero-image-md.webp 1000w,
+        ../assets/hero-image-lg.webp 1500w
+      "
+      alt="hero image"
+    />
   </section>
 </template>
 <script>
-export default { name: 'Intro' };
+export default { name: 'Intro' }
 </script>
-<style lang="scss">
-#section-intro {
-  @include style-all-grid(repeat(auto-fill, minmax(290px, 1fr)));
-  font-size: 1rem;
-}
-
-%intro-placeholder {
-  text-align: left;
-  transform: translateY(20px);
-  opacity: 0;
-  animation: intro-transition 0.5s ease-out forwards;
+<style lang="scss" scoped>
+#intro-section {
+  @include grid-on-section(290px);
+  place-items: center;
 }
 
 .intro {
-  &-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   &-name {
+    @include heading-animation-delay(0.8s);
+    @include gradient-heading-direction(to right);
+    font-size: clamp(3rem, calc(2.27rem + 3.64vw), 5.46rem);
     line-height: 1;
-    @extend %intro-placeholder;
-    @include style-gradient-heading(to right);
-    @include style-intro(3em, 0.8s);
   }
 
   &-pos {
-    @extend %intro-placeholder;
-    @include style-gradient-heading(to left);
-    @include style-intro(2em, 0.9s, 2px);
+    @include heading-animation-delay(0.9s);
+    @include gradient-heading-direction(to left);
+    font-size: clamp(2rem, calc(1.67rem + 1.66vw), 3.12rem);
+    padding-left: 2px;
   }
 
   &-subtitle {
-    @extend %intro-placeholder;
-    @include style-intro(1.33em, 1s, 5px);
+    @include heading-animation-delay(1s);
+    font-size: clamp(1.33rem, calc(1.11rem + 1.1vw), 2.07rem);
+    padding-left: 5px;
   }
 }
 
@@ -58,17 +58,12 @@ export default { name: 'Intro' };
   max-width: 475px;
   transform: translateX(20px);
   opacity: 0;
-  animation: intro-image-transition 0.5s ease-out 1.2s forwards;
+  animation: slide-left 0.5s ease-out 1.2s forwards;
 }
 
 @media screen and (min-width: 768px) {
-  #section-intro {
+  #intro-section {
     grid-template-columns: 55% 45%;
-    font-size: 1.1rem;
-  }
-
-  .intro-name {
-    font-size: 3em;
   }
 
   .hero-image {
@@ -76,26 +71,6 @@ export default { name: 'Intro' };
   }
 }
 
-@media screen and (min-width: 1100px) {
-  #section-intro {
-    font-size: 1.56rem;
-  }
-
-  .intro-name {
-    font-size: 3.5em;
-  }
-}
-
-@keyframes intro-image-transition {
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes intro-transition {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+@media screen and (min-width: 1200px) {
 }
 </style>
