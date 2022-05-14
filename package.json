@@ -11,8 +11,9 @@
   },
   "main": "babel.config.js",
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
     "core-js": "^3.6.5",
-    "devicon": "^2.13.0",
     "save-dev": "0.0.1-security",
     "vue": "^2.6.11"
   },
