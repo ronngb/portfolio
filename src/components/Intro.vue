@@ -1,5 +1,5 @@
 <template>
-  <section id="intro-section" class="content-wrapper">
+  <section id="intro" class="intro-section content-wrapper">
     <div class="intro-main">
       <hgroup>
         <h1 class="intro-name ">Ronnel Gabiosa</h1>
@@ -26,12 +26,12 @@
 export default { name: 'Intro' }
 </script>
 <style lang="scss" scoped>
-#intro-section {
-  @include grid-on-section(290px);
-  place-items: center;
-}
-
 .intro {
+  &-section {
+    @include grid-on-section(290px);
+    place-items: center;
+  }
+
   &-name {
     @include heading-animation-delay(0.8s);
     @include gradient-heading-direction(to right);
@@ -55,22 +55,14 @@ export default { name: 'Intro' }
 
 .hero-image {
   width: 100%;
-  max-width: 475px;
   transform: translateX(20px);
   opacity: 0;
-  animation: slide-left 0.5s ease-out 1.2s forwards;
+  animation: fadeInLeft 0.5s ease-out 1.2s forwards;
 }
 
 @media screen and (min-width: 768px) {
-  #intro-section {
+  .intro-section {
     grid-template-columns: 55% 45%;
   }
-
-  .hero-image {
-    max-width: 100%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
 }
 </style>
