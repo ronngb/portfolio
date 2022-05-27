@@ -4,5 +4,25 @@ $color-gradient: #4deee3;
 $color-black: #000;
 $color-white: #fff;
 
-$class-about-active: (about-heading, about-main);
+$class-about-active: (about-heading, about-article);
 $class-project-active: (project-heading, project-list);
+
+// BREAKPOINTS
+$bkp-md: 48em; /*768*/
+$bkp-lg: 62em; /*992*/
+$bkp-xl: 75em; /*1200*/
+$bkp-xxl: 90em; /*1440*/
+
+// Column
+$col-sm: 4;
+$col-md: 8;
+$col-lg: 12;
+
+// Gutter
+$gutter-sm: 8px;
+$gutter-md: 32px;
+
+// Margin
+$margin-sm: 16px;
+$margin-md: 32px;
+$margin-lg: 100px;

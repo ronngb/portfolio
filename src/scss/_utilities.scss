@@ -2,9 +2,30 @@
   border: 1px solid black;
 }
 
-%intro-animation-init {
-  text-align: left;
-  transform: translateY(20px);
-  opacity: 0;
-  animation: intro-transition 0.5s ease-out forwards;
+.container {
+  display: grid;
+  grid-template-columns: repeat($col-sm, 1fr);
+  gap: 0 $gutter-sm;
+  margin: 0 $margin-sm;
+  @include responsive(md) {
+    @include grid-col-gutter-margin($col-md, $gutter-md, $margin-md);
+  }
+
+  @include responsive(lg) {
+    @include grid-col-gutter-margin($col-lg, $gutter-md, $margin-md);
+  }
+
+  @include responsive(xl) {
+    @include grid-col-gutter-margin($col-lg, $gutter-md, $margin-lg);
+  }
+}
+
+.content-wrapper {
+  padding: 4rem 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px 0;
 }

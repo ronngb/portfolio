@@ -1,10 +1,18 @@
+// Redundant to be remove
 @mixin style-intro($font-size, $animation-delay, $padding: 0) {
   font-size: $font-size;
   animation-delay: $animation-delay;
   padding-left: $padding;
 }
 
-@mixin style-gradient-heading($direction) {
+// Change this to mixins - DONE
+@mixin heading-animation-delay($delay) {
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out $delay forwards;
+}
+
+@mixin gradient-heading-direction($direction) {
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(
@@ -14,16 +22,61 @@
   );
 }
 
+// Redundant to be remove
+@mixin style-gradient-heading($direction) {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    $direction,
+    $color-primary,
+    $color-gradient
+  );
+}
+@mixin grid-on-section-proto($min-value) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-value, 1fr));
+  grid-column: 1/-1;
+}
+
+@mixin grid-on-section($min-value) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-value, 1fr));
+  grid-column: 1/-1;
+}
+
+// ON TEST MIXINS
+@mixin grid-col-gutter-margin($column, $gutter, $margin) {
+  grid-template-columns: repeat($column, 1fr);
+  gap: 0 $gutter;
+  margin: 0 $margin;
+}
+
+@mixin grid-on-main($column, $gutter, $margin) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: 0 $gutter;
+  margin: 0 $margin;
+}
+
+// REDUNDANT TO BE REMOVE
 @mixin style-all-grid($grid-columns, $grid-gap: 15px) {
   display: grid;
   grid-template-columns: $grid-columns;
   gap: $grid-gap 0;
 }
 
+// NEW: style-all-heading
+@mixin default-sub-heading-style {
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+// REDUNDANT TO BE REMOVE
 @mixin style-all-heading {
-  grid-column: 1/2;
-  color: $color-primary;
-  font-size: 3.4rem;
+  grid-column: 1/2; /*REDUNDANT*/
+  color: $color-primary; /*REDUNDANT*/
+  font-size: 3.4rem; /*REDUNDANT*/
   text-align: center;
   transform: translateY(20px);
   opacity: 0;
@@ -34,4 +87,27 @@
   align-items: $align-items;
   justify-content: $justify-cont;
   flex-direction: $flex-direct;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == md {
+    @media (min-width: $bkp-md) {
+      @content;
+    }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: $bkp-lg) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: $bkp-xl) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxl {
+    @media (min-width: $bkp-xxl) {
+      @content;
+    }
+  }
 }

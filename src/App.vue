@@ -2,19 +2,21 @@
   <div id="app">
     <Navbar />
     <main v-trigger>
-      <Intro />
-      <About />
-      <Project />
-      <Resume />
+      <div class="container">
+        <Intro />
+        <!-- <About /> -->
+        <!-- <Project /> -->
+        <!-- <Resume /> -->
+      </div>
     </main>
   </div>
 </template>
 <script>
-import Navbar from './components/Navbar.vue';
-import Intro from './components/Intro.vue';
-import About from './components/About.vue';
-import Project from './components/Project.vue';
-import Resume from './components/Resume.vue';
+import Navbar from './components/Navbar.vue'
+import Intro from './components/Intro.vue'
+import About from './components/About.vue'
+import Project from './components/Project.vue'
+import Resume from './components/Resume.vue'
 
 export default {
   name: 'App',
@@ -23,18 +25,18 @@ export default {
       inserted(el, binding) {
         const options = {
           threshold: 0.5,
-        };
+        }
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('active');
+              entry.target.classList.add('active')
             }
-          });
-        }, options);
+          })
+        }, options)
 
         el.children.forEach((section) => {
-          observer.observe(section);
-        });
+          observer.observe(section)
+        })
       },
     },
   },
@@ -45,29 +47,26 @@ export default {
     Project,
     Resume,
   },
-};
+}
 </script>
 <style lang="scss">
 @import 'scss/base';
+@import 'scss/utilities';
+@import 'scss/animation';
 
-#app {
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
-}
+// main {
+//   @include grid-on-main(4, 16px, 16px);
+// }
 
-.content-wrapper {
-  padding: 3.125rem 0;
-}
+// @media screen and (min-width: 768px) {
+//   main {
+//     @include grid-on-main(8, 32px, 32px);
+//   }
+// }
 
-@media screen and (min-width: 768px) {
-  main {
-    width: 84%;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  main {
-    width: 82%;
-  }
-}
+// @media screen and (min-width: 992px) {
+//   main {
+//     @include grid-on-main(12, 32px, 32px);
+//   }
+// }
 </style>
