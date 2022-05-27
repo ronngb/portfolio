@@ -1,6 +1,6 @@
 <template>
-  <header v-scroll="navbarTransition">
-    <nav>
+  <header v-scroll="navbarTransition" class="navbar-header">
+    <div class="flex-container">
       <a>
         <img
           class="website-logo"
@@ -8,30 +8,37 @@
           src="./../assets/logo.png"
         />
       </a>
-      <button class="toggle-button" type="button" @click="showMenu = !showMenu">
+      <nav class="navbar-nav">
+        <!-- ul -> .site-nav -->
+        <ul :class="{ active: showMenu }" class="navbar-list">
+          <li class="navbar-item">
+            <!-- NOTE: navbar-link font-size:19.2px -->
+            <a class="navbar-link" href="#intro" @click="showMenu = false"
+              >home</a
+            >
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="#about" @click="showMenu = false">
+              about
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="#project" @click="showMenu = false">
+              projects
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="#">resume</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- TODO: place the button outside the <nav> -->
+    <!-- <button class="toggle-button" type="button" @click="showMenu = !showMenu">
         <svg class="toggle-icon" viewBox="0 0 60 60">
           <path d="M1 9 H58 M20 29 H58 M38 49 H58" />
         </svg>
-      </button>
-      <ul :class="{ active: showMenu }" class="site-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#intro" @click="showMenu = false">home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about" @click="showMenu = false">
-            about
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#project" @click="showMenu = false">
-            projects
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">resume</a>
-        </li>
-      </ul>
-    </nav>
+      </button> -->
   </header>
 </template>
 <script>
@@ -40,190 +47,250 @@ export default {
     scroll: {
       inserted(el, binding) {
         window.addEventListener('scroll', () => {
-          binding.value(el);
-        });
+          console.log(binding.value)
+          binding.value(el)
+        })
 
-        window.addEventListener('resize', () => {
-          binding.value(el);
-        });
+        // window.addEventListener('resize', () => {
+        //   binding.value(el)
+        // })
       },
     },
   },
   data() {
     return {
       showMenu: false,
-    };
+    }
   },
   methods: {
     navbarTransition(el) {
       let cssProperty =
         window.scrollY == 0
-          ? 'padding: 1.3rem 0;'
-          : 'padding: .7rem 0;box-shadow: 0 0 20px rgba(0,0,0,.16);';
+          ? 'padding: 1.8rem 0;'
+          : 'padding: 1.2rem 0;box-shadow: 0 0 20px rgba(0,0,0,.16);'
 
       if (window.screen.width > 768) {
-        el.setAttribute('style', cssProperty);
+        el.setAttribute('style', cssProperty)
       } else {
-        el.setAttribute('style', 'padding: 0;');
+        el.setAttribute('style', 'padding: 0;')
       }
     },
   },
-};
+}
 </script>
-<style lang="scss">
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: $color-white;
-  border-bottom: 1px solid rgba($color-black, 0.16);
-
-  nav {
-    @include style-all-flex(center, space-between);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0.5rem 0.62rem;
+<style lang="scss" scoped>
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 16px;
+  padding: 0.5rem 0;
+  @include responsive(md) {
+    margin: 0 32px;
+  }
+  @include responsive(xl) {
+    margin: 0 100px;
   }
 }
 
 .website-logo {
+  // NOTE: try rem or ems here
   width: 30px;
   height: 30px;
 }
 
-.site-nav {
-  @include style-all-flex(center, center, column);
-  padding-left: 0;
-  position: fixed;
-  top: 57px;
-  left: 0;
-  width: 100vw;
-  height: calc(100vh - 57px);
-  background-color: $color-white;
-  transform: translateX(-320px);
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
-
-  &.active {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.toggle {
-  &-button {
-    padding: 0.25rem 0.75rem;
-    background-color: transparent;
-    border: 1px solid #c5c3c6;
-    border-radius: 4px;
-  }
-
-  &-icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  &-icon path {
-    stroke: #46494c;
-    stroke-width: 3;
-  }
-}
-
-.nav-link {
-  position: relative;
-  display: block;
-  padding: 0.5rem 0;
-  color: black;
-  font-weight: 700;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-
-@media screen and (min-width: 768px) {
-  header {
-    padding: 1rem 0;
+.navbar {
+  &-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: $color-white;
+    padding: 2.1rem 0;
     transition: all 0.2s ease-in-out;
-    border-bottom: 0;
+  }
+  &-list {
+    padding-left: 0;
+    text-align: center;
+  }
+  &-item {
+    display: inline-block;
+    padding: 0 2.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
 
-    nav {
-      width: 84%;
-      padding: 1rem 0;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation: fadeInUp 0.5s ease-out (($i - 1) + $i) * 0.1s forwards;
+      }
     }
   }
-
-  .site-nav {
-    position: static;
-    flex-direction: row;
-    flex: 0 0 45%;
-    opacity: 1;
-    height: 0;
-    transform: none;
-  }
-
-  .nav-item {
-    padding: 0 1.1rem;
-  }
-
-  .nav-item:last-child {
-    padding-right: 0;
-  }
-
-  .nav-link {
-    font-size: 1.2rem;
+  &-link {
+    // display: inline-block;
+    position: relative;
+    font-size: 1.92rem;
+    text-transform: uppercase;
+    font-weight: 700;
 
     &:hover,
     &:focus {
-      color: #00a69a;
+      color: $color-primary;
     }
 
-    &::before {
+    &::after {
+      content: '';
       position: absolute;
-      bottom: 7px;
+      bottom: -3px;
       left: 0;
       width: 100%;
       height: 4px;
-      background-color: #00a69a;
+      background-color: $color-primary;
       border-radius: 25px;
       transform: scaleX(0);
       transition: all 0.12s ease-in-out;
-      content: '';
     }
 
-    &:hover::before {
+    &:hover::after {
       transform: scaleX(1);
     }
   }
+}
 
-  .toggle-button {
-    display: none;
-  }
+// header {
+//   position: sticky;
+//   top: 0;
+//   z-index: 100;
+//   background-color: $color-white;
+//   border-bottom: 1px solid rgba($color-black, 0.16);
 
-  @for $i from 1 through 4 {
-    .nav-item:nth-child(#{$i}) {
-      transform: translateY(-10px);
-      opacity: 0;
-      animation: navbar-trans 0.5s ease-out (($i - 1) + $i) * 0.1s forwards;
-    }
-  }
+//   nav {
+//     @include style-all-flex(center, space-between);
+//     width: 100%;
+//     margin: 0 auto;
+//     padding: 0.5rem 0.62rem;
+//   }
+// }
+
+// NOTE: EFFECT ON MOBILE
+// .site-nav {
+//   @include style-all-flex(center, center, column);
+//   padding-left: 0;
+//   position: fixed;
+//   top: 57px;
+//   left: 0;
+//   width: 100vw;
+//   height: calc(100vh - 57px);
+//   background-color: $color-white;
+//   transform: translateX(-320px);
+//   opacity: 0;
+//   transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
+
+//   &.active {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
+
+// .toggle {
+//   &-button {
+//     padding: 0.25rem 0.75rem;
+//     background-color: transparent;
+//     border: 1px solid #c5c3c6;
+//     border-radius: 4px;
+//   }
+
+//   &-icon {
+//     width: 30px;
+//     height: 30px;
+//   }
+
+//   &-icon path {
+//     stroke: #46494c;
+//     stroke-width: 3;
+//   }
+// }
+
+// .nav-link {
+//   position: relative;
+//   display: block;
+//   padding: 0.5rem 0;
+//   color: black;
+//   font-weight: 700;
+//   font-size: 1.4rem;
+//   text-transform: uppercase;
+// }
+
+// START HERE FOR REFACTORING
+@media screen and (min-width: 768px) {
+  // header {
+  //   padding: 1rem 0;
+  //   transition: all 0.2s ease-in-out;
+  //   border-bottom: 0;
+
+  //   nav {
+  //     width: 84%;
+  //     padding: 1rem 0;
+  //   }
+  // }
+
+  // .site-nav {
+  //   position: static;
+  //   flex-direction: row;
+  //   flex: 0 0 45%;
+  //   opacity: 1;
+  //   height: 0;
+  //   transform: none;
+  // }
+
+  // .nav-item {
+  //   padding: 0 1.1rem;
+  // }
+
+  // .nav-item:last-child {
+  //   padding-right: 0;
+  // }
+
+  // .nav-link {
+  //   font-size: 1.2rem;
+
+  //   &:hover,
+  //   &:focus {
+  //     color: #00a69a;
+  //   }
+
+  //   &::before {
+  //     position: absolute;
+  //     bottom: 7px;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 4px;
+  //     background-color: #00a69a;
+  //     border-radius: 25px;
+  //     transform: scaleX(0);
+  //     transition: all 0.12s ease-in-out;
+  //     content: '';
+  //   }
+
+  //   &:hover::before {
+  //     transform: scaleX(1);
+  //   }
+  // }
+
+  // .toggle-button {
+  //   display: none;
+  // }
 }
 
 @media screen and (min-width: 1100px) {
-  header {
-    nav {
-      width: 82%;
-      padding: 0.37rem 0;
-    }
-  }
+  // header {
+  //   nav {
+  //     width: 82%;
+  //     padding: 0.37rem 0;
+  //   }
+  // }
 
-  .nav-item {
-    padding: 0 1.6rem;
-  }
-}
-
-@keyframes navbar-trans {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  // .nav-item {
+  //   padding: 0 1.6rem;
+  // }
 }
 </style>
