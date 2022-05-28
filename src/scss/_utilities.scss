@@ -27,5 +27,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 20px 0;
+  grid-column: 1/-1;
+  // gap: 20px 0;
 }

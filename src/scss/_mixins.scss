@@ -5,13 +5,24 @@
   padding-left: $padding;
 }
 
-// Change this to mixins - DONE
+// TODO: to be remove 27/5/22
 @mixin heading-animation-delay($delay) {
   transform: translateY(20px);
   opacity: 0;
   animation: fadeInUp 0.5s ease-out $delay forwards;
 }
 
+@mixin gradient-on-heading($direction) {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    $direction,
+    $color-primary,
+    $color-gradient
+  );
+}
+
+// TODO: to be remove 27/5/22
 @mixin gradient-heading-direction($direction) {
   color: transparent;
   background-clip: text;

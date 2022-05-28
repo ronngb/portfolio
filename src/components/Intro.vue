@@ -1,11 +1,11 @@
 <template>
-  <section id="intro" class="intro-section content-wrapper">
-    <div class="intro-main">
-      <hgroup>
-        <h1 class="intro-name ">Ronnel Gabiosa</h1>
-        <h2 class="intro-pos">Web Developer</h2>
-      </hgroup>
-      <p class="intro-subtitle">
+  <section id="intro" class="grid-container content-wrapper">
+    <div>
+      <h1 class="primary-heading">
+        <span class="primary-heading-main">Ronnel Gabiosa</span>
+        <span class="primary-heading-sub">Web Developer</span>
+      </h1>
+      <p class="paragraph">
         Hi there! I'm Ronnel, your friendly neighborhood developer, who enjoys
         designing and developing websites, great in both Front and Back end.
       </p>
@@ -26,43 +26,54 @@
 export default { name: 'Intro' }
 </script>
 <style lang="scss" scoped>
-.intro {
-  &-section {
-    @include grid-on-section(290px);
-    place-items: center;
-  }
+p {
+  padding-left: 5px;
+}
 
-  &-name {
-    @include heading-animation-delay(0.8s);
-    @include gradient-heading-direction(to right);
-    font-size: clamp(3rem, calc(2.27rem + 3.64vw), 5.46rem);
-    line-height: 1;
-  }
+section {
+  place-items: center;
 
-  &-pos {
-    @include heading-animation-delay(0.9s);
-    @include gradient-heading-direction(to left);
-    font-size: clamp(2rem, calc(1.67rem + 1.66vw), 3.12rem);
-    padding-left: 2px;
-  }
-
-  &-subtitle {
-    @include heading-animation-delay(1s);
-    font-size: clamp(1.33rem, calc(1.11rem + 1.1vw), 2.07rem);
-    padding-left: 5px;
+  @include responsive(md) {
+    grid-template-columns: 55% 45%;
   }
 }
 
 .hero-image {
-  width: 100%;
   transform: translateX(20px);
   opacity: 0;
   animation: fadeInLeft 0.5s ease-out 1.2s forwards;
+  width: 100%;
 }
+// .intro {
+//   &-section {
+//     @include grid-on-section(290px);
+//     place-items: center;
+//   }
 
-@media screen and (min-width: 768px) {
-  .intro-section {
-    grid-template-columns: 55% 45%;
-  }
-}
+//   &-name {
+//     @include heading-animation-delay(0.8s);
+//     @include gradient-heading-direction(to right);
+//     font-size: clamp(3rem, calc(2.27rem + 3.64vw), 5.46rem);
+//     line-height: 1;
+//   }
+
+//   &-pos {
+//     @include heading-animation-delay(0.9s);
+//     @include gradient-heading-direction(to left);
+//     font-size: clamp(2rem, calc(1.67rem + 1.66vw), 3.12rem);
+//     padding-left: 2px;
+//   }
+
+//   &-subtitle {
+//     @include heading-animation-delay(1s);
+//     font-size: clamp(1.33rem, calc(1.11rem + 1.1vw), 2.07rem);
+//     padding-left: 5px;
+//   }
+// }
+
+// @media screen and (min-width: 768px) {
+//   .intro-section {
+//     grid-template-columns: 55% 45%;
+//   }
+// }
 </style>

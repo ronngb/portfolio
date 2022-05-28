@@ -1,0 +1,28 @@
+.primary-heading {
+  &-main {
+    display: inherit;
+    line-height: 1;
+    opacity: 0;
+    font-size: clamp(4.997rem, calc(3.58rem + 3.64vw), 8.7rem);
+    animation: fadeInUp 0.5s ease-out 0.8s forwards;
+    @include gradient-on-heading(to right);
+  }
+  &-sub {
+    display: inherit;
+    opacity: 0;
+    padding-left: 2px;
+    font-size: clamp(3.294rem, calc(2.672rem + 1.66vw), 4.939rem);
+    animation: fadeInUp 0.5s ease-out 0.9s forwards;
+    @include gradient-on-heading(to left);
+  }
+}
+
+// NOTE: I think it may have a conflict with about.vue paragrap
+// with animation and font -CHECKPOINT
+.paragraph {
+  opacity: 0;
+  // NOTE: font-size (conflict)
+  font-size: clamp(2.128rem, calc(1.776rem + 1.1vw), 3.312rem);
+  // NOTE: animation (conflict)
+  animation: fadeInUp 0.5s ease-out 1s forwards;
+}

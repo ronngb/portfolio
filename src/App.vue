@@ -53,6 +53,7 @@ export default {
 @import 'scss/base';
 @import 'scss/utilities';
 @import 'scss/animation';
+@import 'scss/typography';
 
 // main {
 //   @include grid-on-main(4, 16px, 16px);
