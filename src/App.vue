@@ -1,13 +1,11 @@
 <template>
   <div id="app">
     <Navbar />
-    <main v-trigger>
-      <div class="container">
-        <Intro />
-        <!-- <About /> -->
-        <!-- <Project /> -->
-        <!-- <Resume /> -->
-      </div>
+    <main v-trigger class="container">
+      <Intro />
+      <About />
+      <!-- <Project /> -->
+      <!-- <Resume /> -->
     </main>
   </div>
 </template>
