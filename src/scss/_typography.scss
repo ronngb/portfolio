@@ -17,6 +17,13 @@
   }
 }
 
+.secondary-heading {
+  opacity: 0;
+  text-align: center;
+  font-size: clamp(5.44rem, calc(3.696rem + 5.46vw), 9.92rem);
+  @include gradient-on-heading(to left);
+}
+
 // NOTE: I think it may have a conflict with about.vue paragrap
 // with animation and font -CHECKPOINT
 .paragraph {

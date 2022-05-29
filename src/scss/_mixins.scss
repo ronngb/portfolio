@@ -76,7 +76,7 @@
   gap: $grid-gap 0;
 }
 
-// NEW: style-all-heading
+// REDUNDANT TO BE REMOVE 28/5/22
 @mixin default-sub-heading-style {
   text-align: center;
   transform: translateY(20px);

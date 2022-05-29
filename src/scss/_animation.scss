@@ -1,4 +1,7 @@
 @keyframes fadeInLeft {
+  from {
+    transform: translateX(20px);
+  }
   to {
     opacity: 1;
     transform: translateX(0);
