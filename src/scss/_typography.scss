@@ -23,13 +23,3 @@
   font-size: clamp(5.44rem, calc(3.696rem + 5.46vw), 9.92rem);
   @include gradient-on-heading(to left);
 }
-
-// NOTE: I think it may have a conflict with about.vue paragrap
-// with animation and font -CHECKPOINT
-.paragraph {
-  opacity: 0;
-  // NOTE: font-size (conflict)
-  font-size: clamp(2.128rem, calc(1.776rem + 1.1vw), 3.312rem);
-  // NOTE: animation (conflict)
-  animation: fadeInUp 0.5s ease-out 1s forwards;
-}
