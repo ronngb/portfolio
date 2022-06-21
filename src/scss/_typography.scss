@@ -23,3 +23,9 @@
   font-size: clamp(5.44rem, calc(3.696rem + 5.46vw), 9.92rem);
   @include gradient-on-heading(to left);
 }
+
+.tertiary-heading {
+  color: $color-secondary;
+  text-align: center;
+  font-size: clamp(2rem, calc(0.36rem + 4.44vw), 2.24rem);
+}

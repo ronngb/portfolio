@@ -1,11 +1,13 @@
 $color-primary: #00a69a;
 $color-secondary: #46494c;
+$color-tertiary: #4ecaf3;
 $color-gradient: #4deee3;
+$color-silver: #c5c3c6;
 $color-black: #000;
 $color-white: #fff;
 
 $about-component-class-list: (about-heading, about-article, img-container);
-$class-project-active: (project-heading, project-list);
+$project-component-class-list: (project-heading, project-list);
 
 // BREAKPOINTS
 $bkp-md: 48em; /*768*/

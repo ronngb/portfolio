@@ -4,7 +4,7 @@
     <main v-trigger class="container">
       <Intro />
       <About />
-      <!-- <Project /> -->
+      <Project />
       <!-- <Resume /> -->
     </main>
   </div>
