@@ -11,9 +11,19 @@ import {
 import {
   faEnvelope,
   faExternalLinkAlt,
+  faChevronLeft,
+  faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFontAwesome, faLinkedin, faGithub, faEnvelope, faExternalLinkAlt)
+library.add(
+  faFontAwesome,
+  faLinkedin,
+  faGithub,
+  faEnvelope,
+  faExternalLinkAlt,
+  faChevronLeft,
+  faChevronRight
+)
 
 export default {
   FontAwesomeIcon,

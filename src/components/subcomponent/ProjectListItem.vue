@@ -1,11 +1,11 @@
 <template>
   <li class="project-item">
-    <figure class="project-figure">
+    <figure class="project-figure" @click="$emit('openCarousel')">
       <!-- TODO: make it 1 size all in img -->
       <div class="img-container">
         <img
           class="project-thumbnail"
-          src="../../assets/test-proj.png"
+          src="../../assets/test-proj.webp"
           alt=""
         />
       </div>

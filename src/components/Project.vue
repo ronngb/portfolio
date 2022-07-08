@@ -2,18 +2,25 @@
   <section id="project" class="project-section content-wrapper">
     <h2 class="secondary-heading project-heading">Project</h2>
     <ul class="project-list">
-      <ProjectListItem />
-      <!-- <ProjectListItem /> -->
+      <ProjectListItem @openCarousel="showCarousel = true" />
     </ul>
+    <ImageCarousel v-if="showCarousel" @closeCarousel="showCarousel = false" />
   </section>
 </template>
 <script>
 import ProjectListItem from './subcomponent/ProjectListItem.vue'
+import ImageCarousel from './subcomponent/ImageCarousel.vue'
 
 export default {
   name: 'Projects',
+  data() {
+    return {
+      showCarousel: false,
+    }
+  },
   components: {
     ProjectListItem,
+    ImageCarousel,
   },
 }
 </script>
