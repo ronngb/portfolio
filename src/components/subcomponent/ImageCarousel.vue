@@ -29,6 +29,7 @@
 </template>
 
 <script>
+// NOTE: current algorith is Static on image needs to be dynamic
 export default {
   data() {
     return {
@@ -66,6 +67,7 @@ button {
 
 .carousel {
   position: fixed;
+  z-index: 10;
   inset: 0;
 
   &-backdrop {

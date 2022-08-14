@@ -47,7 +47,6 @@ export default {
     scroll: {
       inserted(el, binding) {
         window.addEventListener('scroll', () => {
-          console.log(binding.value)
           binding.value(el)
         })
 
@@ -104,7 +103,7 @@ export default {
   &-header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1;
     background: $color-white;
     padding: 2.1rem 0;
     transition: all 0.2s ease-in-out;
