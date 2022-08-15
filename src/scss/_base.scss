@@ -21,7 +21,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Neutra Text', sans-serif;
+  font-family: $neutra-sans;
   line-height: 1.2;
 }
 
@@ -38,7 +38,7 @@ h3 {
 
 p {
   margin: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: $josefin-sans;
 }
 
 a,

@@ -9,8 +9,8 @@
           2014 when I decided to propose an eCommerce platform for medical
           supplies as my thesis, turns-out its the beginning of my constant
           passion for web development.<br /><br />
-          In my free time, I developed open source project. Fast forward today,
-          I was retrenched because of the pandemic and hoping to get a job.
+          Fast forward today, I was retrenched because of pandemic and eager to
+          get a job.
         </p>
         <p class="about-paragraph">
           Some of technologies that I've been using
@@ -116,7 +116,7 @@ export default {
 .tech-skills-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: $josefin-sans;
   padding-inline-start: 20px;
   row-gap: 2px;
 

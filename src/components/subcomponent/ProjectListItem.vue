@@ -20,8 +20,8 @@
       <h3 class="tertiary-heading">PassVault</h3>
       <p class="project-tech-stacks">
         <span>HTML</span>
-        <span>Vue</span>
         <span>JavaScript</span>
+        <span>Vue</span>
       </p>
       <a
         href="https://github.com/ronngb"
@@ -101,19 +101,14 @@ export default {}
     font-size: 1.5rem;
     justify-content: center;
     column-gap: 5px;
+    font-weight: bold;
+    color: $color-secondary;
+    font-family: $poppins-sans;
 
     & > span {
       background: $color-silver;
-      padding: 3px;
+      padding: 3px 5px;
       border-radius: 6px;
-    }
-  }
-
-  &-github-link {
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.2);
     }
   }
 }
