@@ -28,7 +28,7 @@
         <div class="img-container">
           <img
             class="profile-pic"
-            src="../assets/profile-pic.webp"
+            src="../assets/img/profile-pic.webp"
             alt="profile-pic-me"
           />
         </div>

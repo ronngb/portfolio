@@ -5,7 +5,7 @@
       <div class="img-container">
         <img
           class="project-thumbnail"
-          src="../../assets/test-proj.webp"
+          src="@/assets/img/test-proj.webp"
           alt=""
         />
       </div>

@@ -5,7 +5,7 @@
         <img
           class="website-logo"
           alt="website logo"
-          src="./../assets/logo.png"
+          src="@/assets/img/logo.png"
         />
       </a>
       <nav class="navbar-nav">

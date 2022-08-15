@@ -12,12 +12,7 @@
     </div>
     <img
       class="hero-image "
-      src="../assets/hero-image-sm.webp"
-      srcset="
-        ../assets/hero-image-sm.webp  500w,
-        ../assets/hero-image-md.webp 1000w,
-        ../assets/hero-image-lg.webp 1500w
-      "
+      src="../assets/img/hero-image-lg.webp"
       alt="hero image"
     />
   </section>
