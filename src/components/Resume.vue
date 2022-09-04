@@ -1,372 +1,231 @@
 <template>
-  <section id="section-resume" class="content-wrapper">
-    <h1 class="resume-heading">Resume</h1>
-    <div class="timeline"></div>
-    <article class="article-job-item">
-      <svg class="circle circle-event-1 " viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" />
-      </svg>
-      <div class="job-details">
-        <span class="job-date"><b>March - September 2020</b></span>
-        <hgroup>
-          <h2 class="job-position">IT Programmer</h2>
-          <h2 class="job-company">
-            <i>Solid Business Machines Center, Inc.</i>
-          </h2>
-        </hgroup>
-        <p class="job-subtitle">
-          Developer for module base content management system
+  <section id="resume" class="content-wrapper">
+    <h2 class="secondary-heading">Resume</h2>
+    <ul id="drawing" class="">
+      <div class="timeline"></div>
+      <li v-for="data in resume" class="">
+        <font-awesome-layers>
+          <font-awesome-icon
+            icon="fas fa-circle"
+            :style="{ color: '#00a69a' }"
+          />
+          <font-awesome-icon
+            icon="fas fa-circle"
+            transform="shrink-6"
+            inverse
+          />
+        </font-awesome-layers>
+        <h3 class="tertiary-heading">
+          <span class="tertiary-heading-main">
+            {{ data.position }}
+          </span>
+          <span class="tertiary-heading-sub">
+            <em>{{ data.company }}</em>
+          </span>
+        </h3>
+        <p>
+          <b>
+            <font-awesome-icon icon="fas fa-location-dot" />
+            {{ data.location }}
+          </b>
+          <span class="sub">
+            <font-awesome-icon icon="fas fa-calendar" />
+            {{ data.hired }}
+          </span>
         </p>
-      </div>
-      <ul class="job-summary">
-        <li>
-          Develop Quatation Reciept Module that will easily print in organize
-          reciept format
-        </li>
-        <li>
-          Develop Quatation Module that can add new product for Quatation
-        </li>
-      </ul>
-    </article>
-    <article class="article-job-item">
-      <svg class="circle circle-event-2" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" />
-      </svg>
-      <div class="job-details">
-        <span class="job-date"><b>January – December 2018</b></span>
-        <hgroup>
-          <h2 class="job-position">Programmer</h2>
-          <h2 class="job-company"><i>Telford Svc Phils., Inc.</i></h2>
-        </hgroup>
-        <p class="job-subtitle">
-          Sole developer for maintaining in-house system
-        </p>
-      </div>
-      <ul class="job-summary">
-        <li>
-          Eliminating the bugs that outputted false value base on the standard
-          Humidity and Temperature in a specific area
-        </li>
-        <li>
-          Maintain the Document Controller System by fixing the bugs that
-          preventing the user for adding new Document
-        </li>
-        <li>
-          Support and assist particular departments regarding on any IT related
-          issues including Computer Troubleshooting,
-        </li>
-      </ul>
-    </article>
-    <article class="article-job-item">
-      <svg class="circle circle-event-3" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" />
-      </svg>
-      <div class="job-details">
-        <span class="job-date"><b>May – September 2017</b></span>
-        <hgroup>
-          <h2 class="job-position">Web Developer</h2>
-          <h2 class="job-company"><i>Widget City Co.</i></h2>
-        </hgroup>
-        <p class="job-subtitle">
-          Sole developer for maintaining the e-commerce website
-        </p>
-      </div>
-      <ul class="job-summary">
-        <li>
-          Maintain the website, add new product, update the price and other
-          information of the specific product.
-        </li>
-        <li>
-          Integration of Google Analytics and Facebook Pixel for data comparison
-          and correlation.
-        </li>
-        <li>
-          Sole Developed the Payment Module Dragon Pay for the new website as
-          one of the payment options for the customer checkout process.
-        </li>
-      </ul>
-    </article>
+      </li>
+    </ul>
   </section>
 </template>
 <script>
+import data from '@/data/resume.json'
+
 export default {
   name: 'resume',
-};
+  data() {
+    return {
+      resume: data,
+    }
+  },
+}
 </script>
-<style lang="scss">
-#section-resume {
-  @include style-all-grid(minmax(290px, auto), 20px);
-  grid-template-rows: repeat(auto-fill, max-content);
-  position: relative;
-}
-
-.resume-heading {
-  @include style-all-heading;
-  @include style-gradient-heading(to right);
-}
-
+<style lang="scss" scoped>
 .timeline {
-  display: inline-block;
+  display: none;
   position: absolute;
-  border: 1px solid #848892;
-  border-radius: 5px;
-  background-color: #848892;
   width: 5px;
-  height: 90%;
-  top: 136px;
-  left: -2px;
-  transform-origin: bottom;
-  transform: scaleY(0);
+  height: 100%;
+  background-color: $color-primary;
+  @include responsive(sm) {
+    display: block;
+  }
 }
 
-svg circle {
-  fill: #fff;
-  stroke: #848892;
-  stroke-width: 12px;
-}
-
-.circle {
+ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(290px, 1fr);
+  gap: 30px 50px;
   position: relative;
-  top: 55px;
-  left: -15px;
-  width: 30px;
-  height: 30px;
-  opacity: 0;
+  justify-items: center;
+  padding-bottom: 30px;
+  @include responsive(sm) {
+    grid-template-columns: repeat(2, minmax(290px, 1fr));
+  }
 }
 
-#section-resume.active {
-  .resume-heading {
-    animation: resume-transition 0.5s ease-out 0.2s forwards;
+div[class~='fa-layers'] {
+  display: none;
+  font-size: 2em;
+  position: absolute;
+  top: -10px;
+  @include responsive(sm) {
+    display: block;
   }
+}
 
-  .timeline {
-    animation: resume-timeline-transition 1.5s cubic-bezier(0.08, 0.82, 0.17, 1)
-      0.4s forwards;
-  }
+li {
+  display: flex;
+  position: relative;
+  width: min(100%, 456px);
+  @include responsive(sm) {
+    &:nth-of-type(odd) {
+      justify-self: end;
+      grid-column: 1/2;
 
-  @for $i from 1 through 3 {
-    svg.circle-event-#{$i} {
-      animation: resume-transition 0.8s ease-in ($i * 0.3) + 1.2s forwards;
+      & div[class~='fa-layers'] {
+        right: -35px;
+      }
+
+      & p {
+        border-top-right-radius: 0;
+      }
     }
-  }
 
-  @for $i from 1 through 3 {
-    .article-job-item:nth-of-type(#{$i}) .job-details {
-      animation: resume-job-details-transition
-        0.8s
-        ease
-        ($i * 0.2) +
-        2s
-        forwards;
+    &:nth-of-type(even) {
+      justify-self: start;
+      grid-column: 2/-1;
+
+      & div[class~='fa-layers'] {
+        left: -35px;
+      }
+
+      & h3 {
+        border-top-left-radius: 0;
+      }
     }
-  }
-  $job-summary-delay: 2.8s;
 
-  @for $i from 1 through 3 {
-    .article-job-item:nth-of-type(#{$i}) .job-summary {
-      @for $j from 1 through 3 {
-        :nth-child(#{$j}) {
-          animation: resume-job-summary-transition
-            1s
-            cubic-bezier(0.22, 0.61, 0.36, 1)
-            ($j * 0.3) +
-            $job-summary-delay
-            forwards;
+    &:last-of-type {
+      position: absolute;
+      top: 30px;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        @if $i % 2 == 0 {
+          grid-row: $i #{'/'} ($i + 1);
+        } @else {
+          grid-row: $i #{'/'} ($i + 1);
         }
       }
-      $job-summary-delay: $job-summary-delay + 0.8;
     }
   }
 }
 
-.article-job-item {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
+h3 {
+  border-radius: 0.8rem 0 0 0.8rem;
+  padding: clamp(0.8rem, calc(0.704rem + 0.3vw), 1rem);
+  background-color: $color-quartet;
+  flex: 1 1 56%;
+}
 
-  .job-details {
-    transform: translateX(20px);
+p {
+  color: #fff;
+  padding: clamp(0.8rem, calc(0.704rem + 0.3vw), 1rem);
+  border-radius: 0 0.8rem 0.8rem 0;
+  background-color: $color-primary;
+  flex: 1 1 36%;
+  & > * {
+    display: inherit;
+  }
+
+  & :nth-child(1) {
+    font-size: clamp(1.28rem, calc(1.12rem + 0.48vw), 1.6rem);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  & :nth-child(2) {
+    font-size: clamp(1.1rem, calc(0.96rem + 0.45vw), 1.4rem);
+    font-weight: 100;
+  }
+}
+
+// Animation Init Start
+.timeline {
+  transform: scale(0);
+  transform-origin: 50% 100%;
+}
+
+li {
+  opacity: 0;
+  &:nth-of-type(odd) {
+    transform-origin: 100% 50%;
+    transform: translateX(30px) scaleX(0.2);
+  }
+  &:nth-of-type(even) {
+    transform-origin: 0% 50%;
+    transform: translateX(-30px) scaleX(0.2);
+  }
+  & > *:not(div) > * {
     opacity: 0;
+    transform: translateY(10px);
   }
 
-  .job-summary > li {
+  & div[class~='fa-layers'] {
     opacity: 0;
-  }
-}
-
-.job {
-  &-details {
-    border-radius: 5px;
-    box-shadow: 0px 2px 8px 0px rgba(36, 46, 76, 0.25);
-    height: 137px;
-    flex: 0 0 89%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    padding: 8px;
-    background: #fff;
+    transform: scale(0);
   }
 
-  &-details::before {
+  &:not(li:last-of-type)::after {
     content: '';
+    height: 30px;
     position: absolute;
-    top: 40%;
-    left: 1px;
-    border: 10px solid black;
-    border-color: transparent transparent #fff #fff;
-    transform-origin: 0 0;
-    transform: rotate(45deg);
-    filter: drop-shadow(-4px 3px 3px rgba(36, 46, 76, 0.25));
-  }
-
-  &-date {
-    font-size: 1rem;
-    color: #848892;
-  }
-
-  &-position {
-    font-size: 1.2rem;
-    color: $color-primary;
-  }
-
-  &-company {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  &-subtitle {
-    font-size: 1rem;
-  }
-
-  &-summary {
-    padding: 20px 30px;
-    width: 90%;
-    margin-left: auto;
-    position: relative;
-  }
-
-  &-summary li {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    position: relative;
-    border-radius: 20px;
-    margin-top: 10px;
-    box-shadow: 0px 2px 8px 0px rgba(36, 46, 76, 0.25);
-    padding: 10px 10px;
-    font-size: 1rem;
-  }
-
-  &-summary li:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -20px;
-    margin-top: -6px;
-    background: #848892;
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .job-details {
-    flex: 0 0 92%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  #section-resume {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content max-content;
-  }
-
-  .resume-heading {
-    grid-column: 1/3;
-    font-size: 6.2rem;
-  }
-
-  .timeline {
-    height: 80%;
-    top: 187px;
-    left: 50%;
-    margin-left: -2.5px;
-  }
-
-  .article-job-item {
-    &:nth-of-type(1) {
-      grid-column: 2/3;
-    }
-
-    &:nth-of-type(2) {
-      grid-row: 2/4;
-      align-self: center;
-
-      & .job-details {
-        text-align: right;
-        order: -1;
-      }
-
-      & .circle {
-        left: unset;
-        right: -15px;
-      }
-
-      & .job-details::before {
-        content: '';
-        position: absolute;
-        top: 40%;
-        right: -19px;
-        left: unset;
-        border: 10px solid black;
-        border-color: #fff #fff transparent transparent;
-        transform-origin: 0 0;
-        transform: rotate(45deg);
-        filter: drop-shadow(2px -2px 3px rgba(36, 46, 76, 0.25));
-      }
-
-      & .job-summary {
-        margin-left: unset;
-        margin-right: auto;
-      }
-    }
-
-    &:nth-of-type(even) .job-details {
-      transform: translateX(-20px);
-      opacity: 0;
+    bottom: -30px;
+    left: 15px;
+    width: 5px;
+    background-color: $color-primary;
+    transform-origin: 50% 0;
+    transform: scale(0);
+    @include responsive(sm) {
+      display: none;
     }
   }
-
-  .job-details {
-    flex: 0 0 90%;
-  }
 }
 
-@keyframes resume-job-summary-transition {
-  to {
-    opacity: 1;
+section.active {
+  & h2 {
+    animation: fadeInUp 0.5s ease-out 0.2s forwards;
   }
-}
-
-@keyframes resume-job-details-transition {
-  to {
-    transform: translateX(0);
-    opacity: 1;
+  & .timeline {
+    animation: fadeInScaleUp 0.3s $easeOutCubic 0.4s forwards;
   }
-}
 
-@keyframes resume-transition {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+  @for $i from 1 through 4 {
+    & li:nth-of-type(#{$i}) {
+      animation: fadeInScaleX 0.3s $easeOutCubic 0.6s forwards;
 
-@keyframes resume-timeline-transition {
-  to {
-    transform: scaleY(1);
+      & > *:not(div) > * {
+        animation: fadeInUp 0.3s $easeOutCubic 0.9s forwards;
+      }
+
+      & div[class~='fa-layers'] {
+        animation: fadeInScaleUp 0.3s $easeOutBack $i * 0.2 + 1s forwards;
+      }
+
+      &::after {
+        animation: fadeInScaleUp 0.3s $easeOutBack $i * 0.2 + 1s forwards;
+      }
+    }
   }
 }
 </style>

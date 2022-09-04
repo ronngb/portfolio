@@ -25,7 +25,27 @@
 }
 
 .tertiary-heading {
-  color: $color-secondary;
-  text-align: center;
-  font-size: clamp(2rem, calc(0.36rem + 4.44vw), 2.24rem);
+  color: $color-white;
+  font-family: $josefin-sans;
+
+  & > * {
+    display: inherit;
+  }
+
+  &-main {
+    font-size: clamp(2rem, calc(1.904rem + 0.3vw), 2.2rem);
+    font-weight: bold;
+  }
+  &-sub {
+    font-size: clamp(1.5rem, calc(1.36rem + 0.45vw), 1.8rem);
+    font-weight: 300;
+  }
 }
+
+//NOTE: font-size only same props with resume
+// TODO: tertiary-heading will be for resume.vue
+// .tertiary-heading {
+//   color: $color-secondary;
+//   text-align: center;
+//   font-size: clamp(2rem, calc(0.36rem + 4.44vw), 2.24rem);
+// }

@@ -7,6 +7,7 @@ $poppins-sans: 'Poppins', sans-serif;
 $color-primary: #00a69a;
 $color-secondary: #46494c;
 $color-tertiary: #4ecaf3;
+$color-quartet: #4c5c68;
 $color-gradient: #4deee3;
 $color-silver: #c5c3c6;
 $color-black: #000;
@@ -16,7 +17,12 @@ $color-white: #fff;
 $about-component-class-list: (about-heading, about-article, img-container);
 $project-component-class-list: (project-heading, project-list);
 
+// EASINGS
+$easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
+$easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+
 // BREAKPOINTS
+$bkp-sm: 36em; /*576*/
 $bkp-md: 48em; /*768*/
 $bkp-lg: 62em; /*992*/
 $bkp-xl: 75em; /*1200*/

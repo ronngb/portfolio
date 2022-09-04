@@ -13,6 +13,9 @@ import {
   faExternalLinkAlt,
   faChevronLeft,
   faChevronRight,
+  faCalendar,
+  faLocationDot,
+  faCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -22,7 +25,10 @@ library.add(
   faEnvelope,
   faExternalLinkAlt,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faCalendar,
+  faLocationDot,
+  faCircle
 )
 
 export default {

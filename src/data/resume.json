@@ -1,0 +1,27 @@
+[
+   {
+    "position": "IT Programmer",
+    "company": "Solid Business Machines Center, Inc. ",
+    "location": "Binondo, Manila",
+    "hired": "Mar - Sept 2020"
+  },
+  {   
+    "position": "Computer Programmer",
+    "company": "Telford Svc Phils., Inc.",
+    "location": "Gen. Trias, Cavite",
+    "hired": "Jan - Dec 2018"
+  },
+  {   
+    "position": "Web Developer",
+    "company": "Widget City Co.",
+    "location": "Malate, Manila",
+    "hired": "May - Sept 2017"
+  },
+  {   
+    "position": "B.S. Computer Science",
+    "company": "System Technology Institute(STI)",
+    "location": "Quiapo, Manila",
+    "hired": "May 2015"
+  }  
+]
+

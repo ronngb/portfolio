@@ -2,7 +2,6 @@
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
   --gainsboro: #dcdcdd;
-  --black-coral: #4c5c68;
 
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -32,7 +31,8 @@ main > section {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
 }
 

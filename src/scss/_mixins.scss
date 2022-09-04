@@ -101,6 +101,11 @@
 }
 
 @mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $bkp-sm) {
+      @content;
+    }
+  }
   @if $breakpoint == md {
     @media (min-width: $bkp-md) {
       @content;
