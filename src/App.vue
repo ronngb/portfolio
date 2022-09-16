@@ -5,8 +5,9 @@
       <Intro />
       <About />
       <Project />
-      <!-- <Resume /> -->
+      <Resume />
     </main>
+    <Footer />
   </div>
 </template>
 <script>
@@ -15,6 +16,7 @@ import Intro from './components/Intro.vue'
 import About from './components/About.vue'
 import Project from './components/Project.vue'
 import Resume from './components/Resume.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -44,6 +46,7 @@ export default {
     About,
     Project,
     Resume,
+    Footer,
   },
 }
 </script>
@@ -52,7 +55,6 @@ export default {
 @import 'scss/utilities';
 @import 'scss/animation';
 @import 'scss/typography';
-
 // main {
 //   @include grid-on-main(4, 16px, 16px);
 // }
