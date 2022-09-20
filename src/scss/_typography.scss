@@ -3,7 +3,7 @@
     display: inherit;
     line-height: 1;
     opacity: 0;
-    font-size: clamp(4.997rem, calc(3.58rem + 3.64vw), 8.7rem);
+    font-size: clamp(5.44rem, calc(3.888rem + 4.85vw), 8.7rem);
     animation: fadeInUp 0.5s ease-out 0.8s forwards;
     @include gradient-on-heading(to right);
   }
@@ -20,7 +20,7 @@
 .secondary-heading {
   opacity: 0;
   text-align: center;
-  font-size: clamp(5.44rem, calc(3.696rem + 5.46vw), 9.92rem);
+  font-size: clamp(5.2rem, calc(3.328rem + 5.21vw), 8.5rem);
   @include gradient-on-heading(to left);
 }
 

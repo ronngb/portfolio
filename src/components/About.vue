@@ -67,15 +67,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-/* TOCOMMIT:
-    * fix: about component not visible
-      - App.vue, _base.scss, _utilities.scss
-*/
-
-/* READY TO COMMIT!!
-  *
-
-*/
 .about {
   &-article {
     opacity: 0;
@@ -83,7 +74,8 @@ export default {
 
   &-paragraph {
     margin-bottom: 15px;
-    font-size: 2.096rem;
+    line-height: 1.3;
+    font-size: clamp(1.7rem, calc(1.552rem + 0.45vw), 2rem);
   }
 
   &-social-acct {
