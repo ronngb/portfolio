@@ -1,16 +1,16 @@
 // Redundant to be remove
-@mixin style-intro($font-size, $animation-delay, $padding: 0) {
-  font-size: $font-size;
-  animation-delay: $animation-delay;
-  padding-left: $padding;
-}
+// @mixin style-intro($font-size, $animation-delay, $padding: 0) {
+//   font-size: $font-size;
+//   animation-delay: $animation-delay;
+//   padding-left: $padding;
+// }
 
 // TODO: to be remove 27/5/22
-@mixin heading-animation-delay($delay) {
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-out $delay forwards;
-}
+// @mixin heading-animation-delay($delay) {
+//   transform: translateY(20px);
+//   opacity: 0;
+//   animation: fadeInUp 0.5s ease-out $delay forwards;
+// }
 
 @mixin gradient-on-heading($direction) {
   color: transparent;
@@ -23,26 +23,26 @@
 }
 
 // TODO: to be remove 27/5/22
-@mixin gradient-heading-direction($direction) {
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(
-    $direction,
-    $color-primary,
-    $color-gradient
-  );
-}
+// @mixin gradient-heading-direction($direction) {
+//   color: transparent;
+//   background-clip: text;
+//   background-image: linear-gradient(
+//     $direction,
+//     $color-primary,
+//     $color-gradient
+//   );
+// }
 
 // Redundant to be remove
-@mixin style-gradient-heading($direction) {
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(
-    $direction,
-    $color-primary,
-    $color-gradient
-  );
-}
+// @mixin style-gradient-heading($direction) {
+//   color: transparent;
+//   background-clip: text;
+//   background-image: linear-gradient(
+//     $direction,
+//     $color-primary,
+//     $color-gradient
+//   );
+// }
 @mixin grid-on-section-proto($min-value) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($min-value, 1fr));
@@ -56,12 +56,13 @@
 }
 
 // ON TEST MIXINS
-@mixin grid-col-gutter-margin($column, $gutter, $margin) {
-  grid-template-columns: repeat($column, 1fr);
-  gap: 0 $gutter;
-  margin: 0 $margin;
-}
+// @mixin grid-col-gutter-margin($column, $gutter, $margin) {
+//   grid-template-columns: repeat($column, 1fr);
+//   gap: 0 $gutter;
+//   margin: 0 $margin;
+// }
 
+// NOTE: Check this later
 @mixin grid-on-main($column, $gutter, $margin) {
   display: grid;
   grid-template-columns: repeat($column, 1fr);
@@ -70,28 +71,28 @@
 }
 
 // REDUNDANT TO BE REMOVE
-@mixin style-all-grid($grid-columns, $grid-gap: 15px) {
-  display: grid;
-  grid-template-columns: $grid-columns;
-  gap: $grid-gap 0;
-}
+// @mixin style-all-grid($grid-columns, $grid-gap: 15px) {
+//   display: grid;
+//   grid-template-columns: $grid-columns;
+//   gap: $grid-gap 0;
+// }
 
 // REDUNDANT TO BE REMOVE 28/5/22
-@mixin default-sub-heading-style {
-  text-align: center;
-  transform: translateY(20px);
-  opacity: 0;
-}
+// @mixin default-sub-heading-style {
+//   text-align: center;
+//   transform: translateY(20px);
+//   opacity: 0;
+// }
 
 // REDUNDANT TO BE REMOVE
-@mixin style-all-heading {
-  grid-column: 1/2; /*REDUNDANT*/
-  color: $color-primary; /*REDUNDANT*/
-  font-size: 3.4rem; /*REDUNDANT*/
-  text-align: center;
-  transform: translateY(20px);
-  opacity: 0;
-}
+// @mixin style-all-heading {
+//   grid-column: 1/2; /*REDUNDANT*/
+//   color: $color-primary; /*REDUNDANT*/
+//   font-size: 3.4rem; /*REDUNDANT*/
+//   text-align: center;
+//   transform: translateY(20px);
+//   opacity: 0;
+// }
 
 @mixin style-all-flex($align-items, $justify-cont, $flex-direct: row) {
   display: flex;
@@ -126,4 +127,57 @@
       @content;
     }
   }
+}
+
+@mixin bgimage {
+  background-image: radial-gradient(
+      circle at 13% 47%,
+      rgba(140, 140, 140, 0.03) 0%,
+      rgba(140, 140, 140, 0.03) 25%,
+      transparent 25%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 28% 63%,
+      rgba(143, 143, 143, 0.03) 0%,
+      rgba(143, 143, 143, 0.03) 16%,
+      transparent 16%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 81% 56%,
+      rgba(65, 65, 65, 0.03) 0%,
+      rgba(65, 65, 65, 0.03) 12%,
+      transparent 12%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 26% 48%,
+      rgba(60, 60, 60, 0.03) 0%,
+      rgba(60, 60, 60, 0.03) 6%,
+      transparent 6%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 97% 17%,
+      rgba(150, 150, 150, 0.03) 0%,
+      rgba(150, 150, 150, 0.03) 56%,
+      transparent 56%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(25, 25, 25, 0.03) 0%,
+      rgba(25, 25, 25, 0.03) 36%,
+      transparent 36%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 55% 52%,
+      rgba(69, 69, 69, 0.03) 0%,
+      rgba(69, 69, 69, 0.03) 6%,
+      transparent 6%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
 }

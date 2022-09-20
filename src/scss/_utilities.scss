@@ -2,31 +2,21 @@
   border: 1px solid black;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat($col-sm, 1fr);
-  gap: 0 $gutter-sm;
-  margin: 0 $margin-sm;
-  @include responsive(md) {
-    @include grid-col-gutter-margin($col-md, $gutter-md, $margin-md);
-  }
-
-  @include responsive(lg) {
-    @include grid-col-gutter-margin($col-lg, $gutter-md, $margin-md);
-  }
-
-  @include responsive(xl) {
-    @include grid-col-gutter-margin($col-lg, $gutter-md, $margin-lg);
-  }
-}
-
 .content-wrapper {
-  padding: 4rem 0;
+  padding: 5rem clamp(0.96rem, calc(-2.192rem + 9.87vw), 12rem);
 }
 
-// NOTE: current using this class INTRO & ABOUT
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px 0;
+  @include responsive(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.primary-bg {
+  @include bgimage;
+  position: fixed;
+  z-index: -10;
+  inset: 0;
 }

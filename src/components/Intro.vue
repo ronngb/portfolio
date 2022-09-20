@@ -12,7 +12,7 @@
     </div>
     <img
       class="hero-image "
-      src="../assets/img/hero-image-lg.webp"
+      src="../assets/img/hero-image.webp"
       alt="hero image"
     />
   </section>
@@ -23,8 +23,7 @@ export default { name: 'Intro' }
 <style lang="scss" scoped>
 section {
   place-items: center;
-
-  @include responsive(md) {
+  @include responsive(lg) {
     grid-template-columns: 55% 45%;
   }
 }
@@ -42,36 +41,4 @@ section {
   animation: fadeInLeft 0.5s ease-out 1.2s forwards;
   width: 100%;
 }
-// .intro {
-//   &-section {
-//     @include grid-on-section(290px);
-//     place-items: center;
-//   }
-
-//   &-name {
-//     @include heading-animation-delay(0.8s);
-//     @include gradient-heading-direction(to right);
-//     font-size: clamp(3rem, calc(2.27rem + 3.64vw), 5.46rem);
-//     line-height: 1;
-//   }
-
-//   &-pos {
-//     @include heading-animation-delay(0.9s);
-//     @include gradient-heading-direction(to left);
-//     font-size: clamp(2rem, calc(1.67rem + 1.66vw), 3.12rem);
-//     padding-left: 2px;
-//   }
-
-//   &-subtitle {
-//     @include heading-animation-delay(1s);
-//     font-size: clamp(1.33rem, calc(1.11rem + 1.1vw), 2.07rem);
-//     padding-left: 5px;
-//   }
-// }
-
-// @media screen and (min-width: 768px) {
-//   .intro-section {
-//     grid-template-columns: 55% 45%;
-//   }
-// }
 </style>
