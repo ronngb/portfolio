@@ -2,10 +2,11 @@
   <header v-scroll="navbarTransition" class="navbar-header">
     <div class="flex-container">
       <a>
+        <!-- change the website-logo to navbar-logo -->
         <img
-          class="website-logo"
+          class="navbar-logo"
           alt="website logo"
-          src="@/assets/img/logo.png"
+          src="@/assets/img/logo.svg"
         />
       </a>
       <nav class="navbar-nav">
@@ -93,10 +94,10 @@ export default {
   }
 }
 
-.website-logo {
+.navbar-logo {
   // NOTE: try rem or ems here
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  // height: 30px;
 }
 
 .navbar {

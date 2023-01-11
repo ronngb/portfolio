@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <Navbar /> -->
+    <Navbar />
     <div class="primary-bg"></div>
     <main v-trigger class="">
       <Intro />
