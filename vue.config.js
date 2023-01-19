@@ -10,12 +10,12 @@ module.exports = {
     },
   },
   css: {
-    sourceMap: true,
+    sourceMap: process.env.NODE_ENV === 'production' ? false : true,
     loaderOptions: {
       scss: {
         additionalData: `
-          @import "@/scss/variables.scss";
-          @import "@/scss/mixins.scss";        
+          @import "@/assets/scss/abstracts/variables.scss";
+          @import "@/assets/scss/abstracts/mixins.scss";        
         `,
       },
     },

@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar />
     <div class="primary-bg"></div>
-    <main v-trigger class="">
+    <main v-trigger>
       <Intro />
       <About />
       <Project />
@@ -53,8 +53,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import 'scss/base';
-@import 'scss/utilities';
-@import 'scss/animation';
-@import 'scss/typography';
+@import './assets/scss/main.scss';
 </style>

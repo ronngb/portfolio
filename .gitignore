@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # Prettier ignore
 .prettierignore
+.prettierrc.json
+
+# deploy conf
+deploy.sh
