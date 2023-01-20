@@ -1,8 +1,6 @@
 :root {
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
-  --gainsboro: #dcdcdd;
-
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
@@ -22,6 +20,9 @@ body {
   padding: 0;
   font-family: $neutra-sans;
   line-height: 1.2;
+  &.backdrop-open {
+    overflow: hidden;
+  }
 }
 
 main > section {

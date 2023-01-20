@@ -2,9 +2,11 @@
   <section id="project" class="project-section content-wrapper">
     <h2 class="secondary-heading project-heading">Project</h2>
     <ul class="project-list">
-      <ProjectListItem @openCarousel="showCarousel = true" />
+      <ProjectListItem @openCarousel="toggleCarousel()" />
     </ul>
-    <ImageCarousel v-if="showCarousel" @closeCarousel="showCarousel = false" />
+    <ImageCarousel
+      v-if="showCarousel"
+      @closeCarousel="toggleCarousel()" />
   </section>
 </template>
 <script>
@@ -21,6 +23,12 @@ export default {
   components: {
     ProjectListItem,
     ImageCarousel,
+  },
+  methods: {
+    toggleCarousel() {
+      this.showCarousel = !this.showCarousel
+      document.body.classList.toggle('backdrop-open')
+    },
   },
 }
 </script>

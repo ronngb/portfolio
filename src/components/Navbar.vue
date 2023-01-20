@@ -1,10 +1,6 @@
 <template>
-  <header
-    v-scroll="navbarTransition"
-    class="navbar-header">
-    <a
-      class="navbar-logo-link"
-      href="/">
+  <header v-scroll="navbarTransition" class="navbar-header">
+    <a class="navbar-logo-link" href="/">
       <img
         class="navbar-logo"
         alt="website logo"
@@ -21,18 +17,12 @@
     <nav class="navbar-nav">
       <ul class="navbar-list">
         <li class="navbar-item">
-          <a
-            href="#intro"
-            class="navbar-link"
-            @click="toggleMenu()">
+          <a href="#intro" class="navbar-link" @click="toggleMenu()">
             Home
           </a>
         </li>
         <li class="navbar-item">
-          <a
-            href="#about"
-            class="navbar-link"
-            @click="toggleMenu()"
+          <a href="#about" class="navbar-link" @click="toggleMenu()"
             >About
           </a>
         </li>
@@ -45,10 +35,7 @@
           </a>
         </li>
         <li class="navbar-item">
-          <a
-            href="#resume"
-            class="navbar-link"
-            @click="toggleMenu()">
+          <a href="#resume" class="navbar-link" @click="toggleMenu()">
             Resume
           </a>
         </li>
@@ -75,7 +62,10 @@ export default {
   },
   methods: {
     toggleMenu() {
-      this.$refs.navbarBtn.classList.toggle('active')
+      if (window.screen.width < 992) {
+        this.$refs.navbarBtn.classList.toggle('active')
+        document.body.classList.toggle('backdrop-open')
+      }
     },
     navbarTransition(el) {
       if (window.screen.width > 992) {
@@ -202,7 +192,10 @@ export default {
     position: fixed;
     top: 1.9rem;
     right: 3.3rem;
-    background-image: radial-gradient($color-gradient, $color-primary);
+    background-image: radial-gradient(
+      $color-gradient,
+      $color-primary
+    );
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     @include responsive(lg) {
       display: none;
@@ -248,7 +241,12 @@ export default {
 
       @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-          animation: fadeInUp 0.5s ease-out (($i - 1) + $i) * 0.1s forwards;
+          animation: fadeInUp
+            0.5s
+            ease-out
+            (($i - 1) + $i) *
+            0.1s
+            forwards;
         }
       }
     }

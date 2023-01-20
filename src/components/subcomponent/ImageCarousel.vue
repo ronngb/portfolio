@@ -1,27 +1,32 @@
 <template>
   <transition name="fadeScale" appear>
     <div class="carousel">
-      <div class="carousel-backdrop" @click="$emit('closeCarousel')"></div>
+      <div
+        class="carousel-backdrop"
+        @click="$emit('closeCarousel')"></div>
       <figure class="carousel-body">
         <transition name="fade" mode="out-in">
           <img
             v-for="i in [currentIndex]"
             :key="i"
             class="carousel-img"
-            :src="require(`@/assets/${currentImg}.webp`)"
-          />
+            :src="require(`@/assets/img/${currentImg}.webp`)" />
         </transition>
-        <button key="left" class="carousel-btn-left" @click="changeIndex(-1)">
+        <button
+          key="left"
+          class="carousel-btn-left"
+          @click="changeIndex(-1)">
           <font-awesome-icon
             class="chevron-left-icon"
-            :icon="['fas', 'chevron-left']"
-          />
+            :icon="['fas', 'chevron-left']" />
         </button>
-        <button key="right" class="carousel-btn-right" @click="changeIndex(1)">
+        <button
+          key="right"
+          class="carousel-btn-right"
+          @click="changeIndex(1)">
           <font-awesome-icon
             class="chevron-right-icon"
-            :icon="['fas', 'chevron-right']"
-          />
+            :icon="['fas', 'chevron-right']" />
         </button>
       </figure>
     </div>
@@ -29,18 +34,20 @@
 </template>
 
 <script>
-// NOTE: current algorith is Static on image needs to be dynamic
 export default {
+  // images: ['pv-image01', 'pv-image02', 'pv-image03'],
   data() {
     return {
-      images: ['test-proj', 'test-proj2', 'test-proj3'],
+      images: ['test-proj', 'test-proj', 'test-proj'],
       timer: null,
       currentIndex: 0,
     }
   },
   computed: {
     currentImg() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length]
+      return this.images[
+        Math.abs(this.currentIndex) % this.images.length
+      ]
     },
   },
   methods: {
@@ -67,7 +74,7 @@ button {
 
 .carousel {
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   inset: 0;
 
   &-backdrop {

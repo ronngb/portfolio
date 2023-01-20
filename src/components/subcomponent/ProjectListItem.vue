@@ -1,34 +1,36 @@
 <template>
   <li class="project-item">
-    <figure class="project-figure" @click="$emit('openCarousel')">
-      <!-- TODO: make it 1 size all in img -->
+    <figure class="project-figure">
       <div class="img-container">
         <img
+          @click="$emit('openCarousel')"
           class="project-thumbnail"
           src="@/assets/img/test-proj.webp"
-          alt=""
-        />
+          alt="" />
       </div>
-      <a href="" class="project-link">
+      <a
+        href="https://passvault-89989.web.app"
+        target="_blank"
+        class="project-link">
         <font-awesome-icon
           class="external-link-icon"
-          :icon="['fas', 'external-link-alt']"
-        />
+          :icon="['fas', 'external-link-alt']" />
       </a>
     </figure>
     <div class="project-info">
-      <h3 class="tertiary-heading">PassVault</h3>
+      <h3 class="project-heading">PassVault</h3>
       <p class="project-tech-stacks">
         <span>HTML</span>
         <span>JavaScript</span>
         <span>Vue</span>
       </p>
       <a
-        href="https://github.com/ronngb"
+        href="https://github.com/ronngb/passvault"
         class="project-github-link"
-        target="_blank"
-      >
-        <font-awesome-icon class="github-icon" :icon="['fab', 'github']" />
+        target="_blank">
+        <font-awesome-icon
+          class="github-icon"
+          :icon="['fab', 'github']" />
       </a>
     </div>
   </li>
@@ -45,6 +47,7 @@ export default {}
     grid-template-rows: repeat(2, 1fr);
     padding: 0 15px;
     border-radius: 8px;
+    background-color: #fff;
     transition: all 0.3s linear;
     box-shadow: 0 0 20px rgba($color-black, 0.16);
 
@@ -61,7 +64,7 @@ export default {}
     border-radius: 8px;
     border-radius: 10px;
     transform: translateY(-15px);
-    // box-shadow: 0 0 20px rgba($color-black, 0.16);
+    box-shadow: 0 0 20px rgba($color-black, 0.16);
   }
 
   &-thumbnail {
@@ -73,6 +76,10 @@ export default {}
     &:hover {
       transform: scale(1.6);
     }
+  }
+
+  &-heading {
+    font-size: clamp(2rem, calc(1.904rem + 0.3vw), 2.2rem);
   }
 
   &-link {
