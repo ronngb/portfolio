@@ -10,7 +10,7 @@
             v-for="i in [currentIndex]"
             :key="i"
             class="carousel-img"
-            :src="require(`@/assets/img/${currentImg}.webp`)" />
+            :src="require(`@/assets/images/${currentImg}.webp`)" />
         </transition>
         <button
           key="left"
@@ -35,10 +35,9 @@
 
 <script>
 export default {
-  // images: ['pv-image01', 'pv-image02', 'pv-image03'],
   data() {
     return {
-      images: ['test-proj', 'test-proj', 'test-proj'],
+      images: ['pv-image01', 'pv-image02', 'pv-image03'],
       timer: null,
       currentIndex: 0,
     }

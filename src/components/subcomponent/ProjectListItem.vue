@@ -5,7 +5,7 @@
         <img
           @click="$emit('openCarousel')"
           class="project-thumbnail"
-          src="@/assets/img/test-proj.webp"
+          src="@/assets/images/pv-image01.webp"
           alt="" />
       </div>
       <a

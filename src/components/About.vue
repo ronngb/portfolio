@@ -4,13 +4,14 @@
     <div class="grid-container">
       <article class="about-article">
         <p class="about-paragraph">
-          Hello world! My name is Ronnel and I love building things that make
-          work accessible. My interest in web development started way back in
-          2014 when I decided to propose an eCommerce platform for medical
-          supplies as my thesis, turns-out its the beginning of my constant
-          passion for web development.<br /><br />
-          Fast forward today, I was retrenched because of pandemic and eager to
-          get a job.
+          Hello world! My name is Ronnel and I love building things
+          that make work accessible. My interest in web development
+          started way back in 2014 when I decided to propose an
+          eCommerce platform for medical supplies as my thesis,
+          turns-out its the beginning of my constant passion for web
+          development.<br /><br />
+          Fast forward today, I was retrenched because of pandemic and
+          eager to get a job.
         </p>
         <p class="about-paragraph">
           Some of technologies that I've been using
@@ -28,33 +29,30 @@
         <div class="img-container">
           <img
             class="profile-pic"
-            src="../assets/img/profile-pic.webp"
-            alt="profile-pic-me"
-          />
+            src="../assets/images/profile-pic.webp"
+            alt="profile-pic-me" />
         </div>
         <div class="about-social-acct">
           <a
             href="https://www.linkedin.com/in/ronnel-g-3103881b1/"
             class="linkedin-link"
-            target="_blank"
-          >
+            target="_blank">
             <font-awesome-icon
               class="linkedin-icon"
-              :icon="['fab', 'linkedin']"
-            />
+              :icon="['fab', 'linkedin']" />
           </a>
           <a
             href="https://github.com/ronngb"
             class="github-link"
-            target="_blank"
-          >
-            <font-awesome-icon class="github-icon" :icon="['fab', 'github']" />
+            target="_blank">
+            <font-awesome-icon
+              class="github-icon"
+              :icon="['fab', 'github']" />
           </a>
           <a href="mailto:ronny.gabi@gmail.com" class="envelope-link">
             <font-awesome-icon
               class="envelope-icon"
-              :icon="['fas', 'envelope']"
-            />
+              :icon="['fas', 'envelope']" />
           </a>
         </div>
       </div>
@@ -149,7 +147,12 @@ export default {
   }
   @for $i from 1 through 3 {
     .about-social-acct :nth-child(#{$i}) {
-      animation: fadeInScaleUp 0.5s ease (($i * 0.2) + 1) - 0.2s forwards;
+      animation: fadeInScaleUp
+        0.5s
+        ease
+        (($i * 0.2) + 1) -
+        0.2s
+        forwards;
     }
   }
 }

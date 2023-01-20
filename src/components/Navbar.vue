@@ -4,7 +4,7 @@
       <img
         class="navbar-logo"
         alt="website logo"
-        src="@/assets/img/logo.svg" />
+        src="@/assets/images/logo.svg" />
     </a>
     <button
       class="navbar-button border-solid"

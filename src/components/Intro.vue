@@ -6,15 +6,15 @@
         <span class="primary-heading-sub">Web Developer</span>
       </h1>
       <p class="intro-paragraph">
-        Hi there! I'm Ronnel, your friendly neighborhood developer, who enjoys
-        designing and developing websites, great in both Front and Back end.
+        Hi there! I'm Ronnel, your friendly neighborhood developer,
+        who enjoys designing and developing websites, good in both
+        Front and Back end.
       </p>
     </div>
     <img
-      class="hero-image "
-      src="../assets/img/hero-image.webp"
-      alt="hero image"
-    />
+      class="hero-image"
+      src="../assets/images/hero-image.webp"
+      alt="hero image" />
   </section>
 </template>
 <script>
