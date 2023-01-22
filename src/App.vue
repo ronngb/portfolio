@@ -7,6 +7,7 @@
       <About />
       <Project />
       <Resume />
+      <ResumeLink />
     </main>
     <Footer />
   </div>
@@ -18,6 +19,7 @@ import About from './components/About.vue'
 import Project from './components/Project.vue'
 import Resume from './components/Resume.vue'
 import Footer from './components/Footer.vue'
+import ResumeLink from './components/ResumeLink.vue'
 
 export default {
   name: 'App',
@@ -49,6 +51,7 @@ export default {
     Project,
     Resume,
     Footer,
+    ResumeLink,
   },
 }
 </script>

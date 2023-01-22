@@ -12,7 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  margin-top: 6rem;
   padding: 2rem 0;
 }
 
