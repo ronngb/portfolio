@@ -34,7 +34,7 @@
         </div>
         <div class="about-social-acct">
           <a
-            href="https://www.linkedin.com/in/ronnel-g-3103881b1/"
+            href="https://www.linkedin.com/in/ronngb"
             class="linkedin-link"
             target="_blank">
             <font-awesome-icon
